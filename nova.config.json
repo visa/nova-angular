@@ -1,0 +1,8 @@
+{
+  "packageName": "nova-angular",
+  "ossFirstCommitDate": "2025-04-07",
+  "fileExclusions": ["/**/*.json", "/**/__snapshots__/**", "/**/node_modules/**"],
+  "licenseFileExclusions": [],
+  "licensePaths": ["libs/nova-lib"],
+  "licenseHeaderPaths": ["apps", "libs", "bin", "dist"]
+}
