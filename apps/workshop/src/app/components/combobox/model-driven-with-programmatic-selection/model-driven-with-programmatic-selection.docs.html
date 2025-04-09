@@ -1,0 +1,40 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<div v-combobox [formControl]="val">
+  <label v-label>Label</label>
+  <div v-input-container v-floating-ui-trigger vMY="4">
+    <input v-input />
+    <button v-button-icon buttonColor="tertiary" buttonSize="small" aria-label="toggle">
+      <v-icon-visa-toggle>
+        <svg v-toggle-default-template v-icon-visa-chevron-down-tiny></svg>
+        <svg v-toggle-rotated-template v-icon-visa-chevron-up-tiny></svg>
+      </v-icon-visa-toggle>
+    </button>
+  </div>
+  <div v-listbox-container v-floating-ui-element>
+    <ul v-listbox [vHide]="filteredItems.length === 0">
+      <li *ngFor="let item of filteredItems" v-listbox-item [value]="item.value">{{ item.label }}</li>
+    </ul>
+    <div [vHide]="filteredItems.length > 0" vPY="10" vPX="7" vFlex vJustifyContentCenter>No results found</div>
+  </div>
+</div>
+
+<button v-button vMT="12" (click)="reset()">Reset</button>
+
+<!-- For demo purposes: -->
+<code *ngIf="val" vMT="16">{{'Label: ' + val.value?.['label']}}</code>
+<code *ngIf="val">{{'Value: ' + val.value?.['value']}}</code>

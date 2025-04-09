@@ -1,0 +1,129 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<div class="app-container">
+  <header v-nav vertical vAlternate v-icon-two-color>
+    <a v-skip-to-content v-link *ngIf="navOpen" routerLink="./" fragment="content">Skip to content</a>
+    <ng-container *ngIf="navOpen">
+      <a
+        v-link
+        noUnderline
+        vFlex
+        vFlexCol
+        vMT="16"
+        vMB="30"
+        vML="20"
+        vMR="16"
+        vGap="12"
+        aria-label="Visa Application Name home"
+        href="/"
+        style="background-color: transparent"
+        ><svg v-logo-visa></svg>
+        <div vTypography="subtitle-1" vTypographyColor="default">Application Name</div>
+      </a>
+      <nav aria-label="Alternate vertical" vMB="6">
+        <ul v-tabs vertical>
+          <li v-tab-item>
+            <a v-button buttonColor="tertiary" href="./components/vertical-navigation"> L1 label 1</a>
+          </li>
+          <li v-tab-item>
+            <a v-button buttonColor="tertiary" href="./components/vertical-navigation"> L1 label 2</a>
+          </li>
+          <li v-tab-item>
+            <a v-button buttonColor="tertiary" href="./components/vertical-navigation"> L1 label 3</a>
+          </li>
+          <li v-tab-item>
+            <a v-button buttonColor="tertiary" href="./components/vertical-navigation"> L1 label 4</a>
+          </li>
+          <li v-tab-item>
+            <a v-button buttonColor="tertiary" href="./components/vertical-navigation"> L1 label 5</a>
+          </li>
+        </ul>
+      </nav>
+    </ng-container>
+    <hr v-divider dividerType="decorative" vMB="6" vMT="auto" style="inline-size: 100%" />
+    <div *ngIf="navOpen" vFlex vFlexCol vAlignSelfStretch vMB="4">
+      <div v-tab-item disclosureTab (disclosureTabToggled)="handleToggle($event)">
+        <button
+          v-button
+          buttonColor="tertiary"
+          buttonSize="large"
+          aria-label="Alex Miller"
+          aria-controls="alternate-profile-links"
+          [attr.aria-expanded]="disclosureTabOpen"
+        >
+          <svg v-icon-visa-account-tiny></svg>
+          Alex Miller
+          <v-icon-visa-toggle>
+            <svg v-toggle-default-template v-icon-visa-chevron-down-tiny></svg>
+            <svg v-toggle-rotated-template v-icon-visa-chevron-up-tiny></svg>
+          </v-icon-visa-toggle>
+        </button>
+        <div
+          [vHide]="!disclosureTabOpen"
+          vFlex
+          vFlexCol
+          vP="4"
+          id="alternate-profile-links"
+          [attr.aria-hidden]="!disclosureTabOpen"
+        >
+          <ul v-tabs vertical>
+            <li v-tab-item>
+              <a
+                v-button
+                vFlex
+                vJustifyContentStart
+                vTypography="label-large"
+                buttonColor="tertiary"
+                buttonSize="large"
+                href="./components/vertical-navigation"
+                >L2 label 1</a
+              >
+            </li>
+            <li v-tab-item>
+              <a
+                v-button
+                vFlex
+                vJustifyContentStart
+                vTypography="label-large"
+                buttonColor="tertiary"
+                buttonSize="large"
+                href="./components/vertical-navigation"
+                >L2 label 2</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <button
+      v-button-icon
+      buttonColor="tertiary"
+      buttonSize="small"
+      subtle
+      [vML]="navOpen ? 'auto' : ''"
+      [vMR]="navOpen ? 8 : ''"
+      [vMX]="navOpen ? '' : 5"
+      (click)="navOpen = !navOpen"
+      aria-label="Side bar"
+      [aria-expanded]="navOpen"
+    >
+      <svg *ngIf="navOpen" v-icon-visa-media-rewind-tiny></svg>
+      <svg *ngIf="!navOpen" v-icon-visa-media-fast-forward-tiny></svg>
+    </button>
+  </header>
+  <div class="main-content">Main content</div>
+</div>

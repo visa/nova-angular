@@ -1,0 +1,64 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<form [formGroup]="formValidation" vFlex vFlexCol vGap="16" (change)="handleChange(formValidation)">
+  <fieldset aria-labelledby="fb-driven-form-group-label fb-driven-form-group-error-input-message">
+    <legend v-label id="fb-driven-form-group-label">Group label (required)</legend>
+    <div v-input-message id="fb-driven-form-group-error-input-message">Select one or more options.</div>
+    <ul vFlex vFlexCol>
+      <li vFlex vGap="4" vFlexCol>
+        <div v-input-container>
+          <input
+            v-checkbox
+            formControlName="input1"
+            id="fb-checkbox-1"
+            [invalid]="isSubmitted && isInvalid"
+            #firstInput
+          />
+          <label v-label for="fb-checkbox-1">Label 1</label>
+        </div>
+      </li>
+      <li vFlex vGap="4" vFlexCol>
+        <div v-input-container>
+          <input v-checkbox formControlName="input2" id="fb-checkbox-2" [invalid]="isSubmitted && isInvalid" />
+          <label v-label for="fb-checkbox-2">Label 2</label>
+        </div>
+      </li>
+      <li vFlex vGap="4" vFlexCol>
+        <div v-input-container>
+          <input
+            v-checkbox
+            formControlName="input3"
+            id="fb-checkbox-3"
+            aria-describedby="fb-checkbox-message-3"
+            [invalid]="isSubmitted && isInvalid"
+          />
+          <label v-label for="fb-checkbox-3">Label 3</label>
+        </div>
+      </li>
+    </ul>
+    <span v-input-message id="fb-checkbox-message-3" aria-atomic="true" aria-live="assertive">
+      <ng-container *ngIf="isSubmitted && isInvalid">
+        <svg v-icon-visa-error-tiny></svg>
+        Select one or more options and resubmit.
+      </ng-container>
+    </span>
+    <div vFlex vGap="16" vMT="24">
+      <button v-button type="submit" (click)="onSubmit(formValidation, firstInput)">Submit</button>
+      <button v-button type="reset" buttonColor="secondary" (click)="onReset(formValidation)">Reset</button>
+    </div>
+  </fieldset>
+</form>

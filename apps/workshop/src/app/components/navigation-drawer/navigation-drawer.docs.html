@@ -1,0 +1,78 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<ng-container *ngIf="!workshopService.isLoadingExamples()">
+  <h2 vTypography="headline-2">Default navigation drawers</h2>
+  <nova-workshop-example selector="nova-workshop-nav-drawer-default" exampleTitle="Default navigation drawer">
+    <nova-workshop-nav-drawer-default></nova-workshop-nav-drawer-default>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-nav-drawer-active-element"
+    exampleTitle="Navigation drawer with active element"
+  >
+    <nova-workshop-dev-message-router-link
+      ngProjectAs="example-component-prefix"
+    ></nova-workshop-dev-message-router-link>
+    <nova-workshop-nav-drawer-active-element></nova-workshop-nav-drawer-active-element>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-nav-drawer-with-icons" exampleTitle="Navigation drawer with icons">
+    <nova-workshop-nav-drawer-with-icons></nova-workshop-nav-drawer-with-icons>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-nav-drawer-nested"
+    exampleTitle="Navigation drawer with nested elements"
+  >
+    <nova-workshop-nav-drawer-nested></nova-workshop-nav-drawer-nested>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-nav-drawer-with-section-titles"
+    exampleTitle="Navigation drawer with section titles"
+  >
+    <nova-workshop-nav-drawer-with-section-titles></nova-workshop-nav-drawer-with-section-titles>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-nav-drawer-nested-with-section-titles"
+    exampleTitle="Navigation drawer with nested elements and section titles"
+  >
+    <nova-workshop-nav-drawer-nested-with-section-titles></nova-workshop-nav-drawer-nested-with-section-titles>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-nav-drawer-alternate" exampleTitle="Alternate navigation drawer">
+    <nova-workshop-nav-drawer-alternate></nova-workshop-nav-drawer-alternate>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-nav-drawer-alternate-with-active-element"
+    exampleTitle="Alternate navigation drawer with active element"
+  >
+    <nova-workshop-dev-message-router-link
+      ngProjectAs="example-component-prefix"
+    ></nova-workshop-dev-message-router-link>
+    <nova-workshop-nav-drawer-alternate-with-active-element></nova-workshop-nav-drawer-alternate-with-active-element>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-nav-drawer-alternate-with-icons"
+    exampleTitle="Alternate navigation drawer with icons"
+  >
+    <nova-workshop-nav-drawer-alternate-with-icons></nova-workshop-nav-drawer-alternate-with-icons>
+  </nova-workshop-example>
+</ng-container>

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "superheroes",
+    "label": "Iron Man Hero",
+    "value": "iron"
+  },
+  {
+    "name": "superheroes",
+    "label": "Captain America Hero",
+    "value": "cap"
+  },
+  {
+    "name": "superheroes",
+    "label": "Thor Hero",
+    "value": "thor"
+  }
+]

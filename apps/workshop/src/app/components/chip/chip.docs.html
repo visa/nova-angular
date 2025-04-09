@@ -1,0 +1,103 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<ng-container *ngIf="!workshopService.isLoadingExamples()">
+  <h2 vTypography="headline-2">Selection chips</h2>
+
+  <nova-workshop-example exampleTitle="Default selection chip" selector="nova-workshop-selection-chip">
+    <nova-workshop-selection-chip></nova-workshop-selection-chip>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Selected selection chip" selector="nova-workshop-selected-selection-chip">
+    <nova-workshop-selected-selection-chip></nova-workshop-selected-selection-chip>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Multi-line selection chip" selector="nova-workshop-multi-line-selection-chip">
+    <nova-workshop-multi-line-selection-chip></nova-workshop-multi-line-selection-chip>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Disabled selection chip" selector="nova-workshop-disabled-selection-chip">
+    <nova-workshop-disabled-selection-chip></nova-workshop-disabled-selection-chip>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Disabled selected selection chip"
+    selector="nova-workshop-disabled-selected-selection-chip"
+  >
+    <nova-workshop-disabled-selected-selection-chip></nova-workshop-disabled-selected-selection-chip>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Selection chip group" selector="nova-workshop-set-of-chips-selection-chip">
+    <nova-workshop-set-of-chips-selection-chip></nova-workshop-set-of-chips-selection-chip>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Removeable chips</h2>
+
+  <nova-workshop-example exampleTitle="Default removable chip" selector="nova-workshop-delete-chip-default">
+    <nova-workshop-delete-chip-default></nova-workshop-delete-chip-default>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Removable chip with icon" selector="nova-workshop-delete-chip-icon">
+    <nova-workshop-delete-chip-icon></nova-workshop-delete-chip-icon>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Removable chip with avatar" selector="nova-workshop-delete-chip-avatar">
+    <nova-workshop-delete-chip-avatar></nova-workshop-delete-chip-avatar>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Disabled removable chip" selector="nova-workshop-delete-chip-disabled">
+    <nova-workshop-delete-chip-disabled></nova-workshop-delete-chip-disabled>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Compact removable chip" selector="nova-workshop-compact-delete-chip-default">
+    <nova-workshop-compact-delete-chip-default></nova-workshop-compact-delete-chip-default>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Compact removable chip with icon"
+    selector="nova-workshop-compact-delete-chip-icon"
+  >
+    <nova-workshop-compact-delete-chip-icon></nova-workshop-compact-delete-chip-icon>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Compact removable chip with avatar"
+    selector="nova-workshop-compact-delete-chip-avatar"
+  >
+    <nova-workshop-compact-delete-chip-avatar></nova-workshop-compact-delete-chip-avatar>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Removable chip group" selector="nova-workshop-set-of-chips-delete-chips">
+    <nova-workshop-set-of-chips-delete-chips></nova-workshop-set-of-chips-delete-chips>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Compact removable chip group"
+    selector="nova-workshop-set-of-chips-delete-chips-compact"
+  >
+    <nova-workshop-set-of-chips-delete-chips-compact></nova-workshop-set-of-chips-delete-chips-compact>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Custom chips</h2>
+
+  <nova-workshop-example exampleTitle="Static chip" selector="nova-workshop-standard-chip">
+    <nova-workshop-standard-chip></nova-workshop-standard-chip>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Custom chip" selector="nova-workshop-custom-chip">
+    <nova-workshop-custom-chip></nova-workshop-custom-chip>
+  </nova-workshop-example>
+</ng-container>

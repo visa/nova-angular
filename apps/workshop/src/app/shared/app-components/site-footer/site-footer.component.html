@@ -1,0 +1,46 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<footer vFlex vFlexRow vFlexWrap vJustifyContentBetween vAlignItemsCenter class="v-footer" aria-label="Site">
+  <p>Copyright © {{ currentYear }} Visa Inc. All Rights Reserved</p>
+  <div vFlex vFlexWrap vAlignItemsCenter vGap="10" vM="8">
+    <div vFlex vGap="8" vFlexWrap>
+      <label v-label for="nova-themer-select" id="nova-themer-select-label">Select theme</label>
+      <div v-input-container vFlex vFlexBasis="60%">
+        <select v-select id="nova-themer-select" (change)="selectTheme($event)">
+          <option hidden></option>
+          <option value="none">none</option>
+          <option *ngFor="let theme of themeList" [value]="theme.key" [selected]="currentTheme === theme.key">
+            {{ theme.label }}
+          </option>
+        </select>
+        <svg v-icon-visa-chevron-down-tiny></svg>
+      </div>
+    </div>
+    <div vFlex vFlexWrap vJustifyContentBetween vGap="10" vM="8">
+      <label v-switch-label v-label for="rtl-switch" id="rtl-switch-label">Right to Left</label>
+      <input
+        v-switch
+        id="rtl-switch"
+        aria-labelledby="rtl-switch-label"
+        name="default-switch"
+        (click)="switch()"
+        [checked]="checked"
+      />
+    </div>
+    <a v-link routerLink="/site-map">Sitemap</a>
+  </div>
+</footer>

@@ -1,0 +1,85 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<ng-container *ngIf="!workshopService.isLoadingExamples()">
+  <h2 vTypography="headline-2">Default selects</h2>
+  <nova-workshop-example selector="nova-workshop-select-default" exampleTitle="Default select">
+    <nova-workshop-select-default></nova-workshop-select-default>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-select-with-inline-label" exampleTitle="Select with inline label">
+    <nova-workshop-select-with-inline-label></nova-workshop-select-with-inline-label>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-select-with-inline-message" exampleTitle="Select with inline message">
+    <nova-workshop-select-with-inline-message></nova-workshop-select-with-inline-message>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-select-error" exampleTitle="Select with error">
+    <nova-workshop-select-error></nova-workshop-select-error>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-select-read-only" exampleTitle="Read-only select">
+    <nova-workshop-select-read-only></nova-workshop-select-read-only>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-select-disabled" exampleTitle="Disabled select">
+    <nova-workshop-select-disabled></nova-workshop-select-disabled>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Framework-specific selects</h2>
+  <nova-workshop-example selector="nova-workshop-select-template-driven" exampleTitle="Template-driven select">
+    <nova-workshop-select-template-driven></nova-workshop-select-template-driven>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-select-template-driven-object"
+    exampleTitle="Template-driven select object"
+  >
+    <nova-workshop-select-template-driven-object></nova-workshop-select-template-driven-object>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-select-template-driven-form"
+    exampleTitle="Template-driven select form"
+  >
+    <nova-workshop-select-template-driven-form></nova-workshop-select-template-driven-form>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-select-model-driven" exampleTitle="Model-driven select">
+    <nova-workshop-select-model-driven></nova-workshop-select-model-driven>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-select-model-driven-object" exampleTitle="Model-driven select object">
+    <nova-workshop-select-model-driven-object></nova-workshop-select-model-driven-object>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-select-model-driven-form" exampleTitle="Model-driven select form">
+    <nova-workshop-select-model-driven-form></nova-workshop-select-model-driven-form>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-select-model-driven-fb"
+    exampleTitle="Model-driven select form with FormBuilder"
+  >
+    <nova-workshop-select-model-driven-fb></nova-workshop-select-model-driven-fb>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Custom select</h2>
+  <nova-workshop-example selector="nova-workshop-select-mock-data" exampleTitle="Select with mock data">
+    <nova-workshop-select-mock-data></nova-workshop-select-mock-data>
+  </nova-workshop-example>
+</ng-container>

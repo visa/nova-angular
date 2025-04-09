@@ -1,0 +1,95 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<div vFlex vMT="24" vFlexWrap>
+  <span vMR="auto">
+    @if (codeSnippetsOnly) {
+    <span vTypography="subtitle-1" class="example-title">{{ exampleTitle }}</span>
+    } @else {
+    <a
+      v-link
+      noUnderline
+      style="inline-size: fit-content"
+      tabindex="-1"
+      [id]="exampleTitleID"
+      routerLink="."
+      [fragment]="exampleTitleID"
+      (click)="navigateTo(exampleTitleID)"
+    >
+      @if (exampleTitle) { @switch (headingLevel) { @case (1) {
+      <h1 vTypography="headline-1" class="example-title">{{ exampleTitle }}</h1>
+      } @case (2) {
+      <h2 vTypography="headline-3" class="example-title">{{ exampleTitle }}</h2>
+      } @case (3) {
+      <h3 vTypography="headline-3" class="example-title">{{ exampleTitle }}</h3>
+      } @case (4) {
+      <h4 vTypography="headline-4" class="example-title">{{ exampleTitle }}</h4>
+      } @default {
+      <span vTypography="headline-3" class="example-title">{{ exampleTitle }}</span>
+      } } }
+    </a>
+    }
+  </span>
+  <span *ngIf="!loading" vGap="12" vPR="8" vFlex vFlexWrap>
+    <ng-container *ngIf="exampleType">
+      <span
+        v-badge
+        *ngFor="let example of exampleType"
+        [badgeType]="example === '#docs' ? 'neutral' : example === '#alternate' ? 'warning' : 'stable'"
+        >{{ example }}</span
+      >
+    </ng-container>
+    <a
+      *ngIf="exampleLink && !codeSnippetsOnly"
+      v-link
+      noUnderline
+      [href]="'examples/' + exampleLink"
+      rel="noreferrer noopener"
+      target="_blank"
+      [attr.aria-label]="'View example of ' + exampleTitle + ' (opens in a new tab)'"
+      >View example <svg v-icon-visa-maximize-tiny></svg>
+    </a>
+  </span>
+</div>
+<div class="example__content">
+  @if (!codeSnippetsOnly) {
+  <div [id]="exampleTitleID + '-example'" vFlex vFlexCol>
+    <progress *ngIf="loading" v-progress-linear></progress>
+    @if(iframe) {
+    <iframe
+      (load)="handleiFrameLoad()"
+      [safeUrl]="iframeUrl"
+      *ngIf="iframeUrl"
+      [attr.title]="exampleTitle"
+      style="min-block-size: 300px; inline-size: 100%; padding: 0px"
+      class="w-code-demo"
+    ></iframe>
+    } @else if (!loading) {
+    <ng-content select="example-component-prefix"></ng-content>
+    <div class="checkerboard" vSurface><ng-content></ng-content></div>
+    }
+  </div>
+  }
+  <ng-container *ngIf="!loading">
+    <nova-workshop-code-snippet
+      [selector]="selector"
+      [templateData]="templateData"
+      [sourceCode]="sourceCode"
+      [exampleData]="exampleData"
+      [ariaLabel]="exampleTitle"
+    ></nova-workshop-code-snippet>
+  </ng-container>
+</div>

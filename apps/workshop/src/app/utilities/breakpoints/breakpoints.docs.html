@@ -1,0 +1,49 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<p>
+  These breakpoint utility directives build on the
+  <a
+    v-link
+    noUnderline
+    target="_blank"
+    rel="noreferrer noopener"
+    href="https://design.visa.com/styles/base/breakpoints"
+    aria-label="Nova Styles documentation (opens in a new tab)"
+    >breakpoint utility classes <svg v-icon-visa-maximize-tiny></svg
+  ></a>
+  offered in Nova Styles.
+</p>
+<nova-workshop-example selector="nova-workshop-breakpoint-hide" exampleTitle="Hide">
+  <nova-workshop-breakpoint-hide></nova-workshop-breakpoint-hide>
+</nova-workshop-example>
+<nova-workshop-example selector="nova-workshop-breakpoint-container-hide" exampleTitle="Using container queries">
+  <div v-section v-message messageType="warning" vMB="12" ngProjectAs="example-component-prefix">
+    <svg v-message-icon v-icon-visa-warning-low aria-hidden="false" aria-label="Warning" role="img"></svg>
+    <div v-message-content vPL="2" vPB="2">
+      <h4 vTypography="body-2-bold">Using container queries for direct children of Angular elements:</h4>
+      <p>
+        Angular elements (non-native HTML elements such as &lt;app-root&gt;) render
+        <code class="inline-code">display: inline</code> by default. For the container query directives to apply,
+        <strong>the display must be changed to another value</strong>.
+      </p>
+    </div>
+  </div>
+  <nova-workshop-breakpoint-container-hide></nova-workshop-breakpoint-container-hide>
+</nova-workshop-example>
+<nova-workshop-example selector="nova-workshop-breakpoint-media-hide" exampleTitle="Using media queries">
+  <nova-workshop-breakpoint-media-hide></nova-workshop-breakpoint-media-hide>
+</nova-workshop-example>

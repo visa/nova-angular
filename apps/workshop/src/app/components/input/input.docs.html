@@ -1,0 +1,152 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<ng-container *ngIf="!workshopService.isLoadingExamples()">
+  <h2 vTypography="headline-2">Single-line inputs</h2>
+
+  <nova-workshop-example selector="nova-workshop-input-default" exampleTitle="Default input">
+    <nova-workshop-input-default></nova-workshop-input-default>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-input-initial-value" exampleTitle="Input with initial value">
+    <nova-workshop-input-initial-value></nova-workshop-input-initial-value>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-input-inline-message" exampleTitle="Input with inline message">
+    <nova-workshop-input-inline-message></nova-workshop-input-inline-message>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-input-with-clear-text-button"
+    exampleTitle="Input with clear text button"
+  >
+    <nova-workshop-input-with-clear-text-button></nova-workshop-input-with-clear-text-button>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-input-read-only" exampleTitle="Read-only input">
+    <nova-workshop-input-read-only></nova-workshop-input-read-only>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-input-disabled" exampleTitle="Disabled input">
+    <nova-workshop-input-disabled></nova-workshop-input-disabled>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-input-error" exampleTitle="Input with error">
+    <nova-workshop-input-error></nova-workshop-input-error>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-input-prefix" exampleTitle="Input with prefix">
+    <nova-workshop-input-prefix></nova-workshop-input-prefix>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-input-suffix" exampleTitle="Input with suffix">
+    <nova-workshop-input-suffix></nova-workshop-input-suffix>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-input-with-action-button" exampleTitle="Input with action button">
+    <nova-workshop-input-with-action-button></nova-workshop-input-with-action-button>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-input-with-masked-field" exampleTitle="Input with masked field">
+    <nova-workshop-input-with-masked-field></nova-workshop-input-with-masked-field>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-input-leading-icon" exampleTitle="Input with leading icon">
+    <nova-workshop-input-leading-icon></nova-workshop-input-leading-icon>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-input-one-time-passcode" exampleTitle="One-time passcode input">
+    <nova-workshop-input-one-time-passcode></nova-workshop-input-one-time-passcode>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Multi-line inputs</h2>
+
+  <nova-workshop-example
+    selector="nova-workshop-input-textarea-with-resize"
+    exampleTitle="Textarea with resize property"
+  >
+    <nova-workshop-input-textarea-with-resize></nova-workshop-input-textarea-with-resize>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-input-textarea-without-resize"
+    exampleTitle="Textarea without resize property"
+  >
+    <nova-workshop-input-textarea-without-resize></nova-workshop-input-textarea-without-resize>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-input-textarea-with-fixed-height"
+    exampleTitle="Textarea with fixed height"
+  >
+    <nova-workshop-input-textarea-with-fixed-height></nova-workshop-input-textarea-with-fixed-height>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-input-textarea-with-fixed-height-and-resize"
+    exampleTitle="Textarea with fixed height and resize property"
+  >
+    <nova-workshop-input-textarea-with-fixed-height-and-resize></nova-workshop-input-textarea-with-fixed-height-and-resize>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-input-character-counter"
+    exampleTitle="Textarea with fixed height and character counter"
+  >
+    <nova-workshop-input-character-counter></nova-workshop-input-character-counter>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-input-textarea-with-native-rows-attribute"
+    exampleTitle="Textarea with native rows attribute"
+  >
+    <nova-workshop-input-textarea-with-native-rows-attribute></nova-workshop-input-textarea-with-native-rows-attribute>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Framework-specific inputs</h2>
+
+  <nova-workshop-example selector="nova-workshop-input-template-driven" exampleTitle="Template-driven input">
+    <nova-workshop-input-template-driven></nova-workshop-input-template-driven>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-input-template-driven-form"
+    exampleTitle="Template-driven form with inputs"
+  >
+    <nova-workshop-input-template-driven-form></nova-workshop-input-template-driven-form>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-input-model-driven" exampleTitle="Model-driven input">
+    <nova-workshop-input-model-driven></nova-workshop-input-model-driven>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-input-model-driven-form" exampleTitle="Model-driven form with inputs">
+    <nova-workshop-input-model-driven-form></nova-workshop-input-model-driven-form>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-input-model-driven-fb"
+    exampleTitle="Model-driven form with inputs built using FormBuilder"
+  >
+    <nova-workshop-input-model-driven-fb></nova-workshop-input-model-driven-fb>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Custom input</h2>
+
+  <nova-workshop-example selector="nova-workshop-input-inline" exampleTitle="Input with inline label and message">
+    <nova-workshop-input-inline></nova-workshop-input-inline>
+  </nova-workshop-example>
+</ng-container>

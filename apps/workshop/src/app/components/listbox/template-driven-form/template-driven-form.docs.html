@@ -1,0 +1,83 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<form #templateFormValidation="ngForm" vFlex vFlexCol vGap="16">
+  <div>
+    <label v-label id="template-driven-singleselect-label" for="template-driven-singleselect">Label (required)</label>
+    <div
+      v-listbox-container
+      aria-labelledby="template-driven-singleselect-label"
+      aria-describedby="template-driven-singleselect-message"
+      id="template-driven-singleselect"
+    >
+      <ul
+        v-listbox
+        containHeight
+        name="singleselect"
+        ngModel
+        required
+        [invalid]="isSubmitted && ssTemplateListbox.invalid"
+        #ssTemplateListbox="ngModel"
+      >
+        <li v-listbox-item *ngFor="let item of ss_items" [value]="item.value">{{ item.label }}</li>
+      </ul>
+    </div>
+    <span v-input-message id="template-driven-singleselect-message" role="alert" aria-live="polite">
+      <ng-container *ngIf="isSubmitted && ssTemplateListbox.invalid">
+        <svg v-icon-visa-error-tiny></svg>
+        Error: Please fill out field
+      </ng-container>
+    </span>
+  </div>
+  <div>
+    <label v-label id="template-driven-multiselect-label" for="template-driven-multiselect">Label (required)</label>
+    <div
+      v-listbox-container
+      aria-labelledby="template-driven-multiselect-label"
+      aria-describedby="template-driven-multiselect-message"
+      id="template-driven-multiselect"
+    >
+      <ul
+        v-listbox
+        containHeight
+        multiselect
+        name="multiselect"
+        ngModel
+        required
+        [invalid]="isSubmitted && msTemplateListbox.invalid"
+        #msTemplateListbox="ngModel"
+      >
+        <li v-listbox-item *ngFor="let item of ms_items" [value]="item.value">{{ item.label }}</li>
+      </ul>
+    </div>
+    <span v-input-message id="template-driven-multiselect-message" role="alert" aria-live="polite">
+      <ng-container *ngIf="isSubmitted && msTemplateListbox.invalid">
+        <svg v-icon-visa-error-tiny></svg>
+        Error: Please fill out field
+      </ng-container>
+    </span>
+  </div>
+  <div vFlex vGap="16">
+    <button v-button type="submit" (click)="handleFormSubmit(templateFormValidation)">Submit</button>
+    <button v-button type="reset" buttonColor="secondary" (click)="handleFormReset(templateFormValidation)">
+      Reset
+    </button>
+  </div>
+</form>
+
+<!-- For demo purposes: -->
+<code>{{'templateFormValidation.value.singleselect: [ ' + templateFormValidation.value.singleselect + ' ]'}}</code>
+<code>{{'templateFormValidation.value.multiselect [ ' + templateFormValidation.value.multiselect + ' ]'}}</code>

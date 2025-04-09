@@ -1,0 +1,109 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<span tabIndex="-1"></span><a [routerLink]="[]" fragment="content" v-link v-skip-to-content> skip to content </a>
+<header v-nav vAlternate role="banner" vFlex vFlexWrap>
+  <div vFlex vJustifyContentBetween vML="2" vPY="12">
+    <button
+      v-button-icon
+      vMR="16"
+      buttonColor="tertiary"
+      [vContainerHide]="['desktop', 'md']"
+      [attr.aria-label]="sideNavOpen() ? 'Close side navigation' : 'Open side navigation'"
+      (click)="toggleNav()"
+    >
+      <svg *ngIf="!sideNavOpen()" v-icon-visa-menu-tiny></svg>
+      <svg *ngIf="sideNavOpen()" v-icon-visa-close-tiny></svg>
+    </button>
+    <a
+      routerLink=""
+      vFlex
+      vMX="auto"
+      vFlexShrink0
+      vAlignItemsCenter
+      vJustifyContentBetween
+      vFlexGrow
+      vFlexWrap
+      style="inline-size: 100%; text-decoration-color: var(--v-nav-app-name)"
+      class="v-link-unstyled"
+      aria-label="Visa Nova Angular Workshop Home"
+      vGap="16"
+    >
+      <svg v-logo-visa height="23" width="71"></svg>
+      <span vTypography="headline-3" vContainerHide="mobile" class="v-nav-app-name"
+        >VPDS Nova <span vMX="8">|</span> Angular</span
+      >
+    </a>
+  </div>
+  <div vFlex vAlignContentCenter vGap="6" vML="auto" vMR="2" vPY="12" vFlexWrap vContainerHide="mobile">
+    <a
+      v-button
+      buttonColor="tertiary"
+      rel="noopener noreferrer"
+      target="_blank"
+      href="https://design.visa.com/"
+      aria-label="VPDS Home (opens in a new tab)"
+    >
+      VPDS Home
+      <svg v-icon-visa-maximize-tiny></svg>
+    </a>
+    <a
+      v-button
+      buttonColor="tertiary"
+      rel="noopener noreferrer"
+      target="_blank"
+      href="https://bookmarks.visa.com/vpds-vault-angular"
+      aria-label="Vault (opens in a new tab)"
+    >
+      Vault (internal only)
+      <svg v-icon-visa-maximize-tiny></svg>
+    </a>
+    <div v-floating-ui-container (floatingUIToggled)="toggleShown($event)">
+      <button v-button v-floating-ui-trigger buttonColor="tertiary">
+        Support
+        <v-icon-visa-toggle>
+          <svg v-toggle-default-template v-icon-visa-chevron-down-tiny></svg>
+          <svg v-toggle-rotated-template v-icon-visa-chevron-up-tiny></svg>
+        </v-icon-visa-toggle>
+      </button>
+      <div v-dropdown-menu vFlex vFlexCol>
+        <ul v-dropdown-list>
+          <li *ngFor="let item of supportLinks">
+            <a v-dropdown-item vLink vPY="4" vPX="8" vFlex vJustifyContentBetween [href]="item.url" vOpensInNewTab
+              >{{ item.name }} <svg *ngIf="item.name !== 'Email'" v-icon-visa-maximize-tiny></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div v-floating-ui-container (floatingUIToggled)="toggleShown($event)">
+      <button v-button v-floating-ui-trigger buttonColor="tertiary">
+        v{{ version }}
+        <v-icon-visa-toggle>
+          <svg v-toggle-default-template v-icon-visa-chevron-down-tiny></svg>
+          <svg v-toggle-rotated-template v-icon-visa-chevron-up-tiny></svg>
+        </v-icon-visa-toggle>
+      </button>
+      <div v-dropdown-menu vFlex vFlexCol>
+        <ul v-dropdown-list>
+          <li *ngFor="let version of versionLinks">
+            <a [href]="version.url" v-dropdown-item vLink vPY="4" vPX="8" vFlex>{{ version.name }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,315 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<section class="home__guide" vFlex vFlexCol vGap="24" vPT="24">
+  <div vFlex vAlignItemsCenter vGap="16">
+    <svg v-icon-visa-guide-low></svg>
+    <a v-link noUnderline id="guide" tabIndex="-1" href="#guide"><h2 vTypography="headline-2">Quick start guide</h2></a>
+  </div>
+  <p vTypography="body-1" class="v-text-subtle">Quickly get started with a brand new Angular application.</p>
+  <hr dividerType="decorative" v-divider vMB="12" />
+  <article vFlex vFlexCol vGap="24" vMB="24">
+    <div vFlex vFlexCol vGap="6">
+      <h3 vTypography="headline-3" vMB="8">Step 1: Update Angular</h3>
+      <p vTypography="body-1" class="v-text-subtle">
+        Nova Angular supports Angular v16 and up. See Angular's guide on how to
+        <a v-link vOpensInNewTab href="https://angular.io/guide/update-to-version-16">
+          update Angular to v16
+          <svg v-icon-visa-maximize-tiny></svg>
+        </a>
+        or
+        <a v-link vOpensInNewTab href="https://angular.io/guide/update-to-version-17">
+          update Angular to v17
+          <svg v-icon-visa-maximize-tiny></svg>
+        </a>
+      </p>
+    </div>
+    <div vFlex vFlexCol vGap="6">
+      <div vFlex vFlexCol vGap="6">
+        <h3 vTypography="headline-3" vMY="8">Step 2: Installation</h3>
+        <p vTypography="body-1" class="v-text-subtle" vMB="8">
+          First things first, install the library with your preferred package manager:
+        </p>
+        <nova-workshop-package-installer packageName="@visa/nova-angular" [version]="version" />
+      </div>
+      <div vFlex vFlexCol vGap="6" vMT="16">
+        <h4 vTypography="subtitle-2">Step 2b: For Angular 16 only</h4>
+        <p vTypography="body-1" class="v-text-subtle" vMB="8">
+          If you are using Angular 16 be sure to install the proper version of Angular CDK:
+        </p>
+        <nova-workshop-package-installer packageName="@angular/cdk" version="16" [versionRanged]="true" />
+      </div>
+    </div>
+    <div vFlex vFlexCol vGap="6">
+      <div vFlex vFlexCol vGap="6">
+        <h3 vTypography="headline-3" vMY="8">Step 3: Set up application</h3>
+      </div>
+      <div class="home__card" vGap="24">
+        <div vFlex vFlexCol vGap="12">
+          <div vFlex vGap="12" vAlignItemsCenter>
+            <svg v-icon-visa-code-fork-alt-tiny></svg>
+            <p vTypography="subtitle-1" class="v-text-active">Import styles</p>
+          </div>
+          <p vTypography="body-1" class="v-text-subtle">
+            Import the Nova Styles library and theme in your <code>angular.json</code> or equivalent file. If you would
+            like a particular Nova theme, place it above the root in your project. The <code>visa-light</code> theme is
+            the default. To see all the available themes see the
+            <a v-link vOpensInNewTab href="https://design.visa.com/styles/themes/visa-light"
+              >themes docs<svg v-icon-visa-maximize-tiny></svg>
+            </a>
+            inside our styles workshop.
+          </p>
+        </div>
+        <nova-workshop-code-snippet-single
+          analyticsLabel="Quick Start"
+          ariaLabelText="copy yarn install command"
+          [copyData]="stylesImport"
+          codeLanguage="typescript"
+        />
+      </div>
+      <div class="home__card" vGap="24">
+        <div vFlex vFlexCol vGap="12">
+          <div vFlex vGap="12" vAlignItemsCenter>
+            <svg v-icon-visa-code-fork-alt-tiny></svg>
+            <p vTypography="subtitle-1" class="v-text-active">Update <code>compilerOptions</code></p>
+          </div>
+          <p vTypography="body-1" class="v-text-subtle">Add <code>paths</code> in your <code>tsconfig</code>.</p>
+        </div>
+        <div>
+          <div vSurface vAlternate vPB="0">
+            <ul v-tabs>
+              <li v-tab-item *ngFor="let item of tsConfig; index as i" [active]="i === selectedTSConfig">
+                <button
+                  v-button
+                  [aria-controls]="item.id + '-tab-label-' + i"
+                  [id]="item.id + '-tab-label-' + i"
+                  (click)="showVersionPanel(i)"
+                >
+                  {{ item.label }}
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div
+            *ngFor="let item of tsConfig; index as i"
+            vMB="8"
+            vSurface
+            class="v-elevation-inset"
+            style="min-block-size: 200px"
+            tabindex="0"
+            role="tabpanel"
+            [vHide]="selectedTSConfig !== i"
+            [id]="item.id"
+            [attr.aria-labelledby]="item.id + '-tab-label-' + i"
+          >
+            <nova-workshop-code-snippet-single
+              analyticsLabel="Quick Start"
+              ariaLabelText="copy compiler options {{ item.label }}"
+              [copyData]="item.code"
+              codeLanguage="typescript"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="home__card" vGap="24">
+        <div vFlex vFlexCol vGap="12">
+          <div vFlex vGap="12" vAlignItemsCenter>
+            <svg v-icon-visa-code-fork-alt-tiny></svg>
+            <p vTypography="subtitle-1" class="v-text-active">Update your app.module</p>
+          </div>
+          <p vTypography="body-1" class="v-text-subtle">Add our Nova module to your <code>app.module</code></p>
+        </div>
+        <div>
+          <div vSurface vAlternate vPB="0">
+            <ul v-tabs>
+              <li v-tab-item *ngFor="let item of moduleImports; index as i" [active]="i === selectedModuleImport">
+                <button
+                  v-button
+                  [aria-controls]="item.id + '-tab-label-' + i"
+                  [id]="item.id + '-tab-label-' + i"
+                  (click)="showModulePanel(i)"
+                >
+                  {{ item.label }}
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div
+            *ngFor="let item of moduleImports; index as i"
+            vMB="8"
+            vSurface
+            class="v-elevation-inset"
+            style="min-block-size: 200px"
+            tabindex="0"
+            role="tabpanel"
+            [vHide]="selectedModuleImport !== i"
+            [id]="item.id"
+            [attr.aria-labelledby]="item.id + '-tab-label-' + i"
+          >
+            <nova-workshop-code-snippet-single
+              analyticsLabel="Quick start"
+              [ariaLabelText]="'copy code to import a standalone icon using ' + item.label"
+              [copyData]="item.code"
+              codeLanguage="typescript"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div vFlex vFlexCol vGap="6">
+      <div vFlex vFlexCol vGap="6">
+        <h3 vTypography="headline-3" vMY="8">Step 4: Add icons</h3>
+      </div>
+      <p vTypography="body-1" class="v-text-subtle" vMB="16">
+        Nova Angular can be used with Nova Icons or a custom icon library. This documentation site and the component
+        examples uses the Nova Icons library.
+      </p>
+      <div vFlex vFlexCol vGap="6" vMB="16">
+        <h4 vTypography="subtitle-2" vMB="4">Installing Nova Icons for Angular</h4>
+        <nova-workshop-package-installer packageName="@visa/nova-icons-angular" version="latest" />
+      </div>
+      <div class="home__card" vGap="24">
+        <div vFlex vFlexCol vGap="12">
+          <div vFlex vGap="12" vAlignItemsCenter>
+            <svg v-icon-visa-code-fork-alt-tiny></svg>
+            <p vTypography="subtitle-1" class="v-text-active">
+              Use standalone icons from &#64;visa/nova-icons-angular (recommended)
+            </p>
+          </div>
+          <p vTypography="body-1" class="v-text-subtle">
+            Import and use the icons as you need them. See
+            <a v-link routerLink="/components/icon">our Icon documentation</a> for more examples.
+          </p>
+        </div>
+        <div>
+          <div vSurface vAlternate vPB="0">
+            <ul v-tabs>
+              <li v-tab-item *ngFor="let item of iconImports; index as i" [active]="i === selectedIconImport">
+                <button
+                  v-button
+                  [aria-controls]="item.id + '-tab-label-' + i"
+                  [id]="item.id + '-tab-label-' + i"
+                  (click)="showIconPanel(i)"
+                >
+                  {{ item.label }}
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div
+            *ngFor="let item of iconImports; index as i"
+            vMB="8"
+            vSurface
+            class="v-elevation-inset"
+            style="min-block-size: 200px"
+            tabindex="0"
+            role="tabpanel"
+            [vHide]="selectedIconImport !== i"
+            [id]="item.id"
+            [attr.aria-labelledby]="item.id + '-tab-label-' + i"
+          >
+            <nova-workshop-code-snippet-single
+              analyticsLabel="Quick start"
+              [ariaLabelText]="'copy code to import a standalone icon using ' + item.label"
+              [copyData]="item.code"
+              codeLanguage="typescript"
+            />
+          </div>
+        </div>
+        <nova-workshop-code-snippet-single
+          analyticsLabel="Quick Start"
+          ariaLabelText="copy code to use a standalone icon"
+          [copyData]="addStandaloneIcons"
+          codeLanguage="html"
+        />
+      </div>
+      <div class="home__card" vGap="24">
+        <div vFlex vFlexCol vGap="12">
+          <div vFlex vGap="12" vAlignItemsCenter>
+            <svg v-icon-visa-code-fork-alt-tiny></svg>
+            <p vTypography="subtitle-1" class="v-text-active">Use icons sprite from &#64;visa/nova-icons-angular</p>
+          </div>
+          <p vTypography="body-1" class="v-text-subtle">
+            This will add all of the Nova Icons as a sprite into your project. You can then reference them as needed.
+            You can use the Visa sprite, the Generic sprite, or both.
+          </p>
+        </div>
+        <div>
+          <div vSurface vAlternate vPB="0">
+            <ul v-tabs>
+              <li v-tab-item *ngFor="let item of spriteImports; index as i" [active]="i === selectedSpriteImport">
+                <button
+                  v-button
+                  [aria-controls]="item.id + '-tab-label-' + i"
+                  [id]="item.id + '-tab-label-' + i"
+                  (click)="showSpritePanel(i)"
+                >
+                  {{ item.label }}
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div
+            *ngFor="let item of spriteImports; index as i"
+            vMB="8"
+            vSurface
+            class="v-elevation-inset"
+            style="min-block-size: 200px"
+            tabindex="0"
+            role="tabpanel"
+            [vHide]="selectedSpriteImport !== i"
+            [id]="item.id"
+            [attr.aria-labelledby]="item.id + '-tab-label-' + i"
+          >
+            <nova-workshop-code-snippet-single
+              analyticsLabel="Quick start"
+              [ariaLabelText]="'copy code to import a standalone icon using ' + item.label"
+              [copyData]="item.code"
+              codeLanguage="typescript"
+            />
+          </div>
+        </div>
+        <nova-workshop-code-snippet-single
+          analyticsLabel="Quick Start"
+          ariaLabelText="copy code to use icon sprite"
+          [copyData]="spriteComponents"
+          codeLanguage="html"
+        />
+      </div>
+      <div class="home__card" vGap="24">
+        <div vFlex vFlexCol vGap="12">
+          <div vFlex vGap="12" vAlignItemsCenter>
+            <svg v-icon-visa-code-fork-alt-tiny></svg>
+            <p vTypography="subtitle-1" class="v-text-active">Custom icons library</p>
+          </div>
+          <p vTypography="body-1" class="v-text-subtle">Alternatively, add your own icon sprite to reference.</p>
+        </div>
+        <nova-workshop-code-snippet-single
+          analyticsLabel="Quick Start"
+          ariaLabelText="copy code to use custom icon icons"
+          [copyData]="addCustomIcons"
+          codeLanguage="html"
+        />
+      </div>
+    </div>
+    <div vFlex vFlexCol vGap="6">
+      <h3 vTypography="headline-3" vMY="8">Step 5: Use the components</h3>
+      <p vTypography="body-1" class="v-text-subtle">
+        Explore our components and their documentation to see how to use each one within your application!
+      </p>
+    </div>
+  </article>
+</section>

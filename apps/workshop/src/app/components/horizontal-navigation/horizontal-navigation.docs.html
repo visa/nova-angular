@@ -1,0 +1,93 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<!-- vFlex vFlexCol added directly to examples since container breakpoints are added within examples -->
+<ng-container *ngIf="!workshopService.isLoadingExamples()">
+  <h2 vTypography="headline-2">Default horizontal navigations</h2>
+  <nova-workshop-example selector="nova-workshop-horizontal-nav-default" exampleTitle="Default horizontal navigation">
+    <nova-workshop-horizontal-nav-default vFlex vFlexCol></nova-workshop-horizontal-nav-default>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-horizontal-nav-with-active-element"
+    exampleTitle="Horizontal navigation with active element"
+  >
+    <nova-workshop-dev-message-router-link
+      ngProjectAs="example-component-prefix"
+    ></nova-workshop-dev-message-router-link>
+    <nova-workshop-horizontal-nav-with-active-element vFlex vFlexCol></nova-workshop-horizontal-nav-with-active-element>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-horizontal-nav-with-icons"
+    exampleTitle="Horizontal navigation with icons"
+  >
+    <nova-workshop-horizontal-nav-with-icons vFlex vFlexCol></nova-workshop-horizontal-nav-with-icons>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-horizontal-nav-alternate"
+    exampleTitle="Alternate horizontal navigation"
+  >
+    <nova-workshop-horizontal-nav-alternate vFlex vFlexCol></nova-workshop-horizontal-nav-alternate>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-horizontal-nav-alternate-with-active-element"
+    exampleTitle="Alternate horizontal navigation with active element"
+  >
+    <nova-workshop-dev-message-router-link
+      ngProjectAs="example-component-prefix"
+    ></nova-workshop-dev-message-router-link>
+    <nova-workshop-horizontal-nav-alternate-with-active-element
+      vFlex
+      vFlexCol
+    ></nova-workshop-horizontal-nav-alternate-with-active-element>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-horizontal-nav-alternate-with-icons"
+    exampleTitle="Alternate horizontal navigation with icons"
+  >
+    <nova-workshop-horizontal-nav-alternate-with-icons
+      vFlex
+      vFlexCol
+    ></nova-workshop-horizontal-nav-alternate-with-icons>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-horizontal-nav-stacked" exampleTitle="Stacked horizontal navigation">
+    <nova-workshop-horizontal-nav-stacked vFlex vFlexCol></nova-workshop-horizontal-nav-stacked>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Horizontal navigations with persistent search</h2>
+
+  <nova-workshop-example
+    selector="nova-workshop-horizontal-nav-persistent-search"
+    exampleTitle="Default horizontal navigation with persistent search"
+  >
+    <nova-workshop-horizontal-nav-persistent-search vFlex vFlexCol></nova-workshop-horizontal-nav-persistent-search>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-horizontal-nav-stacked-with-persistent-search"
+    exampleTitle="Stacked horizontal navigation with persistent search"
+  >
+    <nova-workshop-horizontal-nav-stacked-with-persistent-search
+      vFlex
+      vFlexCol
+    ></nova-workshop-horizontal-nav-stacked-with-persistent-search>
+  </nova-workshop-example>
+</ng-container>

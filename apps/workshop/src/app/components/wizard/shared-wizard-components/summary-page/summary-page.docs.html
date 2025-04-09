@@ -1,0 +1,37 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<div vSurface vGap="24" vFlex vFlexCol vAlignItemsCenter vPY="44" style="--v-surface-padding-inline: 100px">
+  <h3 vTypography="headline-2" vAlignSelfStart>Summary</h3>
+  @for(step of steps.slice(0, -1); track step.index) {
+  <div vFlex vFlexCol vGap="14" vPB="20" vAlignSelfStretch>
+    <div vFlex vJustifyContentBetween vAlignItemsCenter>
+      <h4 vTypography="headline-4">{{ step.index + 1 }}. {{ step.stepLabel }}</h4>
+      <button
+        v-button-icon
+        buttonColor="tertiary"
+        buttonSize="small"
+        [attr.aria-label]="'edit' + step.stepLabel"
+        (click)="edit.emit(step.index)"
+      >
+        <svg v-icon-visa-edit-tiny></svg>
+      </button>
+    </div>
+    <p>{{ step.inputLabel }}: {{ step.inputValue }}</p>
+  </div>
+  }
+</div>
+<p vMY="10">Changes have been automatically saved.</p>

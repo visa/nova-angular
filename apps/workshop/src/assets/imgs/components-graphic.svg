@@ -1,0 +1,66 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<svg width="300" height="140" id="components-graphic-thumbnail" viewBox="0 0 300 140" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <style>
+        #components-graphic-thumbnail {
+            inline-size: 100%;
+            block-size: auto;
+        }
+    </style>
+    <rect width="300" height="140" fill="var(--palette-default-surface-3)" />
+    <rect x="39" y="28" width="48.1368" height="4.4434" rx="2.2217" fill="var(--palette-default-text, black)"
+        fill-opacity="0.2" />
+    <rect x="39" y="36.8868" width="157" height="28.1415" rx="4.4434" fill="var(--palette-default-surface-1, white)" />
+    <rect x="39.3703" y="37.2571" width="156.259" height="27.4009" rx="4.07311"
+        stroke="var(--palette-default-text, black)" stroke-opacity="0.1" stroke-width="0.740566" />
+    <line x1="46.0353" y1="44.2925" x2="46.0353" y2="59.1038" stroke="var(--palette-default-active, #1434CB)"
+        stroke-width="2.2217" />
+    <rect x="99.3146" y="75.3146" width="111.371" height="30.8315" rx="2.20225"
+        fill="var(--palette-default-surface-1, white)" />
+    <rect x="112.213" y="85.6966" width="10.0674" height="10.0674" rx="5.03371"
+        fill="var(--palette-default-surface-1, white)" />
+    <rect x="114.101" y="87.5843" width="6.29214" height="6.29214" rx="3.14607"
+        fill="var(--palette-default-active, #1434CB)" />
+    <rect x="112.213" y="85.6966" width="10.0674" height="10.0674" rx="5.03371"
+        stroke="var(--palette-default-active, #1434CB)" stroke-width="1.25843" />
+    <rect x="131.719" y="88.2135" width="64.1798" height="5.03371" rx="2.51685"
+        fill="var(--palette-default-text, black)" fill-opacity="0.2" />
+    <rect x="99.3146" y="75.3146" width="111.371" height="30.8315" rx="2.20225"
+        stroke="var(--palette-default-surface-2, #F0F0F0)" stroke-width="0.629214" />
+    <g clip-path="url(#clip0_4840_184456)">
+        <rect x="176" y="50.7174" width="74" height="30.5652" rx="4.82609"
+            fill="var(--palette-default-active, #1434CB)" />
+        <rect x="205.761" y="63.587" width="32.1739" height="4.82609" rx="2.41304"
+            fill="var(--palette-default-surface-1, white)" />
+        <g clip-path="url(#clip1_4840_184456)">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M193.293 60.3447C193.433 60.4565 193.569 60.5824 193.696 60.7221C193.823 60.5824 193.958 60.4565 194.098 60.3447C194.719 59.8481 195.495 59.5652 196.109 59.5652C198.628 59.5652 200.13 61.6013 200.13 63.587C200.13 65.5511 198.903 67.0618 197.644 68.1638C197.003 68.7245 196.317 69.2114 195.705 69.6258C195.497 69.7668 195.302 69.8965 195.12 70.0171L195.12 70.0171C194.749 70.2638 194.435 70.4729 194.178 70.6652L193.696 71.0272L193.213 70.6652C192.957 70.4729 192.642 70.2638 192.271 70.0171L192.271 70.0169C192.089 69.8964 191.894 69.7668 191.686 69.6258C191.074 69.2114 190.388 68.7245 189.748 68.1638C188.488 67.0618 187.261 65.5511 187.261 63.587C187.261 61.6013 188.763 59.5652 191.283 59.5652C191.897 59.5652 192.672 59.8481 193.293 60.3447ZM188.87 63.587C188.87 62.3552 189.78 61.1739 191.283 61.1739C191.819 61.1739 193.052 61.4956 193.696 62.7826C194.339 61.4956 195.572 61.1739 196.109 61.1739C197.611 61.1739 198.522 62.3552 198.522 63.587C198.522 64.8402 197.738 65.9436 196.584 66.9531C196.019 67.4481 195.398 67.8912 194.803 68.2937C194.629 68.4115 194.453 68.5287 194.28 68.6437L194.28 68.644L194.28 68.644C194.077 68.7785 193.88 68.9099 193.696 69.0357C193.512 68.9099 193.314 68.7786 193.112 68.6441L193.112 68.6441L193.112 68.644L193.112 68.6439C192.939 68.5289 192.762 68.4116 192.588 68.2937C191.994 67.8912 191.373 67.4481 190.807 66.9531C189.653 65.9436 188.87 64.8402 188.87 63.587Z"
+                fill="var(--palette-default-surface-1, white)" />
+        </g>
+    </g>
+    <defs>
+        <clipPath id="clip0_4840_184456">
+            <rect width="74" height="30.5652" fill="var(--palette-default-surface-1, white)"
+                transform="translate(176 50.7174)" />
+        </clipPath>
+        <clipPath id="clip1_4840_184456">
+            <rect width="12.8696" height="12.8696" fill="var(--palette-default-surface-1, white)"
+                transform="translate(187.261 58.7609)" />
+        </clipPath>
+    </defs>
+</svg>

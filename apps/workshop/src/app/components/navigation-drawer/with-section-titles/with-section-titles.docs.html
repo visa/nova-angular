@@ -1,0 +1,137 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<button v-button vM="10" (click)="showModal()">Open drawer</button>
+<dialog v-panel vMX="0" aria-label="Drawer with section titles">
+  <div v-nav vertical drawer style="inline-size: 242px">
+    <button
+      v-button-icon
+      (click)="closeModal()"
+      buttonSize="small"
+      buttonColor="tertiary"
+      subtle
+      vML="auto"
+      vMR="4"
+      aria-label="close"
+      autofocus
+    >
+      <svg v-icon-visa-close-tiny></svg>
+    </button>
+    <a
+      v-link
+      noUnderline
+      vFlex
+      vFlexCol
+      vMT="16"
+      vMB="30"
+      vML="20"
+      vMR="16"
+      vGap="12"
+      aria-label="Visa Application Name home"
+      href="/"
+      style="background-color: transparent"
+      ><svg v-logo-visa></svg>
+      <div vTypography="subtitle-1" class="v-nav-app-name">Application Name</div>
+    </a>
+    <nav aria-label="Drawer with section titles" vMB="6">
+      <ul v-tabs vertical>
+        <li v-tab-item>
+          <h2 v-tab-item sectionTitle>Section title L1</h2>
+          <ul v-tabs vertical style="--v-tabs-vertical-nested-count: 1">
+            <li v-tab-item>
+              <a v-button buttonColor="tertiary" href="./components/vertical-navigation"> L1 label 1</a>
+            </li>
+            <li v-tab-item>
+              <a v-button buttonColor="tertiary" href="./components/vertical-navigation"> L1 label 2</a>
+            </li>
+            <li v-tab-item>
+              <a v-button buttonColor="tertiary" href="./components/vertical-navigation"> L1 label 3</a>
+            </li>
+          </ul>
+        </li>
+        <li v-tab-item>
+          <h2 v-tab-item sectionTitle>Section title L2</h2>
+          <ul v-tabs vertical style="--v-tabs-vertical-nested-count: 1">
+            <li v-tab-item>
+              <a v-button buttonColor="tertiary" href="./components/vertical-navigation"> L1 label 4 </a>
+            </li>
+            <li v-tab-item>
+              <a v-button buttonColor="tertiary" href="./components/vertical-navigation"> L1 label 5</a>
+            </li>
+            <li v-tab-item>
+              <a v-button buttonColor="tertiary" href="./components/vertical-navigation"> L1 label 6 </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <hr v-divider dividerType="decorative" vMB="6" vMT="auto" style="inline-size: 100%" />
+    <div vFlex vFlexCol vAlignSelfStretch vGap="4">
+      <div v-tab-item disclosureTab (disclosureTabToggled)="avatarOpen = !avatarOpen">
+        <button
+          v-button
+          buttonColor="tertiary"
+          buttonSize="large"
+          aria-label="Alex Miller"
+          aria-controls="section-titles-profile-links"
+          [attr.aria-expanded]="avatarOpen"
+        >
+          <svg v-icon-visa-account-tiny></svg>
+          Alex Miller
+          <v-icon-visa-toggle>
+            <svg v-toggle-default-template v-icon-visa-chevron-down-tiny></svg>
+            <svg v-toggle-rotated-template v-icon-visa-chevron-up-tiny></svg>
+          </v-icon-visa-toggle>
+        </button>
+        <div
+          [vHide]="!avatarOpen"
+          vFlex
+          vFlexCol
+          vP="4"
+          id="section-titles-profile-links"
+          [attr.aria-hidden]="!avatarOpen"
+        >
+          <ul v-tabs vertical>
+            <li v-tab-item>
+              <a
+                v-button
+                vFlex
+                vJustifyContentStart
+                vTypography="label-large"
+                buttonColor="tertiary"
+                buttonSize="large"
+                href="./components/navigation-drawer"
+                >L2 label 1</a
+              >
+            </li>
+            <li v-tab-item>
+              <a
+                v-button
+                vFlex
+                vJustifyContentStart
+                vTypography="label-large"
+                buttonColor="tertiary"
+                buttonSize="large"
+                href="./components/navigation-drawer"
+                >L2 label 2</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>

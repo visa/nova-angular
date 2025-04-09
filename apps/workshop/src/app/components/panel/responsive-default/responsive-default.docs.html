@@ -1,0 +1,61 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<button
+  v-button
+  (click)="togglePanel()"
+  vM="10"
+  vFlexBasis="30%"
+  [attr.aria-expanded]="panelOpen()"
+  aria-controls="reponsive-default-panel"
+  style="position: absolute"
+  #openButton
+>
+  {{ panelOpen() ? 'Close' : 'Open' }} responsive panel
+</button>
+<div
+  v-panel
+  vML="auto"
+  responsive
+  aria-describedby="responsive-panel-description"
+  aria-labelledby="responsive-panel-title"
+  [vHide]="!panelOpen()"
+  [attr.aria-hidden]="!panelOpen()"
+  id="reponsive-default-panel"
+>
+  <div v-panel-content>
+    <header vFlex vJustifyContentBetween vGap="4">
+      <h2 vTypography="headline-4" id="responsive-panel-title">Panel title</h2>
+      <button
+        aria-label="close responsive default panel"
+        v-button-icon
+        subtle
+        buttonColor="tertiary"
+        buttonSize="small"
+        vMT="-3"
+        vMR="-8"
+        (click)="togglePanel()"
+        #closeButton
+      >
+        <svg v-icon-visa-close-tiny />
+      </button>
+    </header>
+    <div v-panel-body>
+      <h3 vTypography="subtitle-2" id="responsive-panel-description">Panel subtitle</h3>
+      <p>This is required text that can be used to describe the panel title and subtitle in more detail.</p>
+    </div>
+  </div>
+</div>

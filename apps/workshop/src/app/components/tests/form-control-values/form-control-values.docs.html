@@ -1,0 +1,106 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<div vFlex vM="20" vFlexCol>
+  // radio
+  <fieldset (change)="printValues('radio')">
+    <legend v-label>Legend for radio group</legend>
+    <div vFlex vFlexCol>
+      <div v-input-container>
+        <input id="radio-group-1" name="radio-group" v-radio value="1" />
+        <label v-label for="radio-group-1">First label</label>
+      </div>
+      <div v-input-container>
+        <input id="radio-group-2" name="radio-group" v-radio value="2" />
+        <label v-label for="radio-group-2">Second label</label>
+      </div>
+      <div v-input-container>
+        <input id="radio-group-3" name="radio-group" v-radio value="3" />
+        <label v-label for="radio-group-3">Third label</label>
+      </div>
+    </div>
+  </fieldset>
+
+  // select
+  <fieldset vFlex vFlexCol vGap="4">
+    <label v-label for="default-select">Label</label>
+    <div v-input-container>
+      <select v-select id="default-select" (change)="printValues('select')">
+        <option hidden></option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+        <option value="5">Option 5</option>
+      </select>
+      <v-icon-visa-toggle>
+        <svg v-toggle-default-template v-icon-visa-chevron-down-tiny></svg>
+        <svg v-toggle-rotated-template v-icon-visa-chevron-up-tiny></svg>
+      </v-icon-visa-toggle>
+    </div>
+  </fieldset>
+
+  // input
+  <div vFlex vGap="4" vFlexCol>
+    <label v-label for="default-input">Label</label>
+    <div v-input-container>
+      <input v-input (input)="printValues('input')" id="default-input" aria-describedby="default-message" />
+    </div>
+    <span v-input-message id="default-message">Inline message</span>
+  </div>
+
+  // listbox
+  <div v-listbox-container>
+    <ul v-listbox (valueUpdated)="printValues('listbox')">
+      <li v-listbox-item value="item-1">Item 1</li>
+      <li v-listbox-item value="item-2">Item 2</li>
+      <li v-listbox-item value="item-3">Item 3</li>
+    </ul>
+  </div>
+
+  // combobox
+  <div v-combobox (itemSelected)="printValues('combobox')">
+    <label v-label>Label</label>
+    <div v-input-container v-floating-ui-trigger vMY="4">
+      <input v-input />
+      <button v-button-icon buttonColor="tertiary" buttonSize="small" aria-label="toggle">
+        <v-icon-visa-toggle>
+          <svg v-toggle-default-template default-template v-icon-visa-chevron-down-tiny></svg>
+          <svg v-toggle-rotated-template v-icon-visa-chevron-up-tiny></svg>
+        </v-icon-visa-toggle>
+      </button>
+    </div>
+    <div v-listbox-container v-floating-ui-element>
+      <ul v-listbox>
+        <li v-listbox-item value="item-1">Item 1</li>
+        <li v-listbox-item value="item-2">Item 2</li>
+        <li v-listbox-item value="item-3">Item 3</li>
+      </ul>
+    </div>
+  </div>
+
+  // checkbox
+  <div v-input-container>
+    <input (change)="printValues('checkbox')" id="checkbox" value="checkbox-value" v-checkbox />
+    <label v-label for="checkbox">Label</label>
+  </div>
+
+  // switch
+  <div vFlex vFlexWrap vJustifyContentBetween vGap="10" vM="8" style="max-inline-size: 288px">
+    <label v-switch-label v-label for="switch-control-1">Switch</label>
+    <input (change)="printValues('switch')" v-switch id="switch-control-1" name="default-switch" />
+  </div>
+</div>

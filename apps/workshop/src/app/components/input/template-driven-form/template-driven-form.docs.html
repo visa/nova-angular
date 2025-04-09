@@ -1,0 +1,87 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<form #templateFormValidation="ngForm" vFlex vFlexCol vGap="16" (ngSubmit)="handleFormSubmit(templateFormValidation)">
+  <div vFlex vGap="4" vFlexCol>
+    <label v-label for="template-input-1">Label (required)</label>
+    <div v-input-container>
+      <input
+        v-input
+        ngModel
+        #template1="ngModel"
+        required
+        [invalid]="isSubmitted && template1.invalid"
+        aria-describedby="template-input-message-1"
+        name="template1"
+        id="template-input-1"
+      />
+    </div>
+    <span v-input-message id="template-input-message-1" aria-atomic="true" aria-live="assertive">
+      <ng-container *ngIf="isSubmitted && template1.invalid">
+        <svg v-icon-visa-error-tiny></svg>
+        This is required text that describes the error in more detail.
+      </ng-container>
+    </span>
+  </div>
+  <div vFlex vGap="4" vFlexCol>
+    <label v-label for="template-input-2">Label (required)</label>
+    <div v-input-container>
+      <input
+        v-input
+        ngModel
+        required
+        [invalid]="isSubmitted && template2.invalid"
+        aria-describedby="template-input-message-2"
+        name="template2"
+        #template2="ngModel"
+        id="template-input-2"
+      />
+    </div>
+    <span v-input-message id="template-input-message-2" aria-atomic="true" aria-live="assertive">
+      <ng-container *ngIf="isSubmitted && template2.invalid">
+        <svg v-icon-visa-error-tiny></svg>
+        This is required text that describes the error in more detail.
+      </ng-container>
+    </span>
+  </div>
+  <div vFlex vGap="4" vFlexCol>
+    <label v-label for="template-input-3">Label (required)</label>
+    <div v-input-container>
+      <input
+        v-input
+        ngModel
+        required
+        [invalid]="isSubmitted && template3.invalid"
+        aria-describedby="template-input-message-3"
+        name="template3"
+        #template3="ngModel"
+        id="template-input-3"
+      />
+    </div>
+    <span v-input-message id="template-input-message-3" aria-atomic="true" aria-live="assertive">
+      <ng-container *ngIf="isSubmitted && template3.invalid">
+        <svg v-icon-visa-error-tiny></svg>
+        This is required text that describes the error in more detail.
+      </ng-container>
+    </span>
+  </div>
+  <div vFlex vGap="16">
+    <button v-button type="submit">Submit</button>
+    <button v-button buttonColor="secondary" type="reset" (click)="handleFormReset(templateFormValidation)">
+      Reset
+    </button>
+  </div>
+</form>

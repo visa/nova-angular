@@ -1,0 +1,125 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<ng-container *ngIf="!workshopService.isLoadingExamples()">
+  <div v-section v-message vMT="14" messageType="information">
+    <svg v-message-icon v-icon-visa-information-low aria-hidden="false" aria-label="Information" role="img"></svg>
+    <div v-message-content>
+      <div v-message-content vPL="2" vPB="2">
+        <p>
+          Radio buttons should always be used in groups with a fieldset around them. This page has examples of single
+          radio buttons for documentation purposes, which some screen readers incorrectly announce as part of a group.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <h2 vTypography="headline-2" vMT="36">Default radio buttons</h2>
+
+  <nova-workshop-example selector="nova-workshop-radio-with-label" exampleTitle="Radio button with label">
+    <nova-workshop-radio-with-label></nova-workshop-radio-with-label>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-radio-without-visible-label"
+    exampleTitle="Radio button without visible label"
+  >
+    <nova-workshop-radio-without-visible-label></nova-workshop-radio-without-visible-label>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-radio-with-description" exampleTitle="Radio button with description">
+    <nova-workshop-radio-with-description></nova-workshop-radio-with-description>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-radio-selected" exampleTitle="Selected radio button">
+    <nova-workshop-radio-selected></nova-workshop-radio-selected>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-radio-disabled" exampleTitle="Disabled radio button">
+    <nova-workshop-radio-disabled></nova-workshop-radio-disabled>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-radio-disabled-and-selected"
+    exampleTitle="Disabled and selected radio button"
+  >
+    <nova-workshop-radio-disabled-and-selected></nova-workshop-radio-disabled-and-selected>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Radio button groups</h2>
+
+  <nova-workshop-example selector="nova-workshop-radio-group" exampleTitle="Radio button group">
+    <nova-workshop-radio-group></nova-workshop-radio-group>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-radio-group-with-error" exampleTitle="Radio button group with error">
+    <nova-workshop-radio-group-with-error></nova-workshop-radio-group-with-error>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-radio-horizontal-group" exampleTitle="Horizontal radio button group">
+    <nova-workshop-radio-horizontal-group></nova-workshop-radio-horizontal-group>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Radio button panels</h2>
+
+  <nova-workshop-example selector="nova-workshop-radio-panel" exampleTitle="Radio button panel">
+    <nova-workshop-radio-panel></nova-workshop-radio-panel>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-radio-panel-without-description"
+    exampleTitle="Radio button panel without description"
+  >
+    <nova-workshop-radio-panel-without-description></nova-workshop-radio-panel-without-description>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-radio-disabled-panel" exampleTitle="Disabled radio button panel">
+    <nova-workshop-radio-disabled-panel></nova-workshop-radio-disabled-panel>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Radio button panel groups</h2>
+
+  <nova-workshop-example selector="nova-workshop-radio-panel-group" exampleTitle="Radio button panel group">
+    <nova-workshop-radio-panel-group></nova-workshop-radio-panel-group>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-radio-panel-group-with-error"
+    exampleTitle="Radio panel group with error"
+  >
+    <nova-workshop-radio-panel-group-with-error></nova-workshop-radio-panel-group-with-error>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Framework-specific radio groups</h2>
+
+  <nova-workshop-example
+    selector="nova-workshop-radio-template-driven-form"
+    exampleTitle="Template-driven radio group form"
+  >
+    <nova-workshop-radio-template-driven-form></nova-workshop-radio-template-driven-form>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-radio-model-driven-form" exampleTitle="Model-driven radio group form">
+    <nova-workshop-radio-model-driven-form></nova-workshop-radio-model-driven-form>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-radio-model-driven-fb"
+    exampleTitle="Model-driven radio group form with FormBuilder"
+  >
+    <nova-workshop-radio-model-driven-fb></nova-workshop-radio-model-driven-fb>
+  </nova-workshop-example>
+</ng-container>

@@ -1,0 +1,63 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<div class="page__header">
+  <div vFlex class="home__hero" vMX="auto" vAlignItemsCenter vGap="36">
+    <div class="home__hero-left v-xs-media-hide v-sm-media-hide v-md-media-hide v-lg-media-hide">
+      <nova-workshop-thumbnail [componentsGraphic]="true"></nova-workshop-thumbnail>
+    </div>
+    <div class="home__hero-right">
+      <h1 vTypography="display-2" class="v-mb-12" style="color: var(--palette-default-active)">Components</h1>
+    </div>
+  </div>
+</div>
+<div class="page__content page__content-centered">
+  <div class="search-bar">
+    <label for="search-component">Search components</label>
+    <div v-input-container class="search-bar-container">
+      <svg v-icon-visa-search-low></svg>
+      <input v-input id="search-component" (input)="setFilter($event)" #search />
+      <div *ngIf="search && search.value" vFlex vAlignContentCenter vGap="4">
+        <button v-button-icon buttonColor="tertiary" buttonSize="small" (click)="clearValue()">
+          <svg v-icon-visa-close-tiny></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="components-table">
+    <ng-container *ngIf="filteredComponents.length > 0">
+      <div v-content-card clickable *ngFor="let component of filteredComponents; let i = index">
+        <nova-workshop-thumbnail
+          *ngIf="component.path; else noThumbnail"
+          [name]="component.path"
+        ></nova-workshop-thumbnail>
+        <ng-template #noThumbnail>
+          <img v-content-card-image [src]="null" [attr.alt]="'Thumbnail for the ' + component.name + ' component'" />
+        </ng-template>
+        <div v-content-card-body>
+          <h3 v-content-card-title>
+            <a [routerLink]="component.path" v-content-card-title-link>{{ component.path | titlecase }}</a>
+            <svg v-icon-visa-chevron-link-tiny></svg>
+          </h3>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="filteredComponents.length === 0">
+      <p vTypography="label-large-active">No component found</p>
+    </ng-container>
+  </div>
+</div>

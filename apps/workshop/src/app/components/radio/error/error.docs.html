@@ -1,0 +1,41 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<!-- <span vTypography="label">* indicates a required field</span> -->
+<div v-input-container>
+  <input
+    id="radio-with-error"
+    (change)="handleChange(errorRadio)"
+    #errorRadio
+    name="radio-with-error"
+    required
+    [invalid]="isInvalid"
+    v-radio
+    value="radio-with-error"
+    aria-describedby="radio-with-error-message"
+  />
+  <label v-label for="radio-with-error">Label (required)</label>
+</div>
+<span v-input-message id="radio-with-error-message" aria-atomic="true" aria-live="assertive">
+  <ng-container *ngIf="isInvalid">
+    <svg v-icon-visa-error-tiny></svg>
+    This is required text that describes the error in more detail.
+  </ng-container>
+</span>
+<div vFlex vGap="16">
+  <button v-button vMT="12" (click)="handleSubmit(errorRadio)">Submit</button>
+  <button v-button buttonColor="secondary" vMT="12" (click)="handleReset(errorRadio)">Reset</button>
+</div>

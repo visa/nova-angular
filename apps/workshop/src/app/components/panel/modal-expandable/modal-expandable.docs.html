@@ -1,0 +1,55 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<div vFlex vJustifyContentEnd>
+  <button v-panel-toggle buttonSize="large" v-button-icon aria-label="expand panel" (click)="panelOpen.set(true)">
+    <!-- temporarily add two-color styles, awaiting fix from Nova Styles -->
+    <svg v-icon-visa-media-rewind-tiny v-icon-two-color />
+  </button>
+</div>
+<dialog
+  v-panel
+  expandable
+  vML="auto"
+  [expanded]="panelOpen()"
+  aria-describedby="modal-expandable-subtitle"
+  aria-labelledby="modal-expandable-title"
+>
+  <button
+    v-panel-toggle
+    autofocus
+    buttonSize="large"
+    v-button-icon
+    aria-label="collapse panel"
+    (click)="panelOpen.set(false)"
+  >
+    <svg v-icon-visa-media-fast-forward-tiny v-icon-two-color />
+  </button>
+  @if(panelOpen()){
+  <div v-panel-content>
+    <header vFlex vJustifyContentBetween vGap="4">
+      <h3 vTypography="headline-4" id="modal-expandable-title">Panel title</h3>
+    </header>
+    <div v-panel-body>
+      <h4 vTypography="subtitle-2" id="modal-expandable-subtitle">Subtitle of panel</h4>
+      <p>
+        panel content shows here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse purus sem,
+        fringilla ac lorem vel, maxialiquam urna.
+      </p>
+    </div>
+  </div>
+  }
+</dialog>

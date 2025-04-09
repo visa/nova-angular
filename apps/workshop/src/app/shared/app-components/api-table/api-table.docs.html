@@ -1,0 +1,332 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<ng-container *ngIf="APIData">
+  <nova-workshop-on-this-page [associatedTab]="1" [items]="almData"></nova-workshop-on-this-page>
+  <div class="api-list" vFlex vFlexCol vSurface style="overflow-x: auto">
+    <div *ngFor="let item of APIData; index as i" [vMT]="i !== 0 ? 48 : 0">
+      <ng-container *ngIf="item['type'] === APITypes.DIRECTIVE || item['type'] === APITypes.COMPONENT">
+        <ng-container *ngTemplateOutlet="componentTable; context: {component: item, i: i}"></ng-container>
+      </ng-container>
+      <ng-container *ngIf="item['type'] === APITypes.CONSTANT">
+        <ng-container *ngTemplateOutlet="constantTable; context: {constant: item, i: i}"></ng-container>
+      </ng-container>
+      <ng-container *ngIf="item['type'] === APITypes.SERVICESOURCE">
+        <ng-container *ngTemplateOutlet="serviceSourceCode; context: {service: item, i: i}"></ng-container>
+      </ng-container>
+      <ng-container *ngIf="item['type'] === APITypes.SERVICE">
+        <ng-container *ngTemplateOutlet="serviceTable; context: {service: item, i: i}"></ng-container>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #componentTable let-i="i" let-component="component">
+  <div class="w-api-table" [id]="component['component']+ '-example'">
+    <span vFlex vFlexCol vMT="24" vGap="16">
+      <a
+        v-link
+        noUnderline
+        style="inline-size: fit-content"
+        tabindex="-1"
+        [routerLink]="[]"
+        [fragment]="component['component']"
+        [id]="component['component']"
+      >
+        <span vTypography="headline-2">
+          &#64;{{component['type'].charAt(0).toUpperCase() + component['type'].slice(1)}} - {{component['component']}}
+        </span>
+      </a>
+      <p *ngIf="component['description']" [safeHtml]="component.description"></p>
+      <div vFlex vAlignItemsCenter vJustifyContentBetween vFlexWrap>
+        <code vMY="16" *ngIf="component['selector']">{{ component['selector'] }}</code>
+      </div>
+    </span>
+    <div v-table-wrapper>
+      <div *ngIf="component['inputs'].length === 0 && component['outputs'].length === 0" vML="10">
+        No exposed props for this {{component['type']}}
+      </div>
+      <table
+        *ngIf="component['inputs'].length > 0 || component['outputs'].length > 0"
+        v-table
+        alternate
+        horizontalDividerLines
+        style="
+          --v-table-data-padding-block-default: var(--v-table-data-padding-block-large);
+          --v-table-data-block-default: var(--v-table-data-block-large);
+        "
+      >
+        <caption v-caption vSR>
+          {{component['component']}}
+          <span *ngIf="component['inputs'].length > 0"> Inputs</span>
+          <span *ngIf="component['inputs'].length > 0 && component['outputs'].length > 0"> and</span>
+          <span *ngIf="component['outputs'].length > 0"> Outputs</span>
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col" v-th>Name</th>
+            <th scope="col" v-th>Decorator type</th>
+            <th scope="col" v-th>Default value</th>
+            <th scope="col" v-th>Type</th>
+            <th scope="col" v-th>Description</th>
+            <th scope="col" v-th>
+              <span>Built in</span>
+              <span v-floating-ui-container placement="top" vML="4">
+                <button
+                  v-button-icon
+                  buttonColor="tertiary"
+                  buttonSize="small"
+                  aria-describedby="top-example-nova"
+                  v-floating-ui-trigger
+                >
+                  <svg v-icon-visa-information-tiny></svg>
+                </button>
+                <span v-tooltip id="top-example-nova" style="max-inline-size: 250px; white-space: break-spaces"
+                  >Built in properties are set by the Nova Angular component itself or by its parent. These properties
+                  are generally not needed to be set or edited.</span
+                >
+              </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let input of component['inputs']">
+            <th scope="row" v-td vTypography="body-2-bold" [style.white-space]="'nowrap'">{{input.name}}</th>
+            <td v-td>&#64;Input()</td>
+            <td v-td>
+              <ng-container *ngIf="input.defaultValue">
+                <ng-container *ngFor="let value of input.defaultValue; index as i">
+                  <code
+                    [safeHtml]="value"
+                    style="padding-inline: 4px; padding-block: 0; margin-block: 6px; display: inline-block"
+                  ></code>
+                  <hr v-divider dividerType="decorative" *ngIf="i !== input.defaultValue.length - 1" />
+                </ng-container>
+              </ng-container>
+            </td>
+            <td v-td>{{ input.type }}</td>
+            <td v-td>
+              <p
+                [safeHtml]="input.description"
+                [vMB]="input.tags.length > 0? 16 : 0"
+              ></p>
+              <!-- <div
+                *ngFor="let tag of input.tags; index as i"
+                [vMB]="i !== input.tags.length - 1 ? 16 : 0"
+                vFlex
+                vAlignItemsCenter
+              >
+                <p vTypography="overline" [safeHtml]="tag.tagName" style="display: inline-block" vMR="4"></p>
+                <code
+                  [safeHtml]="tag.value"
+                  style="padding-inline: 4px; padding-block: 0; display: inline-block; border-radius: 0"
+                ></code>
+              </div> -->
+            </td>
+            <td v-td [safeHtml]="input.builtIn"></td>
+          </tr>
+          <tr *ngFor="let output of component['outputs']">
+            <th scope="row" v-td vTypography="body-2-bold">{{output.name}}</th>
+            <td v-td>&#64;Output()</td>
+            <td v-td></td>
+            <td v-td>{{ output.type }}</td>
+            <td v-td [safeHtml]="output.description"></td>
+            <td v-td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #constantTable let-i="i" let-constant="constant">
+  <div [id]="constant['name'] + '-example'">
+    <span vFlex vFlexCol vMT="24" vMB="16">
+      <div vFlex vJustifyContentBetween vAlignItemsCenter vFlexWrap>
+        <a
+          v-link
+          noUnderline
+          style="inline-size: fit-content"
+          tabindex="-1"
+          [routerLink]="[]"
+          [fragment]="constant['name']"
+          [id]="constant['name']"
+        >
+          <span vTypography="headline-2"> {{constant['name']}} </span>
+        </a>
+      </div>
+    </span>
+    <div v-table-wrapper>
+      <table
+        *ngIf="constant['options'].length > 0"
+        v-table
+        horizontalDividerLines
+        keyValue
+        style="
+          --v-table-data-padding-block-default: var(--v-table-data-padding-block-large);
+          --v-table-data-block-default: var(--v-table-data-block-large);
+        "
+      >
+        <caption vSR>
+          {{constant['name']}}
+        </caption>
+        <tbody>
+          <tr *ngFor="let option of constant['options']">
+            <th v-td scope="row">{{ option.key }}</th>
+            <td v-td>
+              <code
+                [safeHtml]="option.value"
+                [style.padding]="0"
+                style="display: inline-block"
+              ></code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #serviceSourceCode let-service="service">
+  <div [id]="service['name'] + '-example'">
+    <span vFlex vFlexCol vMT="24" vMB="16">
+      <div vFlex vJustifyContentBetween vAlignItemsCenter vFlexWrap>
+        <a
+          v-link
+          noUnderline
+          style="inline-size: fit-content"
+          tabindex="-1"
+          [routerLink]="[]"
+          [fragment]="service['name']"
+          [id]="service['name']"
+        >
+          <span vTypography="headline-2"> {{service['name']}} </span>
+        </a>
+      </div>
+    </span>
+    <ng-container *ngTemplateOutlet="sourceCodeAccordion; context: {data: service}"></ng-container>
+  </div>
+</ng-template>
+
+<ng-template #serviceTable let-service="service">
+  <div class="w-api-table">
+    <div vTypography="headline-3" vMB="12">Description and code</div>
+    <p [safeHtml]="service.description" vMB="16"></p>
+    <ng-container *ngTemplateOutlet="sourceCodeAccordion; context: {data: service}"></ng-container>
+    <div vTypography="headline-3" vMT="24" vMB="12">Properties</div>
+    <div v-table-wrapper>
+      <div *ngIf="service['properties'].length === 0" vML="10">No exposed props for this service</div>
+      <table
+        *ngIf="service['properties'].length > 0"
+        v-table
+        alternate
+        dividerLines
+        style="
+          --v-table-data-padding-block-default: var(--v-table-data-padding-block-large);
+          --v-table-data-block-default: var(--v-table-data-block-large);
+        "
+      >
+        <caption vSR>
+          {{service['name']}} properties
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col" v-th>Name</th>
+            <th scope="col" v-th>Type</th>
+            <th scope="col" v-th>Default value</th>
+            <th scope="col" v-th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let property of service['properties']">
+            <th scope="row" v-td vTypography="body-2-bold">{{property.name }}</th>
+            <td v-td style="--v-table-border-inline-start-size-default: var(--size-scalable-1)">{{ property.type }}</td>
+            <td v-td>
+              <ng-container *ngIf="property.defaultValue"
+                ><span [safeHtml]="property.defaultValue"></span
+              ></ng-container>
+            </td>
+            <td v-td [safeHtml]="property.description" vMB="16"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div vTypography="headline-3" vMT="24" vMB="12">Methods</div>
+    <div v-table-wrapper *ngIf="service['methods'].length === 0">
+      <div vML="10">No methods for this service</div>
+    </div>
+    <ng-container *ngIf="service['methods'].length > 0">
+      <ng-container *ngFor="let method of service['methods']">
+        <div vTypography="subtitle-1" vMB="12">{{ method['name'] }}</div>
+        <p [safeHtml]="method.description" vMB="16"></p>
+        <div v-table-wrapper>
+          <table v-table alternate keyValue>
+            <caption vSR>
+              {{service['name']}} {{method['name']}} return type
+            </caption>
+            <tbody v-tbody>
+              <tr v-tr>
+                <th v-th scope="row" [style.white-space]="'nowrap'">Return type</th>
+                <td v-td>{{ method['returnType'] }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div v-table-wrapper vMT="12" vMB="36">
+          <table v-table alternate dividerLines>
+            <caption vSR>
+              {{service['name']}} {{method['name']}} arguments
+            </caption>
+            <thead>
+              <tr v-tr>
+                <th v-th groupHeader colspan="3" style="--v-table-data-text-align: flex-start">Arguments</th>
+              </tr>
+              <tr v-tr *ngIf="method['arguments'].length > 0">
+                <th v-th scope="col">Name</th>
+                <th v-th scope="col">Type</th>
+                <th v-th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody v-tbody *ngIf="method['arguments'].length > 0">
+              <tr v-tr *ngFor="let argument of method['arguments']">
+                <td v-td scope="row">{{ argument['name']}}</td>
+                <td v-td>{{ argument['type'] }}</td>
+                <td v-td [safeHtml]="argument.comment" vMB="16"></td>
+              </tr>
+            </tbody>
+          </table>
+          <div vML="10" *ngIf="method['arguments'].length === 0">No arguments for this method</div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</ng-template>
+
+<ng-template #sourceCodeAccordion let-data="data">
+  <div v-accordion>
+    <button v-button v-accordion-heading>
+      <v-icon-visa-toggle>
+        <svg v-toggle-default-template v-icon-visa-chevron-right-tiny></svg>
+        <svg v-toggle-rotated-template v-icon-visa-chevron-down-tiny></svg>
+      </v-icon-visa-toggle>
+      <svg v-icon-visa-code-fork-alt-tiny></svg>
+      Source code
+    </button>
+    <div v-accordion-panel class="markdown-style">
+      <markdown lineNumbers [data]="data['code'] | language : 'typescript'"></markdown>
+    </div>
+  </div>
+</ng-template>

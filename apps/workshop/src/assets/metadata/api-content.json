@@ -1,0 +1,503 @@
+[
+  {
+    "type": "utilities",
+    "content": [
+      {
+        "name": "accessibility",
+        "directives": ["ScreenreaderOnlyDirective"]
+      },
+      {
+        "name": "screenreader-only",
+        "directives": ["ScreenreaderOnlyDirective"]
+      },
+      {
+        "name": "breakpoints",
+        "directives": ["BreakpointsDirective"],
+        "constants": ["BreakpointType"]
+      },
+      {
+        "name": "elevation",
+        "directives": ["ElevationDirective"],
+        "constants": ["ElevationType"]
+      },
+      {
+        "name": "flex",
+        "directives": ["FlexDirective"],
+        "constants": ["SpacingProperties"]
+      },
+      {
+        "name": "spacing",
+        "directives": ["MarginDirective", "PaddingDirective"],
+        "constants": ["SpacingProperties"]
+      },
+      {
+        "name": "surfaces",
+        "directives": ["SurfaceDirective", "AlternateDirective"]
+      },
+      {
+        "name": "surface",
+        "directives": ["SurfaceDirective", "AlternateDirective"]
+      },
+      {
+        "name": "typography",
+        "directives": ["TypographyDirective", "TypographyColorDirective"],
+        "constants": ["TypographyType", "TypographyColor"]
+      }
+    ]
+  },
+  {
+    "type": "components",
+    "content": [
+      {
+        "name": "accordion",
+        "directives": [
+          "AccordionDirective",
+          "AccordionDetailsDirective",
+          "AccordionHeadingDirective",
+          "AccordionPanelDirective",
+          "IconToggleComponent"
+        ],
+        "services": ["AccordionService"],
+        "constants": ["ToggleIcon"],
+        "related": ["ButtonDirective", "NovaLibService", "UUIDService"]
+      },
+      {
+        "name": "anchor-link-menu",
+        "directives": ["AnchorLinkMenuDirective", "AnchorLinkMenuHeaderDirective"],
+        "related": ["LinkDirective", "NovaLibService", "UUIDService"]
+      },
+      {
+        "name": "avatar",
+        "directives": ["AvatarDirective", "AvatarRoleImgDirective"]
+      },
+      {
+        "name": "badge",
+        "directives": ["BadgeDirective"],
+        "constants": ["BadgeType"],
+        "related": ["IconComponent", "UUIDService"]
+      },
+      {
+        "name": "banner",
+        "directives": ["BannerDirective", "MessageDirective", "MessageContentDirective", "MessageIconDirective"],
+        "constants": ["MessageType"],
+        "related": ["ButtonDirective", "ButtonIconDirective", "LinkDirective"]
+      },
+      {
+        "name": "breadcrumbs",
+        "directives": ["BreadcrumbsDirective"],
+        "related": ["LinkDirective", "NovaLibService"]
+      },
+      {
+        "name": "button",
+        "directives": [
+          "ButtonDirective",
+          "ButtonAsDisabledATagDirective",
+          "ButtonDisabledDirective",
+          "ButtonIconDirective",
+          "ButtonStackedDirective"
+        ],
+        "constants": ["ButtonColor", "ButtonSize"],
+        "related": ["IconComponent"]
+      },
+      {
+        "name": "checkbox",
+        "directives": ["CheckboxDirective", "CheckboxPanelDirective"],
+        "related": [
+          "AppReadyService",
+          "InputContainerComponent",
+          "InputMessageDirective",
+          "LabelDirective",
+          "UUIDService"
+        ]
+      },
+      {
+        "name": "chip",
+        "directives": ["ChipDirective", "LabelDirective"],
+        "related": ["ButtonDirective", "ButtonIconDirective", "CheckboxDirective"]
+      },
+      {
+        "name": "color-selector",
+        "related": [
+          "AppReadyService",
+          "InputDirective",
+          "InputContainerComponent",
+          "InputMessageDirective",
+          "LabelDirective"
+        ]
+      },
+      {
+        "name": "combobox",
+        "directives": [
+          "ComboboxDirective",
+          "FloatingUIContainer",
+          "FloatingUIElementDirective",
+          "FloatingUITriggerDirective",
+          "LabelDirective",
+          "IconToggleComponent"
+        ],
+        "services": ["ComboboxService"],
+        "constants": ["ComboboxFilterType", "FloatingUIPlacements", "FloatingUIVisibility", "IconToggle"],
+        "related": [
+          "AppReadyService",
+          "FloatingUIService",
+          "InputContainerComponent",
+          "InputDirective",
+          "InputMessageDirective",
+          "ListboxContainerDirective",
+          "ListboxDirective",
+          "ListboxItemComponent",
+          "ListboxService",
+          "NovaLibService"
+        ]
+      },
+      {
+        "name": "content-card",
+        "directives": [
+          "ContentCardDirective",
+          "ContentCardBodyDirective",
+          "ContentCardImageDirective",
+          "ContentCardSubtitleDirective",
+          "ContentCardTitleDirective",
+          "ContentCardTitleLinkDirective"
+        ],
+        "related": ["LinkDirective", "ButtonDirective", "ButtonIconDirective"]
+      },
+      {
+        "name": "date-and-time-selectors",
+        "related": ["InputDirective", "InputContainerComponent", "InputMessageDirective", "LabelDirective"]
+      },
+      {
+        "name": "dialog",
+        "directives": [
+          "DialogComponent",
+          "DialogHeaderDirective",
+          "DialogTextDirective",
+          "MessageDirective",
+          "MessageContentDirective",
+          "MessageIconDirective"
+        ],
+        "constants": ["MessageType"],
+        "related": ["ButtonDirective", "ButtonIconDirective", "UUIDService"]
+      },
+      {
+        "name": "divider",
+        "directives": ["DividerDirective"],
+        "constants": ["DividerType"]
+      },
+      {
+        "name": "dropdown-menu",
+        "directives": [
+          "DropdownMenuDirective",
+          "DropdownItemDirective",
+          "DropdownListDirective",
+          "AddArrowKeysDirective",
+          "FloatingUIContainer",
+          "FloatingUITriggerDirective"
+        ],
+        "constants": ["FloatingUIPlacements", "FloatingUIVisibility"],
+        "related": ["ButtonDirective", "ButtonIconDirective", "FloatingUIService", "IconToggleComponent", "UUIDService"]
+      },
+      {
+        "name": "flag",
+        "directives": ["FlagDirective", "MessageDirective", "MessageContentDirective", "MessageIconDirective"],
+        "constants": ["MessageType"],
+        "related": ["ButtonDirective", "ButtonIconDirective", "LinkDirective"]
+      },
+      {
+        "name": "footer",
+        "directives": ["FooterDirective", "VisaLogoComponent"],
+        "constants": ["LogoColor"],
+        "related": ["LinkDirective"]
+      },
+      {
+        "name": "horizontal-navigation",
+        "directives": [
+          "NavDirective",
+          "IconToggleComponent",
+          "FloatingUIContainer",
+          "FloatingUITriggerDirective",
+          "SkipToContentDirective",
+          "VisaLogoComponent"
+        ],
+        "constants": ["IconToggle"],
+        "related": [
+          "AlternateDirective",
+          "AvatarDirective",
+          "BadgeDirective",
+          "ButtonDirective",
+          "ButtonIconDirective",
+          "DropdownMenuDirective",
+          "DropdownItemDirective",
+          "DropdownListDirective",
+          "AddArrowKeysDirective",
+          "FloatingUIService",
+          "InputContainerComponent",
+          "InputDirective",
+          "LinkDirective",
+          "NovaLibService",
+          "SurfaceDirective",
+          "TabItemDirective",
+          "TabItemDisclosureDirective",
+          "TabListDirective"
+        ]
+      },
+      {
+        "name": "icon",
+        "directives": ["IconComponent"],
+        "constants": ["IconLibrary", "IconSize"]
+      },
+      {
+        "name": "input",
+        "directives": ["InputDirective", "InputContainerComponent", "InputMessageDirective", "LabelDirective"],
+        "related": ["AppReadyService", "UUIDService"]
+      },
+      {
+        "name": "link",
+        "directives": ["LinkDirective", "OpensInNewTabDirective"]
+      },
+      {
+        "name": "listbox",
+        "directives": ["ListboxDirective", "ListboxContainerDirective", "ListboxItemComponent"],
+        "services": ["ListboxService"],
+        "related": ["AppReadyService", "InputMessageDirective", "LabelDirective", "NovaLibService", "UUIDService"]
+      },
+      {
+        "name": "multiselect",
+        "directives": [
+          "FloatingUIContainer",
+          "FloatingUIElementDirective",
+          "FloatingUITriggerDirective",
+          "IconToggleComponent"
+        ],
+        "constants": ["ComboboxFilterType", "FloatingUIPlacements", "FloatingUIVisibility", "IconToggle"],
+        "related": [
+          "AppReadyService",
+          "ChipDirective",
+          "ComboboxDirective",
+          "ComboboxService",
+          "InputDirective",
+          "InputContainerComponent",
+          "InputMessageDirective",
+          "FloatingUIService",
+          "LabelDirective",
+          "ListboxDirective",
+          "ListboxService",
+          "NovaLibService",
+          "UUIDService"
+        ]
+      },
+      {
+        "name": "navigation-drawer",
+        "directives": [
+          "NavDirective",
+          "IconToggleComponent",
+          "FloatingUIContainer",
+          "FloatingUITriggerDirective",
+          "SkipToContentDirective",
+          "VisaLogoComponent"
+        ],
+        "constants": ["IconToggle"],
+        "related": [
+          "AlternateDirective",
+          "AvatarDirective",
+          "BadgeDirective",
+          "ButtonDirective",
+          "ButtonIconDirective",
+          "DropdownMenuDirective",
+          "DropdownItemDirective",
+          "DropdownListDirective",
+          "AddArrowKeysDirective",
+          "FloatingUIService",
+          "InputContainerComponent",
+          "InputDirective",
+          "LinkDirective",
+          "NovaLibService",
+          "SurfaceDirective",
+          "TabItemDirective",
+          "TabItemDisclosureDirective",
+          "TabListDirective"
+        ]
+      },
+      {
+        "name": "pagination",
+        "directives": ["PaginationDirective", "PaginationOverflowDirective"],
+        "services": ["PaginationService"],
+        "related": ["ButtonDirective", "ButtonIconDirective"]
+      },
+      {
+        "name": "panel",
+        "directives": ["PanelComponent", "PanelBodyDirective", "PanelContentDirective", "PanelToggleDirective"],
+        "related": ["ButtonDirective", "ButtonIconDirective", "TabItemDirective", "TabListDirective", "UUIDService"]
+      },
+      {
+        "name": "progress",
+        "directives": ["CircularProgressComponent", "LinearProgressDirective"],
+        "related": ["AppReadyService", "LabelDirective", "ScreenreaderOnlyDirective"]
+      },
+      {
+        "name": "radio",
+        "directives": ["RadioDirective", "RadioGroupDirective"],
+        "related": [
+          "AppReadyService",
+          "CheckboxPanelDirective",
+          "InputContainerComponent",
+          "InputMessageDirective",
+          "LabelDirective",
+          "UUIDService"
+        ]
+      },
+      {
+        "name": "section-message",
+        "directives": [
+          "SectionMessageDirective",
+          "MessageDirective",
+          "MessageContentDirective",
+          "MessageIconDirective"
+        ],
+        "constants": ["MessageType"],
+        "related": ["ButtonDirective", "ButtonIconDirective", "LinkDirective"]
+      },
+      {
+        "name": "select",
+        "directives": ["SelectDirective"],
+        "related": [
+          "AppReadyService",
+          "InputContainerComponent",
+          "InputDirective",
+          "InputMessageDirective",
+          "LabelDirective"
+        ]
+      },
+      {
+        "name": "switch",
+        "directives": ["SwitchDirective", "SwitchLabelDirective"],
+        "related": ["AppReadyService", "InputMessageDirective", "UUIDService"]
+      },
+      {
+        "name": "table",
+        "directives": [
+          "TableDirective",
+          "TableWrapperDirective",
+          "TbodyDirective",
+          "TdDirective",
+          "ThDirective",
+          "TrDirective"
+        ],
+        "constants": ["TableSize"],
+        "related": ["ScreenreaderOnlyDirective"]
+      },
+      {
+        "name": "tabs",
+        "directives": ["TabItemDirective", "TabItemDisclosureDirective", "TabListDirective"],
+        "constants": ["ButtonColor", "ButtonSize"],
+        "related": [
+          "AlternateDirective",
+          "AppReadyService",
+          "ButtonDirective",
+          "ButtonStackedDirective",
+          "FloatingUIContainer",
+          "FloatingUITriggerDirective",
+          "DropdownMenuDirective",
+          "DropdownItemDirective",
+          "DropdownListDirective",
+          "IconToggleComponent",
+          "NovaLibService",
+          "SurfaceDirective"
+        ]
+      },
+      {
+        "name": "toggle",
+        "directives": ["ToggleContainerDirective", "ToggleDirective"],
+        "related": ["UUIDService"]
+      },
+      {
+        "name": "tooltip",
+        "directives": ["TooltipDirective", "FloatingUIContainer", "FloatingUITriggerDirective"],
+        "constants": ["FloatingUIPlacements", "FloatingUIVisibility"],
+        "related": ["FloatingUIService", "UUIDService"]
+      },
+      {
+        "name": "vertical-navigation",
+        "directives": [
+          "NavDirective",
+          "IconToggleComponent",
+          "FloatingUIContainer",
+          "FloatingUITriggerDirective",
+          "SkipToContentDirective",
+          "VisaLogoComponent"
+        ],
+        "constants": ["IconToggle"],
+        "related": [
+          "AlternateDirective",
+          "AvatarDirective",
+          "BadgeDirective",
+          "ButtonDirective",
+          "ButtonIconDirective",
+          "DropdownMenuDirective",
+          "DropdownItemDirective",
+          "DropdownListDirective",
+          "AddArrowKeysDirective",
+          "FloatingUIService",
+          "InputContainerComponent",
+          "InputDirective",
+          "LinkDirective",
+          "NovaLibService",
+          "SurfaceDirective",
+          "TabItemDirective",
+          "TabItemDisclosureDirective",
+          "TabListDirective"
+        ]
+      },
+      {
+        "name": "wizard",
+        "directives": ["WizardDirective", "WizardStepDirective"],
+        "related": [
+          "AccordionDirective",
+          "AccordionDetailsDirective",
+          "AccordionHeadingDirective",
+          "AccordionPanelDirective",
+          "BadgeDirective",
+          "ButtonDirective",
+          "IconToggleComponent"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "services",
+    "content": [
+      {
+        "name": "app-ready",
+        "service": "AppReadyService"
+      },
+      {
+        "name": "floating-ui",
+        "service": "FloatingUIService"
+      },
+      {
+        "name": "id-generator",
+        "service": "UUIDService"
+      },
+      {
+        "name": "nova-lib",
+        "service": "NovaLibService"
+      },
+      {
+        "name": "AccordionService",
+        "service": "AccordionService"
+      },
+      {
+        "name": "ComboboxService",
+        "service": "ComboboxService"
+      },
+      {
+        "name": "ListboxService",
+        "service": "ListboxService"
+      },
+      {
+        "name": "PaginationService",
+        "service": "PaginationService"
+      }
+    ]
+  }
+]

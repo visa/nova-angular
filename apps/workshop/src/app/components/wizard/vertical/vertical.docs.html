@@ -1,0 +1,164 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+@if (!showSuccess) {
+<div vFlex vGap="12" vFlexWrap>
+  <nova-workshop-wizard-shared-save-flag *ngIf="showFlag" (closeFlag)="showFlag = false" />
+  <nav aria-label="wizard for vertical example">
+    <ol v-wizard vertical style="--v-wizard-vertical-max-inline-size: 100%">
+      @for (step of steps; track step.index) {
+      <li
+        v-wizard-step
+        [vTypography]="step.index === currentStep ? 'label-large-active' : ''"
+        [active]="step.index === currentStep"
+      >
+        <span vSR>
+          @if (step.complete) { Completed } @else if (step.invalid) { Error } step {{ step.index + 1 }} of {{
+          steps.length }}
+        </span>
+        @if (step.available && currentStep !== step.index) {
+        <button
+          v-button
+          buttonColor="tertiary"
+          (click)="goTo(step.index)"
+          vTypography="body-2"
+          vTypographyColor="default"
+        >
+          <ng-template [ngTemplateOutlet]="stepContent" [ngTemplateOutletContext]="{step: step}"></ng-template>
+        </button>
+        } @else {
+        <ng-template [ngTemplateOutlet]="stepContent" [ngTemplateOutletContext]="{step: step}"></ng-template>
+        }
+      </li>
+      }
+    </ol>
+  </nav>
+  @if (currentStep === steps.length - 1) {
+  <nova-workshop-wizard-shared-summary-page [steps]="steps" (edit)="goTo($event)" />
+  <ng-template [ngTemplateOutlet]="actions"></ng-template>
+  } @else {
+  <form vFlexGrow vP="20" vM="auto">
+    <div vFlex vFlexCol vGap="12">
+      <div vFlex vGap="4" vFlexCol *ngFor="let step of steps" [vHide]="!(step.index === currentStep)">
+        <label v-label [for]="'vertical-wizard-' + step.index">{{ step.inputLabel }}</label>
+        <div v-input-container>
+          <input
+            v-input
+            required
+            [invalid]="step.invalid"
+            [id]="'vertical-wizard-' + step.index"
+            [name]="'vertical-wizard-' + step.index"
+            [attr.aria-describedby]="step.invalid ? 'vertical-wizard-message-' + step.index : ''"
+            [(ngModel)]="step.inputValue"
+          />
+        </div>
+        <span
+          v-input-message
+          [id]="'vertical-wizard-message-' + step.index"
+          aria-atomic="true"
+          aria-live="assertive"
+          vMT="4"
+        >
+          <ng-container *ngIf="step.invalid">
+            <svg v-icon-visa-error-tiny></svg>
+            This is required text that describes the error in more detail.
+          </ng-container>
+        </span>
+        <ng-template [ngTemplateOutlet]="actions"></ng-template>
+      </div>
+    </div>
+  </form>
+  }
+</div>
+} @else {
+<nova-workshop-wizard-shared-success-page (reset)="showSuccess = false" />
+}
+
+<ng-template #stepContent let-step="step">
+  @if (step.complete) {
+  <span v-badge icon [noBackground]="!(currentStep === step.index)" badgeType="stable">
+    <svg v-icon-visa-checkmark-tiny></svg>
+  </span>
+  } @else if (step.invalid) {
+  <span v-badge icon [noBackground]="!(currentStep === step.index)" badgeType="critical">
+    <svg v-icon-visa-error-alt-tiny></svg>
+  </span>
+  } @else if (currentStep === step.index) {
+  <span v-badge icon badgeType="active">{{ step.index + 1 }}</span>
+  } @else {
+  <span
+    v-badge
+    icon
+    noBackground
+    badgeType="subtle"
+    style="
+      --v-badge-border-color: var(--palette-default-text-subtle);
+      --v-badge-foreground: var(--palette-default-text-subtle);
+    "
+    >{{ step.index + 1 }}</span
+  >
+  } {{ step.stepLabel }}
+</ng-template>
+
+<ng-template #actions>
+  <div vFlex vJustifyContentBetween vFlexWrap vGap="8">
+    <div vFlex vGap="12" vFlexWrap>
+      <button v-button buttonColor="secondary" (click)="nextStep(true)">Save</button>
+      <button v-button buttonColor="tertiary" (click)="exitDialog.openDialog()">Exit</button>
+      <nova-workshop-wizard-shared-exit-dialog #exitDialog />
+    </div>
+    <div vFlex vGap="12" vFlexWrap>
+      <button v-button buttonColor="secondary" (click)="previousStep()" *ngIf="currentStep !== 0">
+        <svg v-icon-visa-arrow-back-tiny></svg>Back
+      </button>
+      @if (currentStep === steps.length - 1) {
+      <button v-button (click)="submit()">Submit</button>
+      } @else {
+      <button v-button (click)="nextStep()">Next <svg v-icon-visa-arrow-forward-tiny></svg></button>
+      }
+    </div>
+  </div>
+</ng-template>
+
+<!-- ignore the following lines, for documentation purposes only -->
+<hr v-divider dividerType="decorative" vMY="12" />
+<span vTypography="headline-4">Shared custom components in example</span>
+<nova-workshop-example
+  selector="nova-workshop-wizard-shared-exit-dialog"
+  exampleTitle="Exit dialog"
+  [codeSnippetsOnly]="true"
+>
+</nova-workshop-example>
+<nova-workshop-example
+  selector="nova-workshop-wizard-shared-save-flag"
+  exampleTitle="Save flag"
+  [codeSnippetsOnly]="true"
+>
+</nova-workshop-example>
+
+<nova-workshop-example
+  selector="nova-workshop-wizard-shared-success-page"
+  exampleTitle="Success message"
+  [codeSnippetsOnly]="true"
+>
+</nova-workshop-example>
+
+<nova-workshop-example
+  selector="nova-workshop-wizard-shared-summary-page"
+  exampleTitle="Summary page"
+  [codeSnippetsOnly]="true"
+>
+</nova-workshop-example>

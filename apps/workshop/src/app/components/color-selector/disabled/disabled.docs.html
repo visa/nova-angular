@@ -1,0 +1,62 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<!-- temporary inline styles as we work on adding them into nova-styles -->
+<style>
+  input[type='color']::-webkit-color-swatch {
+    min-width: 46px;
+    border: 1px solid lightgray;
+    border-radius: var(--size-scalable-2);
+  }
+  input[type='color']:disabled::-webkit-color-swatch {
+    block-size: 0;
+    align-self: center;
+  }
+  input[type='color'] + .v-label {
+    cursor: default;
+    pointer-events: none;
+    --v-label-color: var(--v-input-disabled-color);
+  }
+</style>
+<div vFlex vGap="6" vAlignItemsCenter vFlexWrap>
+  <input
+    vFlexBasis="5%"
+    vFlexGrow0
+    v-input
+    type="color"
+    disabled
+    id="disabled-color-selector-input"
+    aria-describedby="disabled-a11y-color-tooltip"
+  />
+  <label v-label for="disabled-color-selector-input">Label</label>
+  <div v-floating-ui-container placement="top">
+    <button
+      disabled
+      v-button-icon
+      buttonSize="small"
+      buttonColor="tertiary"
+      aria-label="Color selector accessibility information"
+      aria-describedby="disabled-a11y-color-tooltip"
+      v-floating-ui-trigger
+    >
+      <svg v-icon-visa-accessibility-tiny></svg>
+    </button>
+    <span v-tooltip id="disabled-a11y-color-tooltip"
+      >For RGB, use disabled between 0–255. For HSL, use H disabled between 0–359, S and L disabled between 0–100%. For
+      hex, use the format #RRGGBB and disabled between 0–9 or A–F.</span
+    >
+  </div>
+</div>

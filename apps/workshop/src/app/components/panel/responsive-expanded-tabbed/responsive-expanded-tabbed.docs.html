@@ -1,0 +1,96 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<div v-panel vML="auto" responsive [expanded]="expanded()">
+  <button
+    v-panel-toggle
+    (click)="toggleExpanded()"
+    aria-label="Panel"
+    buttonSize="large"
+    v-button-icon
+    [vML]="expanded() ? '' : 'auto'"
+    [vMediaHide]="expanded() ? ['xs', 'sm'] : null"
+    [attr.aria-expanded]="expanded()"
+    aria-controls="responsive-expanded-tabbed-panel-content"
+  >
+    @if(expanded()){
+    <svg
+      v-icon-visa-media-fast-forward-tiny
+      v-icon-two-color
+      style="--v-icon-secondary: var(--palette-default-active-accent)"
+    />
+    }@else {
+    <svg
+      v-icon-visa-media-rewind-tiny
+      v-icon-two-color
+      style="--v-icon-secondary: var(--palette-default-active-accent)"
+    />
+    }
+  </button>
+  <div
+    v-panel-content
+    [vHide]="!expanded()"
+    [attr.aria-hidden]="!expanded()"
+    id="responsive-expanded-tabbed-panel-content"
+  >
+    <div vFlex vJustifyContentBetween vFlexWrapReverse>
+      <ul v-tabs vFlex vFlexBasis="80%" aria-label="Responsive expanded panel tabs">
+        @for(tab of automaticTabContent; track "tab-" + tab.id ; let i = $index){
+        <li v-tab-item [active]="i === selectedTab()">
+          <button v-button [aria-controls]="tab.id" [id]="tab.id + '-tab-label-' + i" (click)="selectTab(i)">
+            {{ tab.tabLabel }}
+          </button>
+        </li>
+        }
+      </ul>
+      <button
+        v-button-icon
+        buttonColor="tertiary"
+        buttonSize="small"
+        subtle
+        vMB="auto"
+        vMediaHide="desktop"
+        (click)="expanded.set(false)"
+        aria-label="Close tabbed responsive expanded panel"
+      >
+        <svg v-icon-visa-close-tiny />
+      </button>
+    </div>
+    <hr v-divider dividerType="decorative" />
+    @for(tab of automaticTabContent; track "tab-content-" + tab.id; let i = $index) {
+    <div
+      tabindex="0"
+      role="tabpanel"
+      [vHide]="
+          selectedTab() !== i
+        "
+      [id]="tab.id"
+      [attr.aria-labelledby]="tab.id + '-tab-label-' + i"
+    >
+      <header vFlex vJustifyContentBetween vGap="4">
+        <h3 vTypography="headline-4">Panel title</h3>
+      </header>
+      <div v-panel-body>
+        <h3 vTypography="subtitle-2">Panel subtitle</h3>
+        <p>
+          panel content shows here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse purus sem,
+          fringilla ac lorem vel, maxialiquam urna.
+        </p>
+      </div>
+    </div>
+    }
+  </div>
+</div>

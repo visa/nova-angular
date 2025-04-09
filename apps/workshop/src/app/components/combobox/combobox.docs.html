@@ -1,0 +1,154 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<ng-container *ngIf="!workshopService.isLoadingExamples()">
+  <h2 vTypography="headline-2">Default comboboxes</h2>
+  <nova-workshop-example selector="nova-workshop-combobox-default" exampleTitle="Default combobox">
+    <nova-workshop-combobox-default></nova-workshop-combobox-default>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-combobox-with-selected-option"
+    exampleTitle="Combobox with selected option"
+  >
+    <nova-workshop-combobox-with-selected-option></nova-workshop-combobox-with-selected-option>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-combobox-with-inline-message"
+    exampleTitle="Combobox with inline message"
+  >
+    <nova-workshop-combobox-with-inline-message></nova-workshop-combobox-with-inline-message>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-combobox-with-clear-button" exampleTitle="Combobox with clear button">
+    <nova-workshop-combobox-with-clear-button></nova-workshop-combobox-with-clear-button>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-combobox-with-leading-icon" exampleTitle="Combobox with leading icon">
+    <nova-workshop-combobox-with-leading-icon></nova-workshop-combobox-with-leading-icon>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-combobox-error" exampleTitle="Combobox with error">
+    <nova-workshop-combobox-error></nova-workshop-combobox-error>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-combobox-read-only" exampleTitle="Read-only combobox">
+    <nova-workshop-combobox-read-only></nova-workshop-combobox-read-only>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-combobox-disabled" exampleTitle="Disabled combobox">
+    <nova-workshop-combobox-disabled></nova-workshop-combobox-disabled>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-combobox-with-disabled-option"
+    exampleTitle="Combobox with disabled option"
+  >
+    <nova-workshop-combobox-with-disabled-option></nova-workshop-combobox-with-disabled-option>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-combobox-without-dropdown-chevron"
+    exampleTitle="Combobox without dropdown chevron"
+  >
+    <nova-workshop-combobox-without-dropdown-chevron></nova-workshop-combobox-without-dropdown-chevron>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-combobox-with-scroll-bar" exampleTitle="Combobox with scroll bar">
+    <nova-workshop-combobox-with-scroll-bar></nova-workshop-combobox-with-scroll-bar>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Combobox behaviors</h2>
+
+  <nova-workshop-example
+    selector="nova-workshop-combobox-manual-autocomplete"
+    exampleTitle="Combobox with filterable menu and manual selection"
+  >
+    <nova-workshop-combobox-manual-autocomplete></nova-workshop-combobox-manual-autocomplete>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-combobox-auto-autocomplete"
+    exampleTitle="Combobox with filterable menu and automatic selection"
+  >
+    <nova-workshop-combobox-auto-autocomplete></nova-workshop-combobox-auto-autocomplete>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Framework-specific comboboxes</h2>
+
+  <nova-workshop-example selector="nova-workshop-combobox-template-driven" exampleTitle="Template-driven combobox">
+    <nova-workshop-combobox-template-driven></nova-workshop-combobox-template-driven>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-combobox-model-driven" exampleTitle="Model-driven combobox">
+    <nova-workshop-combobox-model-driven></nova-workshop-combobox-model-driven>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-combobox-model-driven-fb"
+    exampleTitle="Model-driven combobox form with FormBuilder"
+  >
+    <nova-workshop-combobox-model-driven-fb></nova-workshop-combobox-model-driven-fb>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Custom comboboxes</h2>
+  <nova-workshop-example selector="nova-workshop-combobox-with-inline-label" exampleTitle="Combobox with inline label">
+    <nova-workshop-combobox-with-inline-label></nova-workshop-combobox-with-inline-label>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-combobox-open-on-select"
+    exampleTitle="Keeps menu open on item selection with closeOnClick option"
+  >
+    <nova-workshop-combobox-open-on-select></nova-workshop-combobox-open-on-select>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-combobox-highlight-on-close"
+    exampleTitle="Using service to select last highlighted item on menu close"
+  >
+    <nova-workshop-combobox-highlight-on-close></nova-workshop-combobox-highlight-on-close>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-combobox-dynamic-data-set"
+    exampleTitle="Using service to filter through large, dynamic data set"
+  >
+    <nova-workshop-combobox-dynamic-data-set></nova-workshop-combobox-dynamic-data-set>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-combobox-fully-custom-filter"
+    exampleTitle="Custom filtering without using service"
+  >
+    <nova-workshop-combobox-fully-custom-filter></nova-workshop-combobox-fully-custom-filter
+  ></nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-combobox-infinite-scroll"
+    exampleTitle="Combobox with infinite menu scroll"
+  >
+    <nova-workshop-combobox-infinite-scroll></nova-workshop-combobox-infinite-scroll
+  ></nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-combobox-shared-combobox-with-delayed-data"
+    exampleTitle="Combobox using custom shared combobox component"
+  >
+    <nova-workshop-combobox-shared-combobox-with-delayed-data></nova-workshop-combobox-shared-combobox-with-delayed-data
+  ></nova-workshop-example>
+</ng-container>

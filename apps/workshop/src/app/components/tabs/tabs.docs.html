@@ -1,0 +1,106 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<ng-container *ngIf="!workshopService.isLoadingExamples()">
+  <h2 vTypography="headline-2">Vertical tabs</h2>
+
+  <nova-workshop-example exampleTitle="Default vertical tablist" selector="nova-workshop-tabs-vertical-default">
+    <nova-workshop-tabs-vertical-default></nova-workshop-tabs-vertical-default>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Vertical tablist with icon" selector="nova-workshop-tabs-vertical-with-icon">
+    <nova-workshop-tabs-vertical-with-icon></nova-workshop-tabs-vertical-with-icon>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Vertical tablist with disabled tab"
+    selector="nova-workshop-tabs-vertical-disabled"
+  >
+    <nova-workshop-tabs-vertical-disabled></nova-workshop-tabs-vertical-disabled>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-tabs-vertical-with-menu" exampleTitle="Vertical tab with menu">
+    <nova-workshop-tabs-vertical-with-menu></nova-workshop-tabs-vertical-with-menu>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Horizontal tabs</h2>
+  <nova-workshop-example selector="nova-workshop-tabs-horizontal-default" exampleTitle="Default horizontal tablist">
+    <nova-workshop-tabs-horizontal-default></nova-workshop-tabs-horizontal-default>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Horizontal tablist with icon" selector="nova-workshop-tabs-horizontal-with-icon">
+    <nova-workshop-tabs-horizontal-with-icon></nova-workshop-tabs-horizontal-with-icon>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Horizontal tablist with disabled tab"
+    selector="nova-workshop-tabs-horizontal-disabled"
+  >
+    <nova-workshop-tabs-horizontal-disabled></nova-workshop-tabs-horizontal-disabled>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-tabs-horizontal-with-menu" exampleTitle="Horizontal tab with menu">
+    <nova-workshop-tabs-horizontal-with-menu></nova-workshop-tabs-horizontal-with-menu>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Stacked tabs</h2>
+
+  <nova-workshop-example exampleTitle="Default stacked tablist" selector="nova-workshop-tabs-stacked-default">
+    <nova-workshop-tabs-stacked-default></nova-workshop-tabs-stacked-default>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Stacked tablist with disabled tab"
+    selector="nova-workshop-tabs-stacked-disabled"
+  >
+    <nova-workshop-tabs-stacked-disabled></nova-workshop-tabs-stacked-disabled>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Stacked tablist with notification badges"
+    selector="nova-workshop-tabs-stacked-with-notifications"
+  >
+    <nova-workshop-tabs-stacked-with-notifications></nova-workshop-tabs-stacked-with-notifications>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Custom tabs</h2>
+
+  <nova-workshop-example exampleTitle="Alternate horizontal tablist" selector="nova-workshop-tabs-horizontal-alternate">
+    <nova-workshop-tabs-horizontal-alternate></nova-workshop-tabs-horizontal-alternate>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Alternate vertical tablist" selector="nova-workshop-tabs-vertical-alternate">
+    <nova-workshop-tabs-vertical-alternate></nova-workshop-tabs-vertical-alternate>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Alternate stacked tablist" selector="nova-workshop-tabs-stacked-alternate">
+    <nova-workshop-tabs-stacked-alternate></nova-workshop-tabs-stacked-alternate>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Tablist without arrow key navigation"
+    selector="nova-workshop-tabs-without-arrow-navigation"
+  >
+    <nova-workshop-tabs-without-arrow-navigation></nova-workshop-tabs-without-arrow-navigation>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Tablist with automatic activation"
+    selector="nova-workshop-tabs-automatic-activation"
+  >
+    <nova-workshop-tabs-automatic-activation></nova-workshop-tabs-automatic-activation>
+  </nova-workshop-example>
+</ng-container>

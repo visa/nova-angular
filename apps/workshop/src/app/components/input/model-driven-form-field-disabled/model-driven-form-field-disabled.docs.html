@@ -1,0 +1,79 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<form [formGroup]="formValidation" vFlex vFlexCol vGap="16">
+  <div vFlex vGap="4" vFlexCol>
+    <label v-label for="model-input-disabled-1">Field 1</label>
+    <div v-input-container>
+      <input
+        v-input
+        [formControl]="input1"
+        [invalid]="isSubmitted && formValidation.controls['input1'].invalid"
+        id="model-input-disabled-1"
+        aria-describedby="model-input-disabled-message-1"
+      />
+    </div>
+    <span v-input-message id="model-input-disabled-message-1" aria-atomic="true" aria-live="assertive">
+      <ng-container *ngIf="isSubmitted && formValidation.controls['input1'].invalid">
+        <svg v-icon-visa-error-tiny></svg>
+        Error: Please fill out field
+      </ng-container>
+    </span>
+  </div>
+  <div vFlex vGap="4" vFlexCol>
+    <label v-label for="model-input-disabled-2">Field 2</label>
+    <div v-input-container>
+      <input
+        v-input
+        [formControl]="input2"
+        id="model-input-disabled-2"
+        aria-describedby="model-input-disabled-message-2"
+        [invalid]="isSubmitted && formValidation.controls['input2'].invalid"
+      />
+    </div>
+    <span v-input-message id="model-input-disabled-message-2" aria-atomic="true" aria-live="assertive">
+      <ng-container *ngIf="isSubmitted && formValidation.controls['input2'].invalid">
+        <svg v-icon-visa-error-tiny></svg>
+        Error: Please fill out field
+      </ng-container>
+    </span>
+  </div>
+  <div vFlex vGap="4" vFlexCol>
+    <label v-label for="model-input-disabled-3">Field 3</label>
+    <div v-input-container>
+      <input
+        v-input
+        [formControl]="input3"
+        id="model-input-disabled-3"
+        aria-describedby="model-input-disabled-message-3"
+        [invalid]="isSubmitted && formValidation.controls['input3'].invalid"
+      />
+    </div>
+    <span v-input-message id="model-input-disabled-message-3" aria-atomic="true" aria-live="assertive">
+      <ng-container *ngIf="isSubmitted && formValidation.controls['input3'].invalid">
+        <svg v-icon-visa-error-tiny></svg>
+        Error: Please fill out field
+      </ng-container>
+    </span>
+  </div>
+  <div vMT="8" vGap="16">
+    <button v-button type="submit" (click)="onSubmit()">Submit</button>
+    <button v-button type="submit" buttonColor="secondary" (click)="toggleDisabled()">Toggle field 1 disabled</button>
+    <button v-button type="reset" buttonColor="tertiary" (click)="formValidation.reset(); isSubmitted = false">
+      Reset
+    </button>
+  </div>
+</form>

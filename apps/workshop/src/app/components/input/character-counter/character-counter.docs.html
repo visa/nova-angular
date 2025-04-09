@@ -1,0 +1,63 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<span vTypography="label">* indicates a required field</span>
+<div vFlex vGap="4" vFlexCol vMT="16">
+  <label v-label for="character-counter-error">* Label</label>
+  <div v-input-container>
+    <textarea
+      v-input
+      #charCounterInput
+      noResize
+      rows="4"
+      [invalid]="isInvalid"
+      id="character-counter-error"
+      (input)="handleInput(charCounterInput)"
+      aria-describedby="character-counter-initial-message character-counter-progress-message character-counter-error-message"
+    ></textarea>
+  </div>
+  <div v-input-message vGap="0" vFlex vFlexCol>
+    <span id="character-counter-initial-message">
+      <ng-container *ngIf="empty && !isInvalid">{{maxLength}} characters remaining</ng-container>
+    </span>
+    <span id="character-counter-progress-message" aria-live="polite">
+      <ng-container *ngIf="charCounterInput.value.length <= maxLength && !empty"
+        >{{ maxLength - charCounterInput.value.length }} characters left</ng-container
+      >
+    </span>
+    <span
+      id="character-counter-error-message"
+      aria-atomic="true"
+      aria-live="assertive"
+      vFlex
+      vAlignItemsCenter
+      vGap="4"
+    >
+      <ng-container *ngIf="overLimit">
+        <svg v-icon-visa-error-tiny></svg>
+        {{charCounterInput.value.length - maxLength }} characters over limit.
+      </ng-container>
+      <ng-container *ngIf="empty && isInvalid">
+        <svg v-icon-visa-error-tiny></svg>
+        This is a required field
+      </ng-container>
+    </span>
+  </div>
+</div>
+<div vFlex vGap="16">
+  <button v-button vMT="8" (click)="handleSubmit(charCounterInput)">Submit</button>
+  <button v-button buttonColor="secondary" vMT="8" (click)="handleReset(charCounterInput)">Reset</button>
+</div>

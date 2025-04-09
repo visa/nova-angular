@@ -1,0 +1,50 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<ng-container *ngIf="!workshopService.isLoadingExamples()">
+  <h2 vTypography="headline-2" vMY="24">Default dialogs</h2>
+  <nova-workshop-example exampleTitle="Default dialog" selector="nova-workshop-dialog-default">
+    <nova-workshop-dialog-default></nova-workshop-dialog-default>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Error dialog" selector="nova-workshop-dialog-error">
+    <nova-workshop-dialog-error></nova-workshop-dialog-error>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Success dialog" selector="nova-workshop-dialog-success">
+    <nova-workshop-dialog-success></nova-workshop-dialog-success>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Warning dialog" selector="nova-workshop-dialog-warning">
+    <nova-workshop-dialog-warning></nova-workshop-dialog-warning>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Dialog without close button"
+    selector="nova-workshop-dialog-without-close-button"
+  >
+    <nova-workshop-dialog-without-close-button></nova-workshop-dialog-without-close-button>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Touring tips dialog" selector="nova-workshop-dialog-touring-tips">
+    <nova-workshop-dialog-touring-tips></nova-workshop-dialog-touring-tips>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2" vMY="24">Custom dialog</h2>
+  <nova-workshop-example exampleTitle="Confirmation dialog" selector="nova-workshop-dialog-confirmation">
+    <nova-workshop-dialog-confirmation></nova-workshop-dialog-confirmation>
+  </nova-workshop-example>
+</ng-container>

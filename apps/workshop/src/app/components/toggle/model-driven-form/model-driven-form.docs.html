@@ -1,0 +1,56 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<!-- 
+ setting an invalid class on the label and message are a temporary measure 
+ while we add the necessary rules into Nova Styles 
+-->
+<form [formGroup]="formValidation" (change)="handleChange()" vFlex vFlexCol vGap="16" vMT="16">
+  <fieldset aria-labelledby="model-toggle-label model-toggle-message">
+    <legend
+      v-label
+      id="model-toggle-label"
+      vTypography="label"
+      [ngClass]="isSubmitted && isInvalid ? 'v-input-error' : ''"
+    >
+      Group label (required)
+    </legend>
+    <div vFlex vGap="0" v-toggle-container formControlName="toggleControl" [invalid]="isSubmitted && isInvalid">
+      <button v-toggle value="1" #btn>Label 1</button>
+      <button v-toggle value="2">Label 2</button>
+      <button v-toggle value="3">Label 3</button>
+    </div>
+    <span
+      v-input-message
+      id="model-toggle-message"
+      aria-atomic="true"
+      aria-live="assertive"
+      [ngClass]="isSubmitted && isInvalid ? 'v-input-error' : ''"
+    >
+      <ng-container *ngIf="isSubmitted && isInvalid">
+        <svg v-icon-visa-error-tiny></svg>
+        This is required text that describes the error in more detail.
+      </ng-container>
+    </span>
+  </fieldset>
+  <div vMT="8" vGap="16">
+    <button v-button type="submit" (click)="onSubmit(formValidation, btn)">Submit</button>
+    <button v-button type="reset" buttonColor="secondary" (click)="onReset(formValidation)">Reset</button>
+  </div>
+</form>
+
+<!-- For demo purposes: -->
+<code>{{'formValidation.value[\'toggleControl\']: ' + formValidation.value['toggleControl']}}</code>

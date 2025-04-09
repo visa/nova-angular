@@ -1,0 +1,221 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<ng-container *ngIf="!workshopService.isLoadingExamples()">
+  <h2 vTypography="headline-2" vMY="24">Subtle badges</h2>
+  <nova-workshop-example exampleTitle="Default subtle badge" selector="nova-workshop-badge-subtle-with-icon">
+    <nova-workshop-badge-subtle-with-icon></nova-workshop-badge-subtle-with-icon>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Subtle badge without icon" selector="nova-workshop-badge-subtle-label-only">
+    <nova-workshop-badge-subtle-label-only></nova-workshop-badge-subtle-label-only>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Subtle badge with indicator" selector="nova-workshop-badge-subtle-with-ellipse">
+    <nova-workshop-badge-subtle-with-ellipse></nova-workshop-badge-subtle-with-ellipse>
+  </nova-workshop-example>
+  <nova-workshop-example
+    exampleTitle="Subtle badge without background"
+    selector="nova-workshop-badge-subtle-no-background"
+  >
+    <nova-workshop-badge-subtle-no-background></nova-workshop-badge-subtle-no-background>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Subtle icon badge with background"
+    selector="nova-workshop-badge-subtle-icon-only"
+  >
+    <nova-workshop-badge-subtle-icon-only></nova-workshop-badge-subtle-icon-only>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Subtle icon badge without background"
+    selector="nova-workshop-badge-subtle-icon-no-background"
+  >
+    <nova-workshop-badge-subtle-icon-no-background></nova-workshop-badge-subtle-icon-no-background>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2" vMY="24">Neutral badges</h2>
+
+  <nova-workshop-example exampleTitle="Default neutral badge" selector="nova-workshop-badge-neutral-with-icon">
+    <nova-workshop-badge-neutral-with-icon></nova-workshop-badge-neutral-with-icon>
+  </nova-workshop-example>
+  <nova-workshop-example exampleTitle="Neutral badge without icon" selector="nova-workshop-badge-neutral-label-only">
+    <nova-workshop-badge-neutral-label-only></nova-workshop-badge-neutral-label-only>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Neutral badge with indicator"
+    selector="nova-workshop-badge-neutral-with-ellipse"
+  >
+    <nova-workshop-badge-neutral-with-ellipse></nova-workshop-badge-neutral-with-ellipse>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Neutral badge without background"
+    selector="nova-workshop-badge-neutral-no-background"
+  >
+    <nova-workshop-badge-neutral-no-background></nova-workshop-badge-neutral-no-background>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Neutral icon badge with background"
+    selector="nova-workshop-badge-neutral-icon-only"
+  >
+    <nova-workshop-badge-neutral-icon-only></nova-workshop-badge-neutral-icon-only>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Neutral icon badge without background"
+    selector="nova-workshop-badge-neutral-icon-no-background"
+  >
+    <nova-workshop-badge-neutral-icon-no-background></nova-workshop-badge-neutral-icon-no-background>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2" vMY="24">Positive badges</h2>
+
+  <nova-workshop-example exampleTitle="Default positive badge" selector="nova-workshop-badge-stable-with-icon">
+    <nova-workshop-badge-stable-with-icon></nova-workshop-badge-stable-with-icon>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Positive badge without icon" selector="nova-workshop-badge-stable-label-only">
+    <nova-workshop-badge-stable-label-only></nova-workshop-badge-stable-label-only>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Positive badge with indicator"
+    selector="nova-workshop-badge-stable-with-ellipse"
+  >
+    <nova-workshop-badge-stable-with-ellipse></nova-workshop-badge-stable-with-ellipse>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Positive badge without background"
+    selector="nova-workshop-badge-stable-no-background"
+  >
+    <nova-workshop-badge-stable-no-background></nova-workshop-badge-stable-no-background>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Positive icon badge with background"
+    selector="nova-workshop-badge-stable-icon-only"
+  >
+    <nova-workshop-badge-stable-icon-only></nova-workshop-badge-stable-icon-only>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Positive icon badge without background"
+    selector="nova-workshop-badge-stable-icon-no-background"
+  >
+    <nova-workshop-badge-stable-icon-no-background></nova-workshop-badge-stable-icon-no-background>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2" vMY="24">Warning badges</h2>
+  <nova-workshop-example exampleTitle="Default warning badge" selector="nova-workshop-badge-warning-with-icon">
+    <nova-workshop-badge-warning-with-icon></nova-workshop-badge-warning-with-icon>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Warning badge without icon" selector="nova-workshop-badge-warning-label-only">
+    <nova-workshop-badge-warning-label-only></nova-workshop-badge-warning-label-only>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Warning badge with indicator"
+    selector="nova-workshop-badge-warning-with-ellipse"
+  >
+    <nova-workshop-badge-warning-with-ellipse></nova-workshop-badge-warning-with-ellipse>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Warning badge without background"
+    selector="nova-workshop-badge-warning-no-background"
+  >
+    <nova-workshop-badge-warning-no-background></nova-workshop-badge-warning-no-background>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Warning icon badge with background"
+    selector="nova-workshop-badge-warning-icon-only"
+  >
+    <nova-workshop-badge-warning-icon-only></nova-workshop-badge-warning-icon-only>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Warning icon badge without background"
+    selector="nova-workshop-badge-warning-icon-no-background"
+  >
+    <nova-workshop-badge-warning-icon-no-background></nova-workshop-badge-warning-icon-no-background>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2" vMY="24">Negative badges</h2>
+  <nova-workshop-example exampleTitle="Default negative badge" selector="nova-workshop-badge-negative-with-icon">
+    <nova-workshop-badge-negative-with-icon></nova-workshop-badge-negative-with-icon>
+  </nova-workshop-example>
+  <nova-workshop-example exampleTitle="Negative badge without icon" selector="nova-workshop-badge-negative-label-only">
+    <nova-workshop-badge-negative-label-only></nova-workshop-badge-negative-label-only>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Negative badge with indicator"
+    selector="nova-workshop-badge-negative-with-ellipse"
+  >
+    <nova-workshop-badge-negative-with-ellipse></nova-workshop-badge-negative-with-ellipse>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Negative badge without background"
+    selector="nova-workshop-badge-negative-no-background"
+  >
+    <nova-workshop-badge-negative-no-background></nova-workshop-badge-negative-no-background>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Negative icon badge with background"
+    selector="nova-workshop-badge-negative-icon-only"
+  >
+    <nova-workshop-badge-negative-icon-only></nova-workshop-badge-negative-icon-only>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Negative icon badge without background"
+    selector="nova-workshop-badge-negative-icon-no-background"
+  >
+    <nova-workshop-badge-negative-icon-no-background></nova-workshop-badge-negative-icon-no-background>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2" vMY="24">Number badges</h2>
+
+  <nova-workshop-example exampleTitle="Short number badge" selector="nova-workshop-badge-number">
+    <nova-workshop-badge-number></nova-workshop-badge-number>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Short number badge without background"
+    selector="nova-workshop-badge-number-no-background"
+  >
+    <nova-workshop-badge-number-no-background></nova-workshop-badge-number-no-background>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Long number badge" selector="nova-workshop-badge-long-number">
+    <nova-workshop-badge-long-number></nova-workshop-badge-long-number>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2" vMY="24">Custom badge</h2>
+
+  <nova-workshop-example exampleTitle="Plain" selector="nova-workshop-badge-default">
+    <nova-workshop-badge-default></nova-workshop-badge-default>
+  </nova-workshop-example>
+</ng-container>

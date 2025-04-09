@@ -1,0 +1,141 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<ng-container *ngIf="!workshopService.isLoadingExamples()">
+  <span role="alert" vSR
+    >This page contains many examples with alerts which are included to show developers how to use them in their code.
+    Sorry about the bad experience when the page initially loads!</span
+  >
+
+  <h2 vTypography="headline-2">Linear progress indicators</h2>
+
+  <nova-workshop-example
+    exampleTitle="Indeterminate linear progress indicator"
+    selector="nova-workshop-progress-indeterminate-progress-bar"
+  >
+    <nova-workshop-progress-indeterminate-progress-bar></nova-workshop-progress-indeterminate-progress-bar>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Indeterminate linear progress indicator without visible label"
+    selector="nova-workshop-progress-indeterminate-progress-bar-no-label"
+  >
+    <nova-workshop-progress-indeterminate-progress-bar-no-label></nova-workshop-progress-indeterminate-progress-bar-no-label>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Determinate linear progress indicator"
+    selector="nova-workshop-progress-live-progress-bar"
+  >
+    <nova-workshop-progress-live-progress-bar class="docs-example"></nova-workshop-progress-live-progress-bar>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Determinate linear progress indicator without visible label "
+    selector="nova-workshop-progress-determinate-progress-bar-no-label"
+  >
+    <nova-workshop-progress-determinate-progress-bar-no-label></nova-workshop-progress-determinate-progress-bar-no-label>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Completed determinate linear progress indicator"
+    selector="nova-workshop-progress-completed-progress-bar"
+  >
+    <nova-workshop-progress-completed-progress-bar></nova-workshop-progress-completed-progress-bar>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Error linear progress indicator"
+    selector="nova-workshop-progress-error-progress-bar"
+  >
+    <nova-workshop-progress-error-progress-bar></nova-workshop-progress-error-progress-bar>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Circular progress indicators</h2>
+
+  <nova-workshop-example
+    exampleTitle="Small indeterminate circular progress indicator"
+    selector="nova-workshop-progress-indeterminate-circular-progress-small"
+  >
+    <nova-workshop-progress-indeterminate-circular-progress-small></nova-workshop-progress-indeterminate-circular-progress-small>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Large indeterminate circular progress indicator"
+    selector="nova-workshop-progress-indeterminate-circular-progress"
+  >
+    <nova-workshop-progress-indeterminate-circular-progress></nova-workshop-progress-indeterminate-circular-progress>
+  </nova-workshop-example>
+
+  <!-- <nova-workshop-example
+    exampleTitle="Small determinate circular progress indicator"
+    selector="nova-workshop-progress-determinate-circular-progress-small"
+  >
+    <nova-workshop-progress-determinate-circular-progress-small
+    ></nova-workshop-progress-determinate-circular-progress-small>
+  </nova-workshop-example> -->
+
+  <nova-workshop-example
+    exampleTitle="Small determinate circular progress indicator"
+    selector="nova-workshop-progress-live-circular-progress"
+  >
+    <nova-workshop-progress-live-circular-progress class="docs-example"></nova-workshop-progress-live-circular-progress>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Large determinate circular progress indicator"
+    selector="nova-workshop-progress-determinate-circular-progress"
+  >
+    <nova-workshop-progress-determinate-circular-progress></nova-workshop-progress-determinate-circular-progress>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Completed determinate circular progress indicator"
+    selector="nova-workshop-progress-determinate-circular-progress-completed"
+  >
+    <nova-workshop-progress-determinate-circular-progress-completed></nova-workshop-progress-determinate-circular-progress-completed>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Error determinate circular progress indicator"
+    selector="nova-workshop-progress-error-circular-progress"
+  >
+    <nova-workshop-progress-error-circular-progress></nova-workshop-progress-error-circular-progress>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Custom progress indicators</h2>
+
+  <nova-workshop-example
+    exampleTitle="Custom flat indeterminate linear progress indicator"
+    selector="nova-workshop-progress-custom-linear-progress"
+  >
+    <nova-workshop-progress-custom-linear-progress></nova-workshop-progress-custom-linear-progress>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Custom size determinate circular progress indicator"
+    selector="nova-workshop-progress-custom-size-circular-progress"
+  >
+    <nova-workshop-progress-custom-size-circular-progress></nova-workshop-progress-custom-size-circular-progress>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Slower indeterminate circular progress indicator"
+    selector="nova-workshop-progress-custom-slow-circular-progress"
+  >
+    <nova-workshop-progress-custom-slow-circular-progress></nova-workshop-progress-custom-slow-circular-progress>
+  </nova-workshop-example>
+</ng-container>

@@ -1,0 +1,83 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<ng-container *ngIf="!workshopService.isLoadingExamples()">
+  <div v-section v-message messageType="information" vMB="12">
+    <svg v-message-icon v-icon-visa-information-low aria-hidden="false" aria-label="Information" role="img"></svg>
+    <div v-message-content>
+      <p>
+        For our full list of available icons, please visit the
+        <a
+          v-link
+          href="https://bookmarks.visa.com/vpds-nova-icons"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="Icon library catalog (opens in a new tab)"
+          >full icons library <svg v-icon-visa-maximize-tiny></svg>
+        </a>
+      </p>
+      <p>
+        For guidance on how to use the Angular standalone icons or icon sprites, please visit the
+        <a
+          v-link
+          href="https://design.visa.com/icons/documentation#angular"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="Icon Catalog documentation (opens in a new tab)"
+        >
+          Icon Catalog's documentation <svg v-icon-visa-maximize-tiny></svg
+        ></a>
+      </p>
+    </div>
+  </div>
+
+  <h2 vTypography="headline-2">Icon styles</h2>
+  <nova-workshop-example exampleTitle="Default" selector="nova-workshop-icon-default">
+    <nova-workshop-icon-default></nova-workshop-icon-default>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Visa" selector="nova-workshop-icon-visa">
+    <nova-workshop-icon-visa></nova-workshop-icon-visa>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Generic" selector="nova-workshop-icon-generic">
+    <nova-workshop-icon-generic></nova-workshop-icon-generic>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Icon sizes</h2>
+
+  <nova-workshop-example exampleTitle="Tiny resolution" selector="nova-workshop-icon-tiny-resolution">
+    <nova-workshop-icon-tiny-resolution></nova-workshop-icon-tiny-resolution>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Low resolution" selector="nova-workshop-icon-low-resolution">
+    <nova-workshop-icon-low-resolution></nova-workshop-icon-low-resolution>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="High resolution" selector="nova-workshop-icon-high-resolution">
+    <nova-workshop-icon-high-resolution></nova-workshop-icon-high-resolution>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Icon customizations</h2>
+
+  <nova-workshop-example exampleTitle="Icon with right-to-left support" selector="nova-workshop-icon-rtl">
+    <nova-workshop-icon-rtl></nova-workshop-icon-rtl>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Icon referencing icon sprite" selector="nova-workshop-icon-using-icon-sprite">
+    <nova-workshop-icon-using-icon-sprite></nova-workshop-icon-using-icon-sprite>
+  </nova-workshop-example>
+</ng-container>

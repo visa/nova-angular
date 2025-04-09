@@ -1,0 +1,151 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<ng-container *ngIf="!workshopService.isLoadingExamples()">
+  <div v-section v-message messageType="information" vMB="12">
+    <svg v-message-icon v-icon-visa-information-low aria-hidden="false" aria-label="Information" role="img"></svg>
+    <div v-message-content vPL="2" vPB="2" vFlexCol vGap="4">
+      <p>
+        To enable the updated accessible markup and behavior for the multiselect component, set the
+        <code>EXPERIMENTAL_ADA_OPT_IN</code> property on <code>v-combobox</code>.
+      </p>
+      <p>
+        All of the examples below, except the last one, use and demonstrate this new property to showcase the updated
+        accessible markup and behavior.
+      </p>
+      <p>
+        <span vTypography="body-2-bold">Note:</span> This property will be deprecated in the next major release, and the
+        accessible markup and behavior will become the default behavior.
+      </p>
+    </div>
+  </div>
+
+  <h2 vTypography="headline-2">Default multiselects</h2>
+  <nova-workshop-example exampleTitle="Default multiselect" selector="nova-workshop-multiselect-default">
+    <nova-workshop-multiselect-default></nova-workshop-multiselect-default>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Multiselect with inline message"
+    selector="nova-workshop-multiselect-inline-message"
+  >
+    <nova-workshop-multiselect-inline-message></nova-workshop-multiselect-inline-message>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Multiselect with error" selector="nova-workshop-multiselect-error">
+    <nova-workshop-multiselect-error></nova-workshop-multiselect-error>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Multiselect with disabled option"
+    selector="nova-workshop-multiselect-with-disabled-option"
+  >
+    <nova-workshop-multiselect-with-disabled-option></nova-workshop-multiselect-with-disabled-option>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Disabled multiselect" selector="nova-workshop-multiselect-disabled">
+    <nova-workshop-multiselect-disabled></nova-workshop-multiselect-disabled>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Read-only multiselect" selector="nova-workshop-multiselect-read-only">
+    <nova-workshop-multiselect-read-only></nova-workshop-multiselect-read-only>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Multiselect without dropdown chevron"
+    selector="nova-workshop-multiselect-without-dropdown-chevron"
+  >
+    <nova-workshop-multiselect-without-dropdown-chevron></nova-workshop-multiselect-without-dropdown-chevron>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Multiselect with multiple selections and vertical scroll"
+    selector="nova-workshop-multiselect-with-multiple-selections-and-vertical-scroll"
+  >
+    <nova-workshop-multiselect-with-multiple-selections-and-vertical-scroll></nova-workshop-multiselect-with-multiple-selections-and-vertical-scroll>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Multiselect with select and unselect all buttons"
+    selector="nova-workshop-multiselect-with-select-and-unselect-all-buttons"
+  >
+    <nova-workshop-multiselect-with-select-and-unselect-all-buttons></nova-workshop-multiselect-with-select-and-unselect-all-buttons>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Multiselect with scrollbar" selector="nova-workshop-multiselect-with-scroll-bar">
+    <nova-workshop-multiselect-with-scroll-bar></nova-workshop-multiselect-with-scroll-bar>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-multiselect-infinite-scroll"
+    exampleTitle="Multiselect with infinite menu scroll"
+  >
+    <nova-workshop-multiselect-infinite-scroll></nova-workshop-multiselect-infinite-scroll
+  ></nova-workshop-example>
+
+  <h2 vTypography="headline-2">Multiselect behaviors</h2>
+
+  <nova-workshop-example
+    selector="nova-workshop-multiselect-manual-autocomplete"
+    exampleTitle="Multiselect with filterable menu and manual selection"
+  >
+    <nova-workshop-multiselect-manual-autocomplete></nova-workshop-multiselect-manual-autocomplete>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-multiselect-auto-autocomplete"
+    exampleTitle="Multiselect with filterable menu and automatic selection"
+  >
+    <nova-workshop-multiselect-auto-autocomplete></nova-workshop-multiselect-auto-autocomplete>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Framework-specific multiselects</h2>
+
+  <nova-workshop-example
+    selector="nova-workshop-multiselect-template-driven"
+    exampleTitle="Template-driven multiselect"
+  >
+    <nova-workshop-multiselect-template-driven></nova-workshop-multiselect-template-driven>
+  </nova-workshop-example>
+
+  <!-- <nova-workshop-example exampleTitle="Template driven dynamic" selector="nova-workshop-multiselect-template-driven-dynamic">
+  <nova-workshop-multiselect-template-driven-dynamic></nova-workshop-multiselect-template-driven-dynamic>
+</nova-workshop-example> -->
+
+  <nova-workshop-example selector="nova-workshop-multiselect-model-driven" exampleTitle="Model-driven multiselect">
+    <nova-workshop-multiselect-model-driven></nova-workshop-multiselect-model-driven>
+  </nova-workshop-example>
+
+  <!-- <nova-workshop-example exampleTitle="Model driven dynamic" selector="nova-workshop-multiselect-model-driven-dynamic">
+  <nova-workshop-multiselect-model-driven-dynamic></nova-workshop-multiselect-model-driven-dynamic>
+</nova-workshop-example> -->
+
+  <nova-workshop-example
+    selector="nova-workshop-multiselect-model-driven-fb"
+    exampleTitle="Model-driven multiselect form with FormBuilder"
+  >
+    <nova-workshop-multiselect-model-driven-fb></nova-workshop-multiselect-model-driven-fb>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Custom multiselect</h2>
+
+  <nova-workshop-example
+    exampleTitle="Multiselect with markup prior to VGAR compliance updates"
+    selector="nova-workshop-multiselect-archived"
+  >
+    <nova-workshop-multiselect-archived></nova-workshop-multiselect-archived>
+  </nova-workshop-example>
+</ng-container>

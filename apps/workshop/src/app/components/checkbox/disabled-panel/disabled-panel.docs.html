@@ -1,0 +1,33 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<div v-checkbox-panel>
+  <div v-input-container vFlex vAlignItemsStart>
+    <input
+      id="checkbox-panel-disabled"
+      value="checkbox-panel-disabled-value"
+      v-checkbox
+      disabled
+      aria-describedby="checkbox-panel-disabled-message"
+    />
+    <div vFlex vFlexCol vGap="2" [vMY]="10">
+      <label v-label for="checkbox-panel-disabled"> Label</label>
+      <span v-input-message id="checkbox-panel-disabled-message" aria-disabled="true">
+        This is optional text that describes the label in more detail.
+      </span>
+    </div>
+  </div>
+</div>

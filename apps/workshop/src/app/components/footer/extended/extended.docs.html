@@ -1,0 +1,44 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<!-- container width can be adjusted as needed -->
+<style>
+  .footer-main-column {
+    flex-basis: calc(30% - 32px);
+  }
+  .footer-link-column {
+    flex-basis: calc(15% - 32px);
+  }
+</style>
+<footer v-footer vFlexRow vGap="32" vPX="32">
+  <div vFlex vFlexCol vFlexGrow vFlexShrink0 vGap="24" class="footer-main-column">
+    <svg v-logo-visa height="23" width="71" aria-label="Visa"></svg>
+    <p>
+      The information furnished herein is confidential and is to be used solely for the support of clients’ Visa
+      programs. This information shall not be duplicated, published, or disclosed in whole, or in part, without the
+      prior written permission of Visa.
+    </p>
+    <p class="v-typography-color-subtle">Copyright &copy; YYYY-YYYY Visa. All rights reserved.</p>
+  </div>
+  <div *ngFor="let data of mockFooterData" vGap="28" vFlex vFlexWrap vFlexGrow vFlexCol class="footer-link-column">
+    <h2 class="v-typography-body-2-bold">{{data.title}}</h2>
+    <ul vFlex vFlexCol vGap="16">
+      <li *ngFor="let linkData of data.links">
+        <a [href]="linkData.path" v-link>{{linkData.title}}</a>
+      </li>
+    </ul>
+  </div>
+</footer>

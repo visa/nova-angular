@@ -1,0 +1,74 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<h2 vTypography="headline-2" vMT="24">Standalone links</h2>
+<nova-workshop-example exampleTitle="Default link" selector="nova-workshop-link-default">
+  <nova-workshop-link-default></nova-workshop-link-default>
+</nova-workshop-example>
+
+<nova-workshop-example exampleTitle="Link with leading icon" selector="nova-workshop-link-with-leading-icon">
+  <nova-workshop-link-with-leading-icon></nova-workshop-link-with-leading-icon>
+</nova-workshop-example>
+
+<nova-workshop-example selector="nova-workshop-link-with-trailing-icon" exampleTitle="Link with trailing icon">
+  <nova-workshop-link-with-trailing-icon></nova-workshop-link-with-trailing-icon>
+</nova-workshop-example>
+
+<nova-workshop-example selector="nova-workshop-link-alternate" exampleTitle="Alternate link with trailing icon">
+  <nova-workshop-link-alternate></nova-workshop-link-alternate>
+</nova-workshop-example>
+
+<nova-workshop-example selector="nova-workshop-link-open-in-new-tab" exampleTitle="Link that opens in a new tab">
+  <div v-section v-message vMB="12" messageType="information" ngProjectAs="example-component-prefix">
+    <svg v-message-icon v-icon-visa-information-low aria-hidden="false" aria-label="Information" role="img"></svg>
+    <div v-message-content vPL="2" vPB="2">
+      <h4 vTypography="body-2-bold">Using the vOpensInNewTab directive:</h4>
+      <p>
+        If you want a link to open in a new tab, use the vOpensInNewTab directive for an automatically generated aria
+        label.
+      </p>
+      <p>
+        The vOpensInNewTab directive generates an aria-label in
+        <strong vTypography="body-2-medium">English only.</strong>
+        For internationalization, make sure to supply your own aria-label.
+      </p>
+    </div>
+  </div>
+  <nova-workshop-link-open-in-new-tab></nova-workshop-link-open-in-new-tab>
+</nova-workshop-example>
+
+<nova-workshop-example selector="nova-workshop-link-disabled" exampleTitle="Disabled link">
+  <nova-workshop-dev-message-disabled-a-tag
+    ngProjectAs="example-component-prefix"
+  ></nova-workshop-dev-message-disabled-a-tag>
+  <nova-workshop-link-disabled></nova-workshop-link-disabled>
+</nova-workshop-example>
+
+<h2 vTypography="headline-2" vMT="24">Inline links</h2>
+<nova-workshop-example selector="nova-workshop-link-inline" exampleTitle="Inline link">
+  <nova-workshop-link-inline></nova-workshop-link-inline>
+</nova-workshop-example>
+<nova-workshop-example selector="nova-workshop-link-without-underline" exampleTitle="Inline link with trailing icon">
+  <nova-workshop-link-without-underline></nova-workshop-link-without-underline>
+</nova-workshop-example>
+
+<h2 vTypography="headline-2" vMT="24">Links coded as buttons</h2>
+<nova-workshop-example selector="nova-workshop-link-button-as-link" exampleTitle="Link coded as a button">
+  <nova-workshop-link-button-as-link></nova-workshop-link-button-as-link>
+</nova-workshop-example>
+<nova-workshop-example selector="nova-workshop-link-button-as-link" exampleTitle="Disabled link coded as a button">
+  <nova-workshop-link-button-as-disabled-link></nova-workshop-link-button-as-disabled-link>
+</nova-workshop-example>

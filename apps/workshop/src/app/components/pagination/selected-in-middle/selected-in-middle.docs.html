@@ -1,0 +1,84 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<nav role="navigation" aria-label="1 digit pagination">
+  <ul v-pagination vFlex vFlexRow vAlignItemsCenter vGap="4">
+    <li>
+      <button (click)="start()" aria-label="First page" v-button-icon buttonSize="small" buttonColor="tertiary">
+        <svg v-icon-visa-arrow-start-tiny></svg>
+      </button>
+    </li>
+    <li>
+      <button (click)="previous()" aria-label="Previous page" v-button-icon buttonSize="small" buttonColor="tertiary">
+        <svg v-icon-visa-chevron-left-tiny></svg>
+      </button>
+    </li>
+    <li v-pagination-item>
+      <button
+        (click)="goTo(1)"
+        aria-label="Page 1"
+        [id]="'1'"
+        v-button
+        [aria-current]="currentPage === 1"
+        buttonColor="tertiary"
+      >
+        1
+      </button>
+    </li>
+    <li vFlex vAlignItemsCenter v-pagination-overflow *ngIf="currentPage > startPageSize">
+      <svg v-icon-visa-option-horizontal-tiny></svg>
+    </li>
+    <ng-container *ngFor="let pageItem of showPages">
+      <li v-pagination-item *ngIf="pageItem !== 1 && pageItem !== items.length">
+        <button
+          (click)="goTo(pageItem)"
+          [attr.aria-label]="'Page ' + pageItem"
+          [id]="pageItem.toString()"
+          v-button
+          [aria-current]="pageItem === currentPage"
+          buttonColor="tertiary"
+        >
+          {{pageItem}}
+        </button>
+      </li>
+    </ng-container>
+    <li vFlex vAlignItemsCenter v-pagination-overflow *ngIf="currentPage < items.length - endPageSize + 1">
+      <svg v-icon-visa-option-horizontal-tiny></svg>
+    </li>
+    <li v-pagination-item>
+      <button
+        (click)="goTo(items.length)"
+        [attr.aria-label]="'Page ' + items.length"
+        [id]="items.length.toString()"
+        v-button
+        [aria-current]="currentPage === items.length"
+        buttonColor="tertiary"
+      >
+        {{ items.length }}
+      </button>
+    </li>
+    <li>
+      <button (click)="next()" aria-label="Next page" v-button-icon buttonSize="small" buttonColor="tertiary">
+        <svg v-icon-visa-chevron-right-tiny></svg>
+      </button>
+    </li>
+    <li>
+      <button (click)="end()" aria-label="Last page" v-button-icon buttonSize="small" buttonColor="tertiary">
+        <svg v-icon-visa-arrow-end-tiny></svg>
+      </button>
+    </li>
+  </ul>
+</nav>

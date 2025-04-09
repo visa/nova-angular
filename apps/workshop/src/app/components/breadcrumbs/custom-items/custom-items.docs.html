@@ -1,0 +1,40 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<nav aria-label="breadcrumbs with custom items" v-breadcrumbs hasInlineSeparator>
+  <ol>
+    <ng-container *ngFor="let page of pages; index as i">
+      <li *ngIf="i === activeIndex || (i < crumbLimit && i < activeIndex)">
+        <ng-container *ngIf="page.icon">
+          <button v-button-icon buttonColor="tertiary" [routerLink]="page.path" [attr.aria-label]="page.text">
+            <svg v-icon-visa-folder-tiny></svg>
+          </button>
+        </ng-container>
+        <a *ngIf="i < activeIndex; else active" v-link [routerLink]="page.path">{{ page.text }}</a>
+        <svg *ngIf="i < pages.length -1" v-icon-visa-chevron-right-tiny></svg>
+        <ng-container *ngIf="i === crumbLimit - 1 && crumbLimit !== currentCrumbCount && activeIndex > crumbLimit">
+          <button v-button-icon buttonColor="tertiary" (click)="showOverflow()" aria-label="Show all items">
+            <svg v-icon-visa-option-horizontal-tiny></svg>
+          </button>
+          <svg v-icon-visa-chevron-right-tiny></svg>
+        </ng-container>
+        <ng-template #active>
+          <span aria-current="page">{{ page.text }}</span>
+        </ng-template>
+      </li>
+    </ng-container>
+  </ol>
+</nav>

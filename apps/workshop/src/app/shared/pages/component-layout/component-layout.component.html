@@ -1,0 +1,42 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<nova-workshop-page-hero>
+  <ul v-tabs aria-label="View examples and API of the component">
+    <li v-tab-item [active]="selectedTab() === 0">
+      <button v-button aria-controls="examples-panel" id="examples-tab" (click)="updateTab(0)">Examples</button>
+    </li>
+    <li v-tab-item [active]="selectedTab() === 1">
+      <button v-button aria-controls="api-panel" id="api-tab" (click)="updateTab(1)">API</button>
+    </li>
+  </ul>
+</nova-workshop-page-hero>
+<div class="page__content v-surface">
+  <nova-workshop-tab-panel vFlex index="0" class="examples-panel" id="examples-panel" aria-labelledby="examples-tab">
+    <ng-container *ngIf="!workshopService.isLoadingExamples() && examples()">
+      <nova-workshop-on-this-page [associatedTab]="0" [items]="examples()"></nova-workshop-on-this-page>
+    </ng-container>
+    <div vFlexGrow vSurface class="examples-list">
+      <ng-container *ngIf="workshopService.isLoadingExamples()">
+        <div v-progress-circular aria-label="Examples loading"></div>
+      </ng-container>
+      <router-outlet #routerOutlet></router-outlet>
+    </div>
+  </nova-workshop-tab-panel>
+  <nova-workshop-tab-panel index="1" id="api-panel" aria-labelledby="api-tab" class="w-api-page">
+    <nova-workshop-api-table></nova-workshop-api-table>
+  </nova-workshop-tab-panel>
+</div>

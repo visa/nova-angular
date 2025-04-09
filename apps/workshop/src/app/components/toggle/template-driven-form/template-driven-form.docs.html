@@ -1,0 +1,76 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<!-- 
+ setting an invalid class on the label and message are a temporary measure 
+ while we add the necessary rules into Nova Styles 
+-->
+<form
+  #templateFormValidation="ngForm"
+  (change)="handleChange()"
+  vFlex
+  vMT="16"
+  vFlexCol
+  (ngSubmit)="handleFormSubmit(templateFormValidation)"
+>
+  <fieldset aria-labelledby="toggle-template-group-label toggle-template-error-message">
+    <legend
+      v-label
+      id="toggle-template-group-label"
+      vTypography="label"
+      [ngClass]="templateFormValidation.submitted && isInvalid ? 'v-input-error' : ''"
+    >
+      Group label (required)
+    </legend>
+    <div
+      vFlex
+      vGap="0"
+      v-toggle-container
+      [(ngModel)]="toggleVal"
+      name="toggle-template-group"
+      required
+      [invalid]="templateFormValidation.submitted && isInvalid"
+    >
+      <button v-toggle vGap="6" value="1">Label 1</button>
+      <button v-toggle vGap="6" value="2">Label 2</button>
+      <button v-toggle vGap="6" value="3">Label 3</button>
+    </div>
+    <span
+      v-input-message
+      id="toggle-template-error-message"
+      aria-atomic="true"
+      aria-live="assertive"
+      [ngClass]="templateFormValidation.submitted && isInvalid ? 'v-input-error' : ''"
+    >
+      <ng-container *ngIf="templateFormValidation.submitted && isInvalid">
+        <svg v-icon-visa-error-tiny></svg>
+        This is required text that describes the error in more detail.
+      </ng-container>
+    </span>
+  </fieldset>
+  <div vFlex vGap="16" vMT="12">
+    <button v-button type="submit">Submit</button>
+    <button v-button type="reset" buttonColor="secondary" (click)="handleFormReset(templateFormValidation)">
+      Reset
+    </button>
+  </div>
+</form>
+
+<!-- For demo purposes: -->
+<code
+  >{{'templateFormValidation.value[\'toggle-template-group\']: ' +
+  templateFormValidation.value['toggle-template-group']}}
+</code>

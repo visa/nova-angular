@@ -1,0 +1,38 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<div
+  vSurface
+  v-message
+  messageType="success"
+  vGap="24"
+  vFlex
+  vFlexCol
+  vAlignItemsCenter
+  vPY="44"
+  style="--v-surface-padding-inline: 100px"
+>
+  <h3 vTypography="headline-3">Success!</h3>
+  <svg v-message-icon v-icon-visa-success-high></svg>
+  <div v-message-content vPL="2" vPB="2" role="alert" aria-live="polite">
+    <span vSR>success</span>
+    <p vTypographyColor="default">This is required text that describes the success message in more detail.</p>
+    <div vFlex vGap="24" vJustifyContentCenter>
+      <a v-link (click)="reset.emit()">Reset wizard example</a>
+      <a v-link>Destination label</a>
+    </div>
+  </div>
+</div>

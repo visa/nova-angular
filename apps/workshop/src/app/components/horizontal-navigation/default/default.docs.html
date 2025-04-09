@@ -1,0 +1,210 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<a v-skip-to-content v-link routerLink="./" fragment="content">Skip to content</a>
+<header v-nav vJustifyContentBetween>
+  <!-- nav elements when search is collapsed -->
+  <ng-container *ngIf="!searchExpanded">
+    <div v-floating-ui-container>
+      <button
+        v-floating-ui-trigger
+        v-button-icon
+        buttonColor="tertiary"
+        buttonSize="large"
+        vContainerHide="desktop"
+        aria-label="open menu"
+      >
+        <svg v-icon-visa-menu-low></svg>
+      </button>
+      <nav v-dropdown-menu vFlex vFlexCol>
+        <ul v-dropdown-list vAddArrowKeys>
+          <li>
+            <a v-dropdown-item vLink vP="4" vPX="8" vFlex JustifyContentStart href="./components/horizontal-navigation"
+              >L1 label 1
+            </a>
+          </li>
+          <li>
+            <a v-dropdown-item vLink vP="4" vPX="8" vFlex JustifyContentStart href="./components/horizontal-navigation"
+              >L1 label 2</a
+            >
+          </li>
+          <li>
+            <a v-dropdown-item vLink vP="4" vPX="8" vFlex JustifyContentStart href="./components/horizontal-navigation"
+              >L1 label 3</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <a
+      v-link
+      noUnderline
+      vMX="auto"
+      vGap="16"
+      aria-label="Visa Application Name Home"
+      href="./components/horizontal-navigation"
+      ><svg v-logo-visa></svg>
+      <div vTypography="headline-3" vContainerHide="xs" class="v-nav-app-name">Application name</div>
+    </a>
+    <nav vFlex vFlexGrow vJustifyContentEnd vGap="4" vML="auto" vContainerHide="mobile" aria-label="Default horizontal">
+      <ul v-tabs>
+        <li v-tab-item>
+          <a v-button buttonColor="tertiary" buttonSize="large" href="./components/horizontal-navigation">L1 label 1</a>
+        </li>
+        <li v-tab-item>
+          <a v-button buttonColor="tertiary" buttonSize="large" href="./components/horizontal-navigation">L1 label 2</a>
+        </li>
+        <li v-tab-item vContainerHide="mobile" v-floating-ui-container>
+          <button v-button buttonColor="tertiary" buttonSize="large" v-floating-ui-trigger>
+            L1 Label 3
+            <v-icon-visa-toggle>
+              <svg v-toggle-default-template v-icon-visa-chevron-down-tiny></svg>
+              <svg v-toggle-rotated-template v-icon-visa-chevron-up-tiny></svg>
+            </v-icon-visa-toggle>
+          </button>
+          <div v-dropdown-menu vFlex vFlexCol>
+            <ul v-dropdown-list vAddArrowKeys>
+              <li>
+                <a
+                  v-dropdown-item
+                  vLink
+                  vP="4"
+                  vPX="8"
+                  vFlex
+                  JustifyContentStart
+                  href="./components/horizontal-navigation"
+                  >L2 label 1</a
+                >
+              </li>
+              <li>
+                <a
+                  v-dropdown-item
+                  vLink
+                  vP="4"
+                  vPX="8"
+                  vFlex
+                  JustifyContentStart
+                  href="./components/horizontal-navigation"
+                >
+                  L2 label 2
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div vFlex vML="8" vGap="8">
+      <button
+        #searchButton
+        v-button-icon
+        buttonColor="tertiary"
+        buttonSize="large"
+        aria-label="search site"
+        (click)="toggleSearch(true)"
+      >
+        <svg v-icon-visa-search-low></svg>
+      </button>
+      <button
+        v-button-icon
+        aria-label="notifications"
+        aria-describedby="badge-default"
+        buttonColor="tertiary"
+        buttonSize="large"
+        vContainerHide="mobile"
+      >
+        <svg v-icon-visa-notifications-low></svg>
+        <sup v-badge badgeType="number" id="badge-default">3</sup>
+      </button>
+      <div v-tab-item vContainerHide="mobile" v-floating-ui-container>
+        <button v-button aria-label="Account" buttonColor="tertiary" buttonSize="large" v-floating-ui-trigger>
+          <svg v-avatar v-icon-visa-account-low></svg>
+          <v-icon-visa-toggle>
+            <svg v-toggle-default-template v-icon-visa-chevron-down-tiny></svg>
+            <svg v-toggle-rotated-template v-icon-visa-chevron-up-tiny></svg>
+          </v-icon-visa-toggle>
+        </button>
+        <div v-dropdown-menu vFlex vFlexCol>
+          <ul v-dropdown-list vAddArrowKeys>
+            <li>
+              <a
+                v-dropdown-item
+                vLink
+                vFlex
+                vJustifyContentStart
+                vP="4"
+                vPX="8"
+                href="./components/horizontal-navigation"
+                >L2 label 1</a
+              >
+            </li>
+            <li>
+              <a
+                v-dropdown-item
+                vLink
+                vFlex
+                vJustifyContentStart
+                vP="4"
+                vPX="8"
+                href="./components/horizontal-navigation"
+              >
+                L2 label 2
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- expanded search -->
+  <div
+    *ngIf="searchExpanded"
+    vSurface
+    vFlex
+    vPL="12"
+    vMY="9"
+    style="
+      --v-surface-background: var(--palette-default-surface-3);
+      --v-surface-border-radius: var(--size-rounded-medium);
+    "
+  >
+    <div v-input-container>
+      <svg v-icon-visa-search-low></svg>
+      <input
+        v-input
+        id="navigation-search-field"
+        name="navigation-search-field"
+        required
+        type="search"
+        aria-label="Search"
+        placeholder="Search"
+        #searchInput
+      />
+    </div>
+    <button
+      (click)="toggleSearch(false)"
+      vMY="5"
+      vMX="8"
+      aria-label="close"
+      v-button-icon
+      buttonColor="tertiary"
+      buttonSize="large"
+    >
+      <svg v-icon-visa-close-low></svg>
+    </button>
+  </div>
+</header>

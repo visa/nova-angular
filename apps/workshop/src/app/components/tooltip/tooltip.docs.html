@@ -1,0 +1,68 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<ng-container *ngIf="!workshopService.isLoadingExamples()">
+  <h2 vTypography="headline-2" vMT="36">Default tooltips</h2>
+  <nova-workshop-example exampleTitle="Top-positioned tooltip" selector="nova-workshop-tooltip-top">
+    <nova-workshop-tooltip-top></nova-workshop-tooltip-top>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Bottom-positioned tooltip" selector="nova-workshop-tooltip-bottom">
+    <nova-workshop-tooltip-bottom></nova-workshop-tooltip-bottom>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Left-positioned tooltip" selector="nova-workshop-tooltip-left">
+    <nova-workshop-tooltip-left></nova-workshop-tooltip-left>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Right-positioned tooltip" selector="nova-workshop-tooltip-right">
+    <nova-workshop-tooltip-right></nova-workshop-tooltip-right>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2" vMT="36">Custom tooltips</h2>
+  <nova-workshop-example
+    exampleTitle="Tooltip with custom middleware"
+    selector="nova-workshop-tooltip-custom-middleware"
+  >
+    <div v-section v-message ngProjectAs="example-component-prefix" messageType="information" vMB="12">
+      <svg v-message-icon v-icon-visa-information-low aria-hidden="false" aria-label="Information" role="img"></svg>
+      <div v-message-content vPL="2" vPB="2">
+        <p>
+          See
+          <a v-link vOpensInNewTab href="https://floating-ui.com/docs/computePosition#middleware"
+            >Floating UI's section on Middleware <svg v-icon-visa-maximize-tiny></svg>
+          </a>
+          for more information.
+        </p>
+      </div>
+    </div>
+    <nova-workshop-tooltip-custom-middleware></nova-workshop-tooltip-custom-middleware>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Tooltip with custom events" selector="nova-workshop-tooltip-custom-events">
+    <nova-workshop-tooltip-custom-events></nova-workshop-tooltip-custom-events>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Tooltip with arrow" selector="nova-workshop-tooltip-with-arrow">
+    <div v-section v-message messageType="information" vMB="12" ngProjectAs="example-component-prefix">
+      <svg v-message-icon v-icon-visa-information-low aria-hidden="false" aria-label="Information" role="img"></svg>
+      <div v-message-content vPL="2" vPB="2">
+        <p>This example demos a custom event array by having the tooltip also hide when space is pressed.</p>
+      </div>
+    </div>
+    <nova-workshop-tooltip-with-arrow></nova-workshop-tooltip-with-arrow>
+  </nova-workshop-example>
+</ng-container>

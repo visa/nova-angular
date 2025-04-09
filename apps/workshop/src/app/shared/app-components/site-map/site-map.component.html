@@ -1,0 +1,53 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<div class="layout">
+  <nova-workshop-site-header></nova-workshop-site-header>
+  <div class="layout__content" #content id="content" tabindex="-1" href="#content">
+    <div vFlex vFlexCol vFlexWrap vGap="16" vP="32">
+      <h1 vTypography="display-2">Site Map</h1>
+      <div vFlex vJustifyContentBetween vFlexGrow vFlexWrap vGap="32">
+        <div *ngFor="let navLink of navLinks" vFlex vFlexCol vGap="16">
+          <h2 vTypography="subtitle-1" *ngIf="navLink.title === 'Foundations'">{{ navLink.title }}</h2>
+          <h2>
+            <a v-link class="title" [routerLink]="navLink.link">
+              {{ navLink.title === 'Foundations' ? 'Grid resources' : navLink.title }}
+            </a>
+          </h2>
+        </div>
+        <ng-container *ngFor="let singleSiteMapData of siteMapData">
+          <div vFlex vFlexCol>
+            <ng-container *ngIf="singleSiteMapData.title !== 'Components'; else componentTitle">
+              <h2 vTypography="subtitle-1" vMB="16">{{ singleSiteMapData.title }}</h2></ng-container
+            >
+            <ng-template #componentTitle>
+              <h2><a v-link routerLink="../components" class="title" vMB="16">Components</a></h2></ng-template
+            >
+            <div vFlex vFlexCol vGap="8">
+              <a
+                *ngFor="let linkData of singleSiteMapData.data"
+                v-link
+                [routerLink]="'../' + singleSiteMapData.title.toLowerCase() + '/' + linkData.path"
+                >{{ linkData.name }}</a
+              >
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <nova-workshop-site-footer></nova-workshop-site-footer>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<div vFlex vFlexCol vAlignItemsCenter vMT="36" vGap="8" vMX="16">
+  <h1 vTypography="headline-1">Page not found</h1>
+  <p>Sorry, but this page does not exist. Use the links below to explore VPDS!</p>
+
+  <div vFlex vFlexWrap vMT="36" vGap="12">
+    <div v-content-card>
+      <div v-content-card-body vFlex vFlexCol vGap="4">
+        <h3 v-content-card-title vTypography="headline-4">Get started</h3>
+        <p vTypography="body-2" vPT="4">Go home to view our getting started guide.</p>
+        <div vFlex vFlexWrap vAlignItemsCenter vGap="12" vPT="12">
+          <a href="/" v-link noUnderline vFlex vAlignItemsCenter style="--v-link-icon-transformation: none">
+            Get started <svg v-icon-visa-chevron-link-tiny></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div v-content-card>
+      <div v-content-card-body vFlex vFlexCol vGap="4">
+        <h3 v-content-card-title vTypography="headline-4">View components</h3>
+        <p vTypography="body-2" vPT="4">See all of the components we have to offer.</p>
+        <div vFlex vFlexWrap vAlignItemsCenter vGap="12" vPT="12">
+          <a
+            routerLink="/../components/"
+            v-link
+            noUnderline
+            vFlex
+            vAlignItemsCenter
+            style="--v-link-icon-transformation: none"
+          >
+            View components
+            <svg v-icon-visa-chevron-link-tiny></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div v-content-card>
+      <div v-content-card-body vFlex vFlexCol vGap="4">
+        <h3 v-content-card-title vTypography="headline-4">See all VPDS has to offer</h3>
+        <p vTypography="body-2" vPT="4">Go to the Visa Product Design System portal to see all that we offer.</p>
+        <div vFlex vFlexWrap vAlignItemsCenter vGap="12" vPT="12">
+          <a
+            href="https://design.visa.com"
+            v-link
+            noUnderline
+            vFlex
+            vAlignItemsCenter
+            style="--v-link-icon-transformation: none"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Visa Product Design System home experience (opens in a new tab)"
+          >
+            Go to portal
+            <svg v-icon-visa-chevron-link-tiny></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

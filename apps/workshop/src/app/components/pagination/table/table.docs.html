@@ -1,0 +1,133 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<div vFlex vAlignItemsCenter vJustifyContentBetween vFlexWrap>
+  <div vFlex vFlexRow vFlexCol vAlignItemsCenter vGap="8" vFlexWrap>
+    <label v-label vTypography="label-large" for="model-input">Results per page</label>
+    <div v-input-container>
+      <select
+        v-select
+        [formControl]="selectFormControl"
+        id="model-input"
+        (change)="changePageSize($event)"
+        aria-describedby="pagination-options-description"
+      >
+        >
+        <option *ngFor="let item of numberOfTableItems" [value]="item.value">{{item.label}}</option>
+      </select>
+      <v-icon-visa-toggle>
+        <svg v-toggle-default-template v-icon-visa-chevron-down-tiny></svg>
+        <svg v-toggle-rotated-template v-icon-visa-chevron-up-tiny></svg>
+      </v-icon-visa-toggle>
+    </div>
+    <p id="pagination-options-description" vTypography="body-2">
+      Showing {{resultsStartIndex}} - {{resultsEndIndex}} of {{dataLength}}
+    </p>
+  </div>
+  <nav role="navigation" aria-label="Pagination for tables">
+    <ul v-pagination vFlex vFlexRow vAlignItemsCenter vGap="4" style="container-type: normal">
+      <li>
+        <button
+          aria-label="First page"
+          v-button-icon
+          buttonSize="small"
+          buttonColor="tertiary"
+          [disabled]="isFirst()"
+          (click)="changePage(startPage)"
+        >
+          <svg v-icon-visa-arrow-start-tiny></svg>
+        </button>
+      </li>
+      <li>
+        <button
+          aria-label="Previous page"
+          v-button-icon
+          buttonSize="small"
+          buttonColor="tertiary"
+          [disabled]="isFirst()"
+          (click)="changePage(currentPage-1)"
+        >
+          <svg v-icon-visa-chevron-left-tiny></svg>
+        </button>
+      </li>
+      <li *ngIf="pagesExceedBlockLimit">
+        <button
+          (click)="changePage(startPage)"
+          [aria-current]="currentPage == startPage ? 'page' : false"
+          aria-label="Page 1"
+          v-button
+          buttonColor="tertiary"
+        >
+          {{startPage}}
+        </button>
+      </li>
+      <li *ngIf="pagesExceedBlockLimit && showStartingEllipses" vFlex vAlignItemsCenter v-pagination-overflow>
+        <svg v-icon-visa-option-horizontal-tiny></svg>
+      </li>
+      <ng-container *ngFor="let page of visiblePages()">
+        <li>
+          <button
+            (click)="changePage(page)"
+            [aria-current]="currentPage == page ? 'page' : false"
+            [attr.aria-label]="'Page ' + page"
+            v-button
+            buttonColor="tertiary"
+          >
+            {{page}}
+          </button>
+        </li>
+      </ng-container>
+      <li vFlex vAlignItemsCenter v-pagination-overflow *ngIf="showEndingEllipses && pagesExceedBlockLimit">
+        <svg v-icon-visa-option-horizontal-tiny></svg>
+      </li>
+      <li *ngIf="pagesExceedBlockLimit">
+        <button
+          (click)="changePage(lastPage())"
+          [aria-current]="currentPage == lastPage() ? 'page' : false"
+          [attr.aria-label]="'Page ' + lastPage()"
+          v-button
+          buttonColor="tertiary"
+        >
+          {{lastPage()}}
+        </button>
+      </li>
+      <li>
+        <button
+          aria-label="Next page"
+          v-button-icon
+          buttonSize="small"
+          buttonColor="tertiary"
+          [disabled]="isLast()"
+          (click)="changePage(currentPage+1)"
+        >
+          <svg v-icon-visa-chevron-right-tiny></svg>
+        </button>
+      </li>
+      <li>
+        <button
+          aria-label="Last page"
+          v-button-icon
+          buttonSize="small"
+          buttonColor="tertiary"
+          [disabled]="isLast()"
+          (click)="changePage(lastPage())"
+        >
+          <svg v-icon-visa-arrow-end-tiny></svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>

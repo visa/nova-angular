@@ -1,0 +1,103 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<ng-container *ngIf="!workshopService.isLoadingExamples()">
+  <h2 vTypography="headline-2" vMY="24">Static tables with banded rows</h2>
+
+  <nova-workshop-example
+    exampleTitle="Large padding with banded rows"
+    selector="nova-workshop-table-large-padding-banded-rows"
+  >
+    <nova-workshop-table-large-padding-banded-rows></nova-workshop-table-large-padding-banded-rows>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Medium padding with banded rows"
+    selector="nova-workshop-table-medium-padding-banded-rows"
+  >
+    <nova-workshop-table-medium-padding-banded-rows></nova-workshop-table-medium-padding-banded-rows>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Small padding with banded rows"
+    selector="nova-workshop-table-compact-padding-banded-rows"
+  >
+    <nova-workshop-table-compact-padding-banded-rows></nova-workshop-table-compact-padding-banded-rows>
+  </nova-workshop-example>
+
+  <nova-workshop-example exampleTitle="Table with scrollbars and banded rows" selector="nova-workshop-table-scroll">
+    <nova-workshop-dev-message-table-keyboard-scroll
+      ngProjectAs="example-component-prefix"
+    ></nova-workshop-dev-message-table-keyboard-scroll>
+    <nova-workshop-table-scroll></nova-workshop-table-scroll>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2" vMY="24">Static tables without banded rows</h2>
+
+  <nova-workshop-example exampleTitle="Table with lined rows" selector="nova-workshop-table-lined-rows">
+    <nova-workshop-table-lined-rows></nova-workshop-table-lined-rows>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Table with outer border column and row dividers"
+    selector="nova-workshop-table-outer-border-column-and-row-dividers"
+  >
+    <nova-workshop-table-outer-border-column-and-row-dividers></nova-workshop-table-outer-border-column-and-row-dividers>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Table with outer border and subtle headers"
+    selector="nova-workshop-table-outer-border-subtle-headers"
+  >
+    <nova-workshop-table-outer-border-subtle-headers></nova-workshop-table-outer-border-subtle-headers>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2" vMY="24">Static tables with group headers</h2>
+
+  <nova-workshop-example exampleTitle="Table with group headers" selector="nova-workshop-table-group-headers">
+    <nova-workshop-table-group-headers></nova-workshop-table-group-headers>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Table with group headers with empty cell"
+    selector="nova-workshop-table-group-headers-with-empty-cell"
+  >
+    <nova-workshop-table-group-headers-with-empty-cell></nova-workshop-table-group-headers-with-empty-cell>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2" vMY="24">Key value static tables</h2>
+  <nova-workshop-example
+    exampleTitle="Key value table with banded rows"
+    selector="nova-workshop-table-key-value-table-banded"
+  >
+    <nova-workshop-table-key-value-table-banded></nova-workshop-table-key-value-table-banded>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Key value table with lined rows"
+    selector="nova-workshop-table-key-value-table-lined"
+  >
+    <nova-workshop-table-key-value-table-lined></nova-workshop-table-key-value-table-lined>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2" vMY="24">Custom table</h2>
+  <nova-workshop-example exampleTitle="Fixed first column" selector="nova-workshop-table-fixed-first-column">
+    <nova-workshop-dev-message-table-keyboard-scroll
+      ngProjectAs="example-component-prefix"
+    ></nova-workshop-dev-message-table-keyboard-scroll>
+    <nova-workshop-table-fixed-first-column></nova-workshop-table-fixed-first-column>
+  </nova-workshop-example>
+</ng-container>

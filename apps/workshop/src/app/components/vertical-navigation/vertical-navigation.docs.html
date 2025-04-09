@@ -1,0 +1,97 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<ng-container *ngIf="!workshopService.isLoadingExamples()">
+  <h2 vTypography="headline-2" vMB="30">Default vertical navigations</h2>
+  <div v-section v-message messageType="information">
+    <svg v-message-icon v-icon-visa-information-low aria-hidden="false" aria-label="Information" role="img"></svg>
+    <div v-message-content vPL="2" vPB="2">
+      <h4 vTypography="body-2-bold">Vertical navigation examples</h4>
+      <p>The below vertical navigation examples are built with the following html layout and css:</p>
+      <p vMT="8" vTypography="body-2-medium">HTML</p>
+      <markdown [data]="htmlLayout | language : 'html'"></markdown>
+      <p vMT="12" vTypography="body-2-medium">CSS</p>
+      <markdown [data]="css | language: 'css'"></markdown>
+    </div>
+  </div>
+  <nova-workshop-example selector="nova-workshop-nav-vertical-default" exampleTitle="Default vertical navigation">
+    <nova-workshop-nav-vertical-default></nova-workshop-nav-vertical-default>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-nav-vertical-active-element"
+    exampleTitle="Vertical navigation with active element"
+  >
+    <nova-workshop-dev-message-router-link
+      ngProjectAs="example-component-prefix"
+    ></nova-workshop-dev-message-router-link>
+    <nova-workshop-nav-vertical-active-element></nova-workshop-nav-vertical-active-element>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-nav-vertical-with-icons" exampleTitle="Vertical navigation with icons">
+    <nova-workshop-nav-vertical-with-icons></nova-workshop-nav-vertical-with-icons>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-nav-vertical-nested"
+    exampleTitle="Vertical navigation with nested elements"
+  >
+    <nova-workshop-nav-vertical-nested></nova-workshop-nav-vertical-nested>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-nav-vertical-with-section-titles"
+    exampleTitle="Vertical navigation with section titles"
+  >
+    <nova-workshop-nav-vertical-with-section-titles></nova-workshop-nav-vertical-with-section-titles>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-nav-vertical-nested-with-section-titles"
+    exampleTitle="Vertical navigation with nested elements and section titles"
+  >
+    <nova-workshop-nav-vertical-nested-with-section-titles></nova-workshop-nav-vertical-nested-with-section-titles>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-nav-vertical-alternate" exampleTitle="Alternate vertical navigation">
+    <nova-workshop-nav-vertical-alternate></nova-workshop-nav-vertical-alternate>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-nav-vertical-alternate-with-active-element"
+    exampleTitle="Alternate vertical navigation with active element"
+  >
+    <nova-workshop-dev-message-router-link
+      ngProjectAs="example-component-prefix"
+    ></nova-workshop-dev-message-router-link>
+    <nova-workshop-nav-vertical-alternate-with-active-element></nova-workshop-nav-vertical-alternate-with-active-element>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-nav-alternate-with-icons"
+    exampleTitle="Alternate vertical navigation with icons"
+  >
+    <nova-workshop-nav-alternate-with-icons></nova-workshop-nav-alternate-with-icons>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2">Custom vertical navigation</h2>
+  <nova-workshop-example
+    selector="nova-workshop-nav-vertical-links-only"
+    exampleTitle="Vertical navigation without logo or application name"
+  >
+    <nova-workshop-nav-vertical-links-only></nova-workshop-nav-vertical-links-only>
+  </nova-workshop-example>
+</ng-container>

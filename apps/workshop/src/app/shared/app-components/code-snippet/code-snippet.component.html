@@ -1,0 +1,97 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<div v-accordion multiselect *ngIf="templateData || sourceCode; else noData">
+  <ng-container *ngIf="templateData">
+    <button v-button v-accordion-heading [attr.aria-label]="'HTML for ' + ariaLabel + ' example'" #html>
+      <v-icon-visa-toggle>
+        <svg v-toggle-default-template v-icon-visa-chevron-right-tiny></svg>
+        <svg v-toggle-rotated-template v-icon-visa-chevron-down-tiny></svg>
+      </v-icon-visa-toggle>
+      <svg v-icon-visa-code-fork-alt-tiny></svg>
+      HTML
+    </button>
+    <div v-accordion-panel class="code-snippet-panel">
+      @defer (on interaction(html)) {
+        <nova-workshop-code-snippet-single
+          [analyticsLabel]="example"
+          analyticsCategory="Nova Angular HTML"
+          ariaLabelText="copy {{ ariaLabel }} HTML to clipboard"
+          [copyData]="templateData"
+          codeLanguage="html"
+        />
+      } @loading {
+        <p>loading...</p>
+      } @placeholder {
+        <p>waiting...</p>
+      }
+    </div>
+  </ng-container>
+  <ng-container *ngIf="sourceCode">
+    <button v-button v-accordion-heading [attr.aria-label]="'TypeScript for ' + ariaLabel + ' example'" #typescript>
+      <v-icon-visa-toggle>
+        <svg v-toggle-default-template v-icon-visa-chevron-right-tiny></svg>
+        <svg v-toggle-rotated-template v-icon-visa-chevron-down-tiny></svg>
+      </v-icon-visa-toggle>
+      <svg v-icon-visa-code-fork-alt-tiny></svg>
+      TypeScript
+    </button>
+    <div v-accordion-panel class="code-snippet-panel">
+      @defer (on interaction(typescript)) {
+        <nova-workshop-code-snippet-single
+          [analyticsLabel]="example"
+          analyticsCategory="Nova Angular TS"
+          ariaLabelText="copy {{ ariaLabel }} typescript to clipboard"
+          [copyData]="sourceCode"
+          codeLanguage="typescript"
+        />
+      } @loading {
+        <p>loading...</p>
+      } @placeholder {
+        <p>waiting...</p>
+      }
+    </div>
+  </ng-container>
+  <ng-container *ngIf="exampleData">
+    <button v-button v-accordion-heading [attr.aria-label]="'Example data for ' + ariaLabel + ' example'" #typescript>
+      <v-icon-visa-toggle>
+        <svg v-toggle-default-template v-icon-visa-chevron-right-tiny></svg>
+        <svg v-toggle-rotated-template v-icon-visa-chevron-down-tiny></svg>
+      </v-icon-visa-toggle>
+      <svg v-icon-visa-code-fork-alt-tiny></svg>
+      Example data
+    </button>
+    <div v-accordion-panel class="code-snippet-panel">
+      @defer (on interaction(typescript)) {
+        <nova-workshop-code-snippet-single
+          [analyticsLabel]="example"
+          analyticsCategory="Nova Angular Example Data"
+          ariaLabelText="copy {{ ariaLabel }} example data to clipboard"
+          [copyData]="exampleData"
+          codeLanguage="json"
+        />
+      } @loading {
+        <p>loading...</p>
+      } @placeholder {
+        <p>waiting...</p>
+      }
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #noData>
+  <span vTypography="overline">No html or typescript found.</span>
+</ng-template>

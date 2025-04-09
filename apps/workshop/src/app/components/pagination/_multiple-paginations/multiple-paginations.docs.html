@@ -1,0 +1,94 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<div vFlex vFlexCol vGap="24">
+  @for(pc of paginationControls; track 'pc-' + pcIndex; let pcIndex = $index; ){
+  <nav role="navigation" [attr.aria-label]="'Multiple paginations in a page ' + (pcIndex+1)">
+    <ul v-pagination vFlex vFlexRow vAlignItemsCenter vGap="4">
+      <li>
+        <button
+          aria-label="First page"
+          v-button-icon
+          buttonSize="small"
+          buttonColor="tertiary"
+          [disabled]="pc.isFirstPage()"
+          (click)="pc.goToFirstPage()"
+        >
+          <svg v-icon-visa-arrow-start-tiny />
+        </button>
+      </li>
+
+      <li>
+        <button
+          aria-label="Previous page"
+          v-button-icon
+          buttonSize="small"
+          buttonColor="tertiary"
+          [disabled]="pc.isFirstPage()"
+          (click)="pc.goToPreviousPage()"
+        >
+          <svg v-icon-visa-chevron-left-tiny />
+        </button>
+      </li>
+
+      <!-- create all the visible pages here -->
+      @for (page of pc.pages(); track $index) { @if (page !== -1) {
+      <li>
+        <button
+          [attr.aria-label]="'Page ' + page"
+          [aria-current]="pc.isCurrentPage(page) ? 'page' : false"
+          v-button
+          buttonColor="tertiary"
+          (click)="pc.goToPage(page)"
+        >
+          {{ page }}
+        </button>
+      </li>
+      } @else {
+      <li vFlex vAlignItemsCenter v-pagination-overflow>
+        <svg v-icon-visa-option-horizontal-tiny />
+      </li>
+      } }
+
+      <li>
+        <button
+          aria-label="Next page"
+          v-button-icon
+          buttonSize="small"
+          buttonColor="tertiary"
+          [disabled]="pc.isLastPage()"
+          (click)="pc.goToNextPage()"
+        >
+          <svg v-icon-visa-chevron-right-tiny />
+        </button>
+      </li>
+
+      <li>
+        <button
+          aria-label="Last page"
+          v-button-icon
+          buttonSize="small"
+          buttonColor="tertiary"
+          [disabled]="pc.isLastPage()"
+          (click)="pc.goToLastPage()"
+        >
+          <svg v-icon-visa-arrow-end-tiny />
+        </button>
+      </li>
+    </ul>
+  </nav>
+  }
+</div>

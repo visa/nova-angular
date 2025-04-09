@@ -1,0 +1,86 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<fieldset
+  aria-labelledby="checkbox-panel-group-error-legend checkbox-panel-group-error-input-message"
+  (change)="handleChange()"
+>
+  <legend v-label id="checkbox-panel-group-error-legend">Group label (required)</legend>
+  <div v-input-message id="checkbox-panel-group-error-input-message">Select one or more options.</div>
+  <ul vFlex vFlexCol>
+    <li v-checkbox-panel>
+      <div v-input-container vFlex vAlignItemsStart>
+        <input
+          id="checkbox-panel-group-error-1"
+          name="checkbox-panel-group-error"
+          v-checkbox
+          aria-describedby="checkbox-panel-group-error-message-1"
+          [invalid]="isInvalid"
+        />
+        <div vFlex vFlexCol vGap="2" [vMY]="8">
+          <label v-label for="checkbox-panel-group-error-1">Label 1</label>
+          <span v-input-message id="checkbox-panel-group-error-message-1">
+            This is optional text that describes the label in more detail.
+          </span>
+        </div>
+      </div>
+    </li>
+    <li v-checkbox-panel>
+      <div v-input-container vFlex vAlignItemsStart>
+        <input
+          id="checkbox-panel-group-error-2"
+          name="checkbox-panel-group-error"
+          v-checkbox
+          aria-describedby="checkbox-panel-group-error-message-2"
+          [invalid]="isInvalid"
+        />
+        <div vFlex vFlexCol vGap="2" [vMY]="8">
+          <label v-label for="checkbox-panel-group-error-2">Label 2</label>
+          <span v-input-message id="checkbox-panel-group-error-message-2">
+            This is optional text that describes the label in more detail.
+          </span>
+        </div>
+      </div>
+    </li>
+    <li v-checkbox-panel>
+      <div v-input-container vFlex vAlignItemsStart>
+        <input
+          id="checkbox-panel-group-error-3"
+          name="checkbox-panel-group-error"
+          v-checkbox
+          aria-describedby="checkbox-panel-group-error-message-3"
+          [invalid]="isInvalid"
+        />
+        <div vFlex vFlexCol vGap="2" [vMY]="8">
+          <label v-label for="checkbox-panel-group-error-3">Label 3</label>
+          <span v-input-message id="checkbox-panel-group-error-message-3">
+            This is optional text that describes the label in more detail.
+          </span>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <span v-input-message id="checkbox-panel-group-error-message" aria-atomic="true" aria-live="assertive">
+    <ng-container *ngIf="isInvalid">
+      <svg v-icon-visa-error-tiny></svg>
+      This is required text that describes the error in more detail.
+    </ng-container>
+  </span>
+</fieldset>
+<div vFlex vGap="16" vMT="24">
+  <button v-button (click)="handleSubmit()">Submit</button>
+  <button v-button buttonColor="secondary" (click)="handleReset()">Reset</button>
+</div>

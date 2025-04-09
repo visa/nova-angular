@@ -1,0 +1,53 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<div v-content-card>
+  <div v-content-card-body vFlex vFlexCol vGap="4">
+    <div vFlex vAlignItemsCenter vJustifyContentBetween>
+      <h3 v-content-card-title vTypography="headline-4">
+        <span vFlex vAlignSelfEnd>{{title}}</span>
+      </h3>
+      <div vFlex vAlignItemsCenter vGap="8">
+        <button v-button-icon buttonSize="small" buttonColor="tertiary" [attr.aria-label]="'Export \<' + title + '\>'">
+          <svg v-icon-visa-share-tiny></svg>
+        </button>
+        <button
+          v-button-icon
+          buttonSize="small"
+          buttonColor="tertiary"
+          [attr.aria-label]="'More information about \<' + title + '\>'"
+        >
+          <svg v-icon-visa-information-tiny></svg>
+        </button>
+      </div>
+    </div>
+    <h4 v-content-card-subtitle vTypography="subtitle-3">Subtitle</h4>
+    <p vTypography="body-2" vPT="4">This is optional text that describes the headline and subtitle in more detail.</p>
+    <div vFlex vFlexWrap vAlignItemsCenter vGap="12" vPT="12">
+      <button v-button buttonColor="primary">Primary action</button>
+      <a
+        href="./components/content-card"
+        v-link
+        noUnderline
+        vFlex
+        vAlignItemsCenter
+        style="--v-link-icon-transformation: none"
+      >
+        Destination label <svg v-icon-visa-chevron-link-tiny></svg>
+      </a>
+    </div>
+  </div>
+</div>

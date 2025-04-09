@@ -1,0 +1,150 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<ng-container *ngIf="!workshopService.isLoadingExamples()">
+  <h2 vTypography="headline-2" [vMT]="24">Informational flags</h2>
+
+  <nova-workshop-dev-message-headings-message vMT="14"></nova-workshop-dev-message-headings-message>
+
+  <nova-workshop-example selector="nova-workshop-flag-empty-info" exampleTitle="Empty informational flag">
+    <nova-workshop-flag-empty-info></nova-workshop-flag-empty-info>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-flag-default-info-flag" exampleTitle="Default informational flag">
+    <nova-workshop-flag-default-info-flag></nova-workshop-flag-default-info-flag>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-flag-default-info-flag-title"
+    exampleTitle="Informational flag with title"
+  >
+    <nova-workshop-flag-default-info-flag-title></nova-workshop-flag-default-info-flag-title>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-flag-info-flag-with-link" exampleTitle="Informational flag with link">
+    <nova-workshop-flag-info-flag-with-link></nova-workshop-flag-info-flag-with-link>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-flag-info-flag-with-action-button"
+    exampleTitle="Informational flag with button"
+  >
+    <nova-workshop-flag-info-flag-with-action-button></nova-workshop-flag-info-flag-with-action-button>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-flag-info-without-close-icon-button"
+    exampleTitle="Informational flag without close icon button"
+  >
+    <nova-workshop-flag-info-without-close-icon-button></nova-workshop-flag-info-without-close-icon-button>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2" [vMT]="24">Success flags</h2>
+
+  <nova-workshop-example selector="nova-workshop-flag-empty-success" exampleTitle="Empty success flag">
+    <nova-workshop-flag-empty-success></nova-workshop-flag-empty-success>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-flag-success-flag" exampleTitle="Default success flag">
+    <nova-workshop-flag-success-flag></nova-workshop-flag-success-flag>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-flag-success-flag-title" exampleTitle="Success flag with title">
+    <nova-workshop-flag-success-flag-title></nova-workshop-flag-success-flag-title>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-flag-success-flag-with-link" exampleTitle="Success flag with link">
+    <nova-workshop-flag-success-flag-with-link></nova-workshop-flag-success-flag-with-link>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-flag-success-flag-with-action-button"
+    exampleTitle="Success flag with button"
+  >
+    <nova-workshop-flag-success-flag-with-action-button></nova-workshop-flag-success-flag-with-action-button>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-flag-success-without-close-icon-button"
+    exampleTitle="Success flag without close icon button"
+  >
+    <nova-workshop-flag-success-without-close-icon-button></nova-workshop-flag-success-without-close-icon-button>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2" [vMT]="24">Warning flags</h2>
+
+  <nova-workshop-example selector="nova-workshop-flag-empty-warning" exampleTitle="Empty warning flag">
+    <nova-workshop-flag-empty-warning></nova-workshop-flag-empty-warning>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-flag-warning-flag" exampleTitle="Default warning flag">
+    <nova-workshop-flag-warning-flag></nova-workshop-flag-warning-flag>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-flag-warning-flag-title" exampleTitle="Warning flag with title">
+    <nova-workshop-flag-warning-flag-title></nova-workshop-flag-warning-flag-title>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-flag-warning-flag-with-link" exampleTitle="Warning flag with link">
+    <nova-workshop-flag-warning-flag-with-link></nova-workshop-flag-warning-flag-with-link>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-flag-warning-flag-with-action-button"
+    exampleTitle="Warning flag with button"
+  >
+    <nova-workshop-flag-warning-flag-with-action-button></nova-workshop-flag-warning-flag-with-action-button>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-flag-warning-without-close-icon-button"
+    exampleTitle="Warning flag without close icon button"
+  >
+    <nova-workshop-flag-warning-without-close-icon-button></nova-workshop-flag-warning-without-close-icon-button>
+  </nova-workshop-example>
+
+  <h2 vTypography="headline-2" [vMT]="24">Error flags</h2>
+
+  <nova-workshop-example selector="nova-workshop-flag-empty-error" exampleTitle="Empty error flag">
+    <nova-workshop-flag-empty-error></nova-workshop-flag-empty-error>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-flag-error-flag" exampleTitle="Default error flag">
+    <nova-workshop-flag-error-flag></nova-workshop-flag-error-flag>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-flag-error-flag-title" exampleTitle="Error flag with title">
+    <nova-workshop-flag-error-flag-title></nova-workshop-flag-error-flag-title>
+  </nova-workshop-example>
+
+  <nova-workshop-example selector="nova-workshop-flag-error-flag-with-link" exampleTitle="Error flag with link">
+    <nova-workshop-flag-error-flag-with-link></nova-workshop-flag-error-flag-with-link>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-flag-error-flag-with-action-button"
+    exampleTitle="Error flag with button"
+  >
+    <nova-workshop-flag-error-flag-with-action-button></nova-workshop-flag-error-flag-with-action-button>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    selector="nova-workshop-flag-error-without-close-icon-button"
+    exampleTitle="Error flag without close icon button"
+  >
+    <nova-workshop-flag-error-without-close-icon-button></nova-workshop-flag-error-without-close-icon-button>
+  </nova-workshop-example>
+</ng-container>

@@ -1,0 +1,38 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<style>
+  .my-progress {
+    --v-progress-bar-border-radius: 0px;
+    --v-progress-bar-background-color: #0099ff11;
+    --v-progress-bar-foreground-color: #0099ff;
+    --v-progress-bar-thickness: 6px;
+  }
+</style>
+<ng-container *ngIf="initiate">
+  <progress v-progress-linear [class.progress-paused]="isPaused" class="my-progress" id="custom-flat-linear"></progress>
+  <label for="custom-flat-linear"><span vSR role="alert">Loading...</span></label>
+</ng-container>
+
+<div vMT="12" vGap="12">
+  <button v-button (click)="initiateProgress()">Start</button>
+  <button v-button buttonColor="secondary" (click)="resetProgress()">Reset</button>
+  <button v-button buttonColor="secondary" (click)="togglePause()">
+    <svg v-icon-visa-media-pause-alt-tiny *ngIf="!isPaused"></svg>
+    <svg v-icon-visa-media-play-alt-tiny *ngIf="isPaused"></svg>
+    {{isPaused? 'Play': 'Pause'}}
+  </button>
+</div>

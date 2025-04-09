@@ -1,0 +1,26 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<label v-label for="ms-scroll-to-index" id="ms-scroll-to-index-label">Label (required)</label>
+<div v-listbox-container id="ms-scroll-to-index" aria-labelledby="ms-scroll-to-index-label">
+  <ul v-listbox containHeight multiselect>
+    <li v-listbox-item *ngFor="let item of items" [value]="item.value">{{ item.label }}</li>
+  </ul>
+</div>
+<div vFlex vGap="16">
+  <button v-button vMT="8" (click)="selectAndScroll()">Select and scroll to option {{ index }}</button>
+  <button v-button vMT="8" buttonColor="secondary" (click)="reset()">Reset</button>
+</div>

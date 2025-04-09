@@ -1,0 +1,67 @@
+<!--
+ *              Copyright (c) 2025 Visa, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<ng-container *ngIf="!workshopService.isLoadingExamples()">
+  <h2 vTypography="headline-2">Default breadcrumbs</h2>
+  <nova-workshop-example
+    exampleTitle="Breadcrumbs with default separator"
+    selector="nova-workshop-breadcrumbs-with-default-separator"
+  >
+    <nova-workshop-breadcrumbs-with-default-separator></nova-workshop-breadcrumbs-with-default-separator>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Breadcrumbs with custom separator"
+    selector="nova-workshop-breadcrumbs-with-custom-separator"
+  >
+    <nova-workshop-breadcrumbs-with-custom-separator></nova-workshop-breadcrumbs-with-custom-separator>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Breadcrumbs with inline separator"
+    selector="nova-workshop-breadcrumbs-with-inline-separator"
+  >
+    <nova-workshop-breadcrumbs-with-inline-separator></nova-workshop-breadcrumbs-with-inline-separator>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Breadcrumbs with svg separator"
+    selector="nova-workshop-breadcrumbs-with-svg-separator"
+  >
+    <nova-workshop-breadcrumbs-with-svg-separator></nova-workshop-breadcrumbs-with-svg-separator>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Breadcrumbs with custom items"
+    selector="nova-workshop-breadcrumbs-with-custom-items"
+  >
+    <nova-workshop-breadcrumbs-with-custom-items></nova-workshop-breadcrumbs-with-custom-items>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Breadcrumbs with observable"
+    selector="nova-workshop-breadcrumbs-with-observable"
+  >
+    <nova-workshop-breadcrumbs-with-observable></nova-workshop-breadcrumbs-with-observable>
+  </nova-workshop-example>
+
+  <nova-workshop-example
+    exampleTitle="Breadcrumbs using service to get active crumb"
+    selector="nova-workshop-breadcrumbs-using-service-to-get-active-crumb"
+  >
+    <nova-workshop-breadcrumbs-using-service-to-get-active-crumb></nova-workshop-breadcrumbs-using-service-to-get-active-crumb>
+  </nova-workshop-example>
+</ng-container>
