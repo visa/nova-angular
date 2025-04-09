@@ -1,0 +1,70 @@
+{
+  "bumpFiles": [
+    {
+      "filename": "package.json",
+      "type": "json"
+    },
+    {
+      "filename": "package-lock.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/nova-lib/package.json",
+      "type": "json"
+    }
+  ],
+  "commitUrlFormat": "Learn more at: https://design.visa.com/developing/angular/changelog",
+  "compareUrlFormat": "Learn more at: https://design.visa.com/developing/angular/changelog",
+  "issueUrlFormat": "Learn more at: https://design.visa.com/developing/angular/changelog",
+  "header": "",
+  "packageFiles": [
+    {
+      "filename": "package.json",
+      "type": "json"
+    }
+  ],
+  "releaseCommitMessageFormat": "chore(release): v{{currentTag}}",
+  "types": [
+    {
+      "type": "feat",
+      "section": "Features"
+    },
+    {
+      "type": "fix",
+      "section": "Bug Fixes"
+    },
+    {
+      "type": "docs",
+      "section": "Documentation"
+    },
+    {
+      "type": "perf",
+      "section": "Performance"
+    },
+    {
+      "type": "test",
+      "hidden": true
+    },
+    {
+      "type": "chore",
+      "hidden": true
+    },
+    {
+      "type": "style",
+      "hidden": true
+    },
+    {
+      "type": "refactor",
+      "hidden": true
+    },
+    {
+      "type": "build",
+      "hidden": true
+    },
+    {
+      "type": "ci",
+      "hidden": true
+    }
+  ],
+  "userUrlFormat": "Learn more at: https://design.visa.com/developing/angular/changelog"
+}

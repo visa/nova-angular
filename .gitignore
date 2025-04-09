@@ -1,0 +1,68 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
+docs-html
+docs-json
+
+# dependencies
+/node_modules
+
+# profiling files
+chrome-profiler-events.json
+speed-measure-plugin.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+/.vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.angular/cache
+/.nx/cache
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+/apps/workshop/src/assets/themes
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Build assets
+sh.exe.stackdump
+
+# Test manifests
+unittest
+coverage
+results.csv
+projects/vds-lib/node_modules
+projects/vds-protractor-axe-plugin/node_modules
+*vds-lib-unit-test-junit-report*
+unit-test/*
+!/unit-test/vds-lib/junit/vds-lib-unit-test-junit-report
+apps/workshop/src/assets/themes/*
+apps/workshop/src/assets/metadata/nova-angular-*.json
+apps/workshop/src/assets/metadata/examples-hierarchy.json
