@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CircularProgressComponent rendering should allow for custom sizes 1`] = `
+<div
+  id="root17"
+>
+  <div
+    class="custom-circular-progress v-progress v-progress-circular v-progress-indeterminate"
+    v-progress-circular=""
+  >
+    <svg
+      class="v-progress-circular-track"
+    >
+      <circle
+        class="v-progress-circular-background"
+      />
+      <circle
+        class="v-progress-circular-bar"
+      />
+    </svg>
+    <span
+      role="alert"
+      vsr=""
+    >
+      Loading...
+    </span>
+  </div>
+</div>
+`;

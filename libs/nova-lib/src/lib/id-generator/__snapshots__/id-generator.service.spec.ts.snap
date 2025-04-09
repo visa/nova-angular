@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IdGenerator should allow for deterministic snapshots ids 1 1`] = `
+<div
+  id="root0"
+>
+  <test-component>
+    <div
+      id="a--0"
+    />
+    <div
+      id="a--1"
+    />
+  </test-component>
+</div>
+`;
+
+exports[`IdGenerator should allow for deterministic snapshots ids 2 1`] = `
+<div
+  id="root1"
+>
+  <test-component>
+    <div
+      id="a--2"
+    />
+    <div
+      id="a--3"
+    />
+  </test-component>
+</div>
+`;

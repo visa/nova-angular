@@ -1,0 +1,110 @@
+{
+  "@angular/cdk@17.3.10": {
+    "licenses": "MIT",
+    "repository": "https://github.com/angular/components",
+    "path": "node_modules/@angular/cdk",
+    "licenseFile": "node_modules/@angular/cdk/LICENSE"
+  },
+  "@angular/common@17.3.12": {
+    "licenses": "MIT",
+    "repository": "https://github.com/angular/angular",
+    "publisher": "angular",
+    "path": "node_modules/@angular/common",
+    "licenseFile": "node_modules/@angular/common/README.md"
+  },
+  "@angular/core@17.3.12": {
+    "licenses": "MIT",
+    "repository": "https://github.com/angular/angular",
+    "publisher": "angular",
+    "path": "node_modules/@angular/core",
+    "licenseFile": "node_modules/@angular/core/README.md"
+  },
+  "@angular/forms@17.3.12": {
+    "licenses": "MIT",
+    "repository": "https://github.com/angular/angular",
+    "publisher": "angular",
+    "path": "node_modules/@angular/forms",
+    "licenseFile": "node_modules/@angular/forms/README.md"
+  },
+  "@angular/platform-browser@17.3.12": {
+    "licenses": "MIT",
+    "repository": "https://github.com/angular/angular",
+    "publisher": "angular",
+    "path": "node_modules/@angular/platform-browser",
+    "licenseFile": "node_modules/@angular/platform-browser/README.md"
+  },
+  "@angular/router@17.3.12": {
+    "licenses": "MIT",
+    "repository": "https://github.com/angular/angular",
+    "publisher": "angular",
+    "path": "node_modules/@angular/router",
+    "licenseFile": "node_modules/@angular/router/README.md"
+  },
+  "@floating-ui/core@1.6.9": {
+    "licenses": "MIT",
+    "repository": "https://github.com/floating-ui/floating-ui",
+    "publisher": "atomiks",
+    "path": "node_modules/@floating-ui/core",
+    "licenseFile": "node_modules/@floating-ui/core/LICENSE"
+  },
+  "@floating-ui/dom@1.6.13": {
+    "licenses": "MIT",
+    "repository": "https://github.com/floating-ui/floating-ui",
+    "publisher": "atomiks",
+    "path": "node_modules/@floating-ui/dom",
+    "licenseFile": "node_modules/@floating-ui/dom/LICENSE"
+  },
+  "@floating-ui/utils@0.2.9": {
+    "licenses": "MIT",
+    "repository": "https://github.com/floating-ui/floating-ui",
+    "publisher": "atomiks",
+    "path": "node_modules/@floating-ui/utils",
+    "licenseFile": "node_modules/@floating-ui/utils/LICENSE"
+  },
+  "@visa/nova-styles@1.6.1": {
+    "licenses": "Apache-2.0",
+    "publisher": "Visa Product Design System",
+    "path": "node_modules/@visa/nova-styles",
+    "licenseFile": "node_modules/@visa/nova-styles/LICENSE",
+    "noticeFile": "node_modules/@visa/nova-styles/NOTICE"
+  },
+  "entities@4.5.0": {
+    "licenses": "BSD-2-Clause",
+    "repository": "https://github.com/fb55/entities",
+    "publisher": "Felix Boehm",
+    "email": "me@feedic.com",
+    "path": "node_modules/entities",
+    "licenseFile": "node_modules/entities/LICENSE"
+  },
+  "parse5@7.2.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/inikulin/parse5",
+    "publisher": "Ivan Nikulin",
+    "email": "ifaaan@gmail.com",
+    "url": "https://github.com/inikulin",
+    "path": "node_modules/parse5",
+    "licenseFile": "node_modules/parse5/LICENSE"
+  },
+  "rxjs@7.8.2": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/reactivex/rxjs",
+    "publisher": "Ben Lesh",
+    "email": "ben@benlesh.com",
+    "path": "node_modules/rxjs",
+    "licenseFile": "node_modules/rxjs/LICENSE.txt"
+  },
+  "tslib@2.8.1": {
+    "licenses": "0BSD",
+    "repository": "https://github.com/Microsoft/tslib",
+    "publisher": "Microsoft Corp.",
+    "path": "node_modules/tslib",
+    "licenseFile": "node_modules/tslib/LICENSE.txt"
+  },
+  "zone.js@0.14.10": {
+    "licenses": "MIT",
+    "repository": "https://github.com/angular/angular",
+    "publisher": "Brian Ford",
+    "path": "node_modules/zone.js",
+    "licenseFile": "node_modules/zone.js/LICENSE"
+  }
+}

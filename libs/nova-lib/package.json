@@ -1,0 +1,47 @@
+{
+  "name": "@visa/nova-angular",
+  "version": "5.1.2",
+  "license": "Apache-2.0",
+  "author": "Visa Product Design System",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Visa Product Design System Nova Angular library",
+  "sideEffects": false,
+  "keywords": [
+    "angular",
+    "design system",
+    "javascript",
+    "nova",
+    "nx",
+    "typescript",
+    "ui",
+    "visa",
+    "visa design",
+    "visa design system",
+    "visa product design system"
+  ],
+  "dependencies": {
+    "@angular/cdk": "^16 || ^17",
+    "@angular/common": "^16 || ^17",
+    "@angular/core": "^16 || ^17",
+    "tslib": "^2.6.2"
+  },
+  "peerDependencies": {
+    "@angular/forms": "^16 || ^17",
+    "@angular/router": "^16 || ^17",
+    "@floating-ui/dom": "^1.6.5",
+    "@visa/nova-styles": "^1.6.1",
+    "rxjs": "~7.8.0"
+  },
+  "devDependencies": {
+    "@angular/compiler": "^17.3.10",
+    "@angular/platform-browser": "^17.3.10",
+    "@testing-library/dom": "^10.4.0",
+    "@types/jest": "^29.5.12",
+    "@types/jest-axe": "^3.5.9",
+    "jest": "^29.7.0",
+    "jest-axe": "^9.0.0",
+    "jest-preset-angular": "^13.1.6"
+  }
+}

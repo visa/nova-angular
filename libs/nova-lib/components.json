@@ -1,0 +1,174 @@
+{
+  "components": [
+    {
+      "name": "accordion",
+      "dependencies": "button, icon",
+      "complete": false
+    },
+    {
+      "name": "anchor-link-menu",
+      "dependencies": "link",
+      "complete": false
+    },
+    {
+      "name": "avatar",
+      "dependencies": "button, icon, tab",
+      "complete": false
+    },
+    {
+      "name": "badge",
+      "dependencies": "icon",
+      "complete": false
+    },
+    {
+      "name": "banner",
+      "dependencies": "button, icon, link, message",
+      "complete": false
+    },
+    {
+      "name": "breadcrumbs",
+      "dependencies": "icon, link",
+      "complete": false
+    },
+    {
+      "name": "button",
+      "dependencies": "icon",
+      "complete": false
+    },
+    {
+      "name": "checkbox",
+      "dependencies": "input-container, input-message",
+      "complete": false
+    },
+    {
+      "name": "chip",
+      "dependencies": "avatar, button, checkbox, icon",
+      "complete": false
+    },
+    {
+      "name": "combobox",
+      "dependencies": "dropdown-menu, input, button, listbox, icon, input-message, input-container",
+      "complete": false
+    },
+    {
+      "name": "content-card",
+      "dependencies": "button, icon, link",
+      "complete": false
+    },
+    {
+      "name": "dialog",
+      "dependencies": "button, icon, link, message",
+      "complete": false
+    },
+    {
+      "name": "divider",
+      "dependencies": "",
+      "complete": false
+    },
+    {
+      "name": "dropdown-menu",
+      "dependencies": "button, listbox, tabs",
+      "complete": false
+    },
+    {
+      "name": "flag",
+      "dependencies": "button, icon, link, message",
+      "complete": false
+    },
+    {
+      "name": "footer",
+      "dependencies": "link, logo",
+      "complete": false
+    },
+    {
+      "name": "icon",
+      "dependencies": "",
+      "complete": false
+    },
+    {
+      "name": "input",
+      "dependencies": "input-container",
+      "complete": false
+    },
+    {
+      "name": "input-container",
+      "complete": false,
+      "subcomponent": true
+    },
+    {
+      "name": "input-message",
+      "complete": false,
+      "subcomponent": true
+    },
+    {
+      "name": "link",
+      "dependencies": "",
+      "complete": false
+    },
+    {
+      "name": "listbox",
+      "dependencies": "checkbox, radio",
+      "complete": false
+    },
+    {
+      "name": "nav",
+      "dependencies": "avatar, dropdown-menu, button, tabs, logo, icon",
+      "complete": false
+    },
+    {
+      "name": "pagination",
+      "dependencies": "button, icon",
+      "complete": false
+    },
+    {
+      "name": "panel",
+      "dependencies": "button, icon, divider, tabs",
+      "complete": false
+    },
+    {
+      "name": "progress",
+      "dependencies": "",
+      "complete": false
+    },
+    {
+      "name": "radio",
+      "dependencies": "checkbox, input-message, input-container",
+      "complete": false
+    },
+    {
+      "name": "section-message",
+      "dependencies": "button, icon, link, message",
+      "complete": false
+    },
+    {
+      "name": "select",
+      "dependencies": "input-container, input-message, icon",
+      "complete": false
+    },
+    {
+      "name": "switch",
+      "dependencies": "input-message",
+      "complete": false
+    },
+    {
+      "name": "table",
+      "dependencies": "badge",
+      "complete": false
+    },
+    {
+      "name": "tabs",
+      "dependencies": "button, icon",
+      "complete": false
+    },
+    {
+      "name": "toggle",
+      "dependencies": "radio, icon",
+      "complete": false
+    },
+    {
+      "name": "tooltip",
+      "dependencies": "button",
+      "complete": false
+    }
+  ]
+}
