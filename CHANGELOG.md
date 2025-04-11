@@ -1,5 +1,5 @@
 <!--
- *              Copyright (c) 2025 Visa, Inc.
+ *              © 2025 Visa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  -->
-
+ 
 ### [5.1.3](Learn more at: https://design.visa.com/developing/angular/changelog) (2025-04-11)
 
 Initial release of the component library.

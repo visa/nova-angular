@@ -49,12 +49,17 @@
   },
   "@visa/nova-icons-angular@2.0.3": {
     "licenses": "Apache-2.0",
-    "path": "node_modules/@visa/nova-icons-angular"
+    "publisher": "Visa Product Design System",
+    "path": "node_modules/@visa/nova-icons-angular",
+    "licenseFile": "node_modules/@visa/nova-icons-angular/LICENSE",
+    "noticeFile": "node_modules/@visa/nova-icons-angular/NOTICE"
   },
   "@visa/nova-styles@1.6.1": {
     "licenses": "Apache-2.0",
+    "publisher": "Visa Product Design System",
     "path": "node_modules/@visa/nova-styles",
-    "licenseFile": "node_modules/@visa/nova-styles/LICENSE"
+    "licenseFile": "node_modules/@visa/nova-styles/LICENSE",
+    "noticeFile": "node_modules/@visa/nova-styles/NOTICE"
   },
   "change-case@5.4.4": {
     "licenses": "MIT",
