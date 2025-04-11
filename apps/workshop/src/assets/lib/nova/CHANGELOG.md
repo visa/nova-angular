@@ -15,7 +15,7 @@
  *
  -->
 
-### [5.1.2](Learn more at: https://design.visa.com/developing/angular/changelog) (2025-03-24)
+### [5.1.3](Learn more at: https://design.visa.com/developing/angular/changelog) (2025-04-11)
 
 Initial release of the component library.
 
