@@ -103,7 +103,7 @@ export class VerticalWizardComponent {
       showErrorMessage: false,
     },
     {
-      stepLabel: 'Step 2  label',
+      stepLabel: 'Step 2 label',
       id: 'vertical-1',
       invalid: false,
       complete: false,
