@@ -103,6 +103,8 @@ export class PaginationControl {
   private readonly canPaginate: Signal<boolean> = computed(
     () =>
       this.totalPages() >
+        this.options.startBlockMaxLength + this.options.endBlockMaxLength &&
+      this.totalPages() >
         Math.max(
           this.options.endBlockMaxLength,
           this.options.startBlockMaxLength,
