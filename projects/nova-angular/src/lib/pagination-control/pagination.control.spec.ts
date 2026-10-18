@@ -393,6 +393,15 @@ describe('PaginationControl', () => {
         });
         expect(service.paginationControl.pages()).toEqual([1, -1, 2, 3, 4, 5, 6, -1, 10]);
       });
+      it('should not paginate when startBlockMaxLength and endBlockMaxLength overlap', () => {
+        service.paginationControl = new PaginationControl({
+          startBlockMaxLength: 7,
+          middleBlockMaxLength: 5,
+          endBlockMaxLength: 7,
+          defaultTotalPages: 11
+        });
+        expect(service.paginationControl.pages()).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
+      });
     });
   });
 
